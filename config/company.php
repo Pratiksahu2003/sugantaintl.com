@@ -82,26 +82,45 @@ return [
     'team' => [
         [
             'name' => 'Sushil Khatta',
-            'position' => 'Managing Director',
-            'description' => 'Leading strategic direction and company growth',
+            'position' => 'Production Manager',
+            'description' => 'Oversees all aspects of video production, ensuring projects are delivered on time and to the highest quality standards.',
             'initials' => 'SK',
-            'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face'
+            'image' => url('team\sushil.jpg')
         ],
-     
         [
             'name' => 'Vidu Slathia',
-            'position' => 'Video Specialist',
-            'description' => 'Expert in video production and creative direction',
+            'position' => 'Manager- Media/ PR & Sales',
+            'description' => 'Leads media relations, public relations, and sales initiatives to expand the company’s reach and client base.',
             'initials' => 'VS',
-            'image' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face'
+            'image' => url('team\vidu.png')
         ],
         [
             'name' => 'Shashak',
-            'position' => 'Social Media Manager',
-            'description' => 'Managing social media presence and digital marketing',
+            'position' => 'Video & Media Editor',
+            'description' => 'Edits and enhances video content, ensuring a polished final product that meets client expectations.',
             'initials' => 'SH',
-            'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face'
+            'image' => url('\team\shashak.jpg')
         ],
-     
+        [
+            'name' => 'Vishal Sharma ',
+            'position' => 'Manger Contracting & HRD',
+            'description' => 'Manages contracts, vendor relationships, and human resource development for smooth business operations.',
+            'initials' => 'VS',
+            'image' => url('team\vishal.jpg')
+        ],
+        [
+            'name' => 'Pratik Sahu',
+            'position' => 'Manager - IT & Tech Management',
+            'description' => 'Handles all IT infrastructure, technical support, and technology strategy for the company.',
+            'initials' => 'PS',
+            'image' => url('team\pratik.png')
+        ],
+        [
+            'name' => 'Ankita Jha',
+            'position' => 'Vice President - Content & Business Development',
+            'description' => 'Drives content strategy and business development, building partnerships and expanding service offerings.',
+            'initials' => 'AJ',
+            'image' => url('team\ankita.jpg')
+        ]
     ],
 ];

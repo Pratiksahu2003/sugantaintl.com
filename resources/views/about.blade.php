@@ -177,8 +177,14 @@
             @foreach(config('company.team') as $member)
             <div class="text-center group">
                 <div class="relative mb-6">
-                    <div class="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto flex items-center justify-center shadow-lg">
-                        <span class=" w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0text-black text-3xl font-bold">{{ strtolower(substr($member['initials'], 0, 1)) }}</span>
+                    <div class="w-32 h-32 rounded-full mx-auto flex items-center justify-center shadow-lg overflow-hidden bg-gray-200">
+                        @if(isset($member['image']) && $member['image'])
+                            <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover rounded-full">
+                        @else
+                            <span class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center text-black text-3xl font-bold">
+                                {{ strtoupper(substr($member['initials'], 0, 1)) }}
+                            </span>
+                        @endif
                     </div>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">{{ $member['name'] }}</h3>

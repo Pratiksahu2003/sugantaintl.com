@@ -5,7 +5,22 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="">
+        <source src="{{ asset('video/hero.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Video Overlay -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+
     <!-- Content -->
     <div class="relative z-20 max-w-6xl mx-auto px-6 text-center">
         <!-- Main Heading -->
