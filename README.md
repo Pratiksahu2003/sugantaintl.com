@@ -1,61 +1,249 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SpacePepper - Digital Solutions Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern, responsive website built with Laravel and Tailwind CSS, similar to spacepepper.com. This project showcases a complete digital agency website with multiple pages and interactive features.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **Modern Design**: Clean, professional design with gradient backgrounds and smooth animations
+-   **Responsive Layout**: Fully responsive design that works on all devices
+-   **Multiple Pages**: Home, About, Services, Portfolio, and Contact pages
+-   **Interactive Elements**: Portfolio filtering, FAQ toggles, mobile menu
+-   **Contact Form**: Functional contact form with validation
+-   **SEO Optimized**: Proper meta tags and semantic HTML structure
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Pages Included
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Home Page
 
-## Learning Laravel
+-   Hero section with call-to-action buttons
+-   Services preview with hover effects
+-   Portfolio showcase
+-   Statistics section
+-   Client testimonials
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. About Page
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   Company story and mission
+-   Team member profiles
+-   Core values section
+-   Why choose us section
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Services Page
 
-## Laravel Sponsors
+-   Detailed service descriptions
+-   Web Development
+-   Mobile Development
+-   UI/UX Design
+-   Digital Marketing
+-   Process workflow
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 4. Portfolio Page
 
-### Premium Partners
+-   Project showcase with filtering
+-   Technology stack display
+-   Client testimonials
+-   Project statistics
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 5. Contact Page
+
+-   Contact form with validation
+-   Contact information
+-   Business hours
+-   FAQ section
+-   Interactive map placeholder
+
+## Technologies Used
+
+-   **Backend**: Laravel 12.x
+-   **Frontend**: Tailwind CSS 4.x
+-   **Icons**: Font Awesome 6.x
+-   **Fonts**: Inter (Google Fonts)
+-   **Build Tool**: Vite
+-   **Database**: SQLite (default)
+
+## Installation
+
+1. **Clone the repository**
+
+    ```bash
+    git clone <repository-url>
+    cd spacepepper-website
+    ```
+
+2. **Install PHP dependencies**
+
+    ```bash
+    composer install
+    ```
+
+3. **Install Node.js dependencies**
+
+    ```bash
+    npm install
+    ```
+
+4. **Environment setup**
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+5. **Database setup**
+
+    ```bash
+    touch database/database.sqlite
+    php artisan migrate
+    ```
+
+6. **Build assets**
+
+    ```bash
+    npm run build
+    ```
+
+7. **Start the development server**
+    ```bash
+    php artisan serve
+    ```
+
+## Development
+
+To run the development environment with hot reloading:
+
+```bash
+npm run dev
+```
+
+This will start Vite's development server for asset compilation with hot module replacement.
+
+## Project Structure
+
+```
+├── app/
+│   └── Http/
+│       └── Controllers/
+│           ├── HomeController.php
+│           ├── AboutController.php
+│           ├── ServicesController.php
+│           ├── PortfolioController.php
+│           └── ContactController.php
+├── resources/
+│   ├── views/
+│   │   ├── layouts/
+│   │   │   └── app.blade.php
+│   │   ├── home.blade.php
+│   │   ├── about.blade.php
+│   │   ├── services.blade.php
+│   │   ├── portfolio.blade.php
+│   │   └── contact.blade.php
+│   ├── css/
+│   │   └── app.css
+│   └── js/
+│       └── app.js
+└── routes/
+    └── web.php
+```
+
+## Features Implemented
+
+### Navigation
+
+-   Fixed navigation bar with backdrop blur
+-   Mobile-responsive hamburger menu
+-   Active page highlighting
+-   Smooth scroll to sections
+
+### Animations & Interactions
+
+-   Hover effects on cards and buttons
+-   Smooth transitions and transforms
+-   Portfolio filtering with JavaScript
+-   FAQ accordion functionality
+-   Mobile menu toggle
+
+### Forms
+
+-   Contact form with Laravel validation
+-   Success/error message handling
+-   CSRF protection
+-   Form field validation and error display
+
+### Responsive Design
+
+-   Mobile-first approach
+-   Flexible grid layouts
+-   Responsive typography
+-   Optimized images and icons
+
+## Customization
+
+### Colors
+
+The website uses a blue-to-purple gradient theme. You can customize colors in the Tailwind CSS classes:
+
+-   Primary: `blue-600` to `purple-600`
+-   Secondary: Various shades of gray
+-   Accent colors: `pink`, `green`, etc.
+
+### Content
+
+Update the content in the respective controller files and Blade templates:
+
+-   Services data in `ServicesController.php`
+-   Portfolio projects in `PortfolioController.php`
+-   Team members and company info in the Blade templates
+
+### Styling
+
+Modify the styles in `resources/css/app.css` and update Tailwind classes in the Blade templates.
+
+## Deployment
+
+1. **Production build**
+
+    ```bash
+    npm run build
+    ```
+
+2. **Optimize for production**
+
+    ```bash
+    php artisan config:cache
+    php artisan route:cache
+    php artisan view:cache
+    ```
+
+3. **Set environment variables**
+   Update `.env` file with production settings
+
+## Browser Support
+
+-   Chrome (latest)
+-   Firefox (latest)
+-   Safari (latest)
+-   Edge (latest)
+-   Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support
+
+For support or questions, please contact:
+
+-   Email: hello@spacepepper.com
+-   Phone: +1 (555) 123-4567
+
+---
+
+Built with ❤️ using Laravel and Tailwind CSS
