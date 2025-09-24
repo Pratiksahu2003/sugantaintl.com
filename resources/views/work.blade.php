@@ -114,25 +114,25 @@
             <div class="portfolio-item group cursor-pointer" data-category="video-production">
                 <div class="aspect-w-16 aspect-h-12 mb-6 overflow-hidden rounded-2xl">
                     <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" alt="Product Video" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
+                                </div>
                 <div class="space-y-2">
                     <p class="text-sm text-gray-500 uppercase tracking-wide">Video Production</p>
                     <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Product Launch Video</h3>
                     <p class="text-gray-600">Dynamic product showcase video with motion graphics and professional editing</p>
-                </div>
-            </div>
+                            </div>
+                        </div>
             
             <!-- Project 7: Advertisement -->
             <div class="portfolio-item group cursor-pointer" data-category="advertisement">
                 <div class="aspect-w-16 aspect-h-12 mb-6 overflow-hidden rounded-2xl">
                     <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="Social Media Ad" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
+                    </div>
                 <div class="space-y-2">
                     <p class="text-sm text-gray-500 uppercase tracking-wide">Advertisement</p>
                     <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Social Media Campaign</h3>
                     <p class="text-gray-600">Engaging social media advertisement series with viral potential</p>
+                    </div>
                 </div>
-            </div>
             
             <!-- Project 8: Photography -->
             <div class="portfolio-item group cursor-pointer" data-category="photography">
@@ -143,9 +143,9 @@
                     <p class="text-sm text-gray-500 uppercase tracking-wide">Photography</p>
                     <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-600 transition-colors">Executive Portraits</h3>
                     <p class="text-gray-600">Professional corporate headshots and executive portrait sessions</p>
-                </div>
             </div>
-            
+        </div>
+        
             <!-- Project 9: Drone Services -->
             <div class="portfolio-item group cursor-pointer" data-category="drone">
                 <div class="aspect-w-16 aspect-h-12 mb-6 overflow-hidden rounded-2xl">
@@ -230,7 +230,7 @@
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     "SuGanta Internationals delivered an exceptional corporate video that exceeded our expectations. The team was professional, responsive, and delivered on time."
                 </p>
-                <div>
+            <div>
                     <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
                     <p class="text-gray-500 text-sm">CEO, TechCorp</p>
                 </div>
@@ -255,11 +255,11 @@
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                         </svg>
                     </div>
-                </div>
+            </div>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     "The drone footage they captured for our real estate project was absolutely stunning. Professional service from start to finish."
                 </p>
-                <div>
+            <div>
                     <h4 class="font-semibold text-gray-900">Michael Chen</h4>
                     <p class="text-gray-500 text-sm">Real Estate Developer</p>
                 </div>
@@ -284,14 +284,14 @@
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                         </svg>
                     </div>
-                </div>
+            </div>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     "Their live streaming setup for our product launch was flawless. Great attention to detail and professional execution."
                 </p>
-                <div>
+            <div>
                     <h4 class="font-semibold text-gray-900">Emily Rodriguez</h4>
                     <p class="text-gray-500 text-sm">Marketing Director</p>
-                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -319,41 +319,41 @@
 
 @push('scripts')
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     // Portfolio filtering functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
-            
-            // Update active button
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
             filterButtons.forEach(btn => {
                 btn.classList.remove('active', 'bg-gray-900', 'text-white');
                 btn.classList.add('bg-gray-100', 'text-gray-700');
             });
-            this.classList.add('active', 'bg-gray-900', 'text-white');
-            this.classList.remove('bg-gray-100', 'text-gray-700');
-            
-            // Filter portfolio items
-            portfolioItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
+                this.classList.add('active', 'bg-gray-900', 'text-white');
+                this.classList.remove('bg-gray-100', 'text-gray-700');
+                
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
                     item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                    }, 100);
-                } else {
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
             });
         });
     });
-});
 </script>
 @endpush
 @endsection

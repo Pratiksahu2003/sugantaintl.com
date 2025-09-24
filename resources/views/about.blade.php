@@ -174,65 +174,20 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Team Member 1 -->
+            @foreach(config('company.team') as $member)
             <div class="text-center group">
                 <div class="relative mb-6">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Arjun Sharma" class="w-32 h-32 rounded-full mx-auto object-cover">
+                    <div class="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto flex items-center justify-center shadow-lg">
+                        <span class=" w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0text-black text-3xl font-bold">{{ strtolower(substr($member['initials'], 0, 1)) }}</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Arjun Sharma</h3>
-                <p class="text-gray-600 font-medium mb-4">Creative Director & Founder</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">{{ $member['name'] }}</h3>
+                <p class="text-gray-600 font-medium mb-4">{{ $member['position'] }}</p>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Passionate about creating meaningful design experiences. 8+ years in the industry with a focus on brand identity and digital design.
+                    {{ $member['description'] }}
                 </p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                        <i class="fab fa-behance"></i>
-                    </a>
-                </div>
             </div>
-            
-            <!-- Team Member 2 -->
-            <div class="text-center group">
-                <div class="relative mb-6">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Priya Patel" class="w-32 h-32 rounded-full mx-auto object-cover">
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Priya Patel</h3>
-                <p class="text-gray-600 font-medium mb-4">Lead UI/UX Designer</p>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    Specializes in user experience design and interface design. Loves creating intuitive digital experiences that users love.
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Team Member 3 -->
-            <div class="text-center group">
-                <div class="relative mb-6">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Rahul Kumar" class="w-32 h-32 rounded-full mx-auto object-cover">
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Rahul Kumar</h3>
-                <p class="text-gray-600 font-medium mb-4">Brand Strategist</p>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    Expert in brand strategy and visual identity. Helps businesses define their brand voice and create compelling narratives.
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

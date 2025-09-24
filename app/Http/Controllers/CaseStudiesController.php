@@ -1,0 +1,241 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class CaseStudiesController extends Controller
+{
+    public function index()
+    {
+        $caseStudies = [
+            [
+                'id' => 1,
+                'title' => 'TechCorp Digital Transformation',
+                'client' => 'TechCorp Industries',
+                'industry' => 'Technology',
+                'project_type' => 'Corporate Video Series',
+                'duration' => '6 months',
+                'videos_produced' => '12',
+                'challenge' => 'TechCorp needed to modernize their internal communication and training programs with engaging video content.',
+                'solution' => 'We created a comprehensive video series including company culture videos, product training modules, and executive communications.',
+                'results' => 'Increased employee engagement by 300%, reduced training time by 50%, and improved internal communication effectiveness.',
+                'image' => 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/CdH6HGEhx9s',
+                'tags' => ['Corporate', 'Training', 'Internal Communication']
+            ],
+            [
+                'id' => 2,
+                'title' => 'Fashion Forward Campaign',
+                'client' => 'StyleHub Fashion',
+                'industry' => 'Fashion & Retail',
+                'project_type' => 'Commercial Advertisement',
+                'duration' => '3 months',
+                'videos_produced' => '8',
+                'challenge' => 'StyleHub wanted to launch their new collection with a viral-worthy campaign across multiple social media platforms.',
+                'solution' => 'We produced dynamic lifestyle videos, product showcases, and influencer collaborations for Instagram, TikTok, and YouTube.',
+                'results' => 'Generated 2.5M views, increased online sales by 180%, and gained 150K new followers across platforms.',
+                'image' => 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/K1ImD48UqNQ',
+                'tags' => ['Commercial', 'Social Media', 'Fashion']
+            ],
+            [
+                'id' => 3,
+                'title' => 'Global Conference Documentation',
+                'client' => 'InnovateGlobal',
+                'industry' => 'Events & Conferences',
+                'project_type' => 'Event Coverage',
+                'duration' => '2 months',
+                'videos_produced' => '15',
+                'challenge' => 'Document a 3-day international conference with 500+ attendees across multiple venues.',
+                'solution' => 'Deployed multiple camera crews, live streaming setup, and post-production team for comprehensive coverage.',
+                'results' => 'Created 15 highlight videos, 3 keynote recordings, and live-streamed to 10K+ virtual attendees.',
+                'image' => 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/5PsSi25OKJ8',
+                'tags' => ['Event Coverage', 'Live Streaming', 'Documentation']
+            ],
+            [
+                'id' => 4,
+                'title' => 'Luxury Real Estate Showcase',
+                'client' => 'Elite Properties',
+                'industry' => 'Real Estate',
+                'project_type' => 'Drone & Property Videos',
+                'duration' => '4 months',
+                'videos_produced' => '25',
+                'challenge' => 'Showcase luxury properties with cinematic quality videos to attract high-end buyers.',
+                'solution' => 'Combined aerial drone footage, interior walkthroughs, and lifestyle shots with professional color grading.',
+                'results' => 'Increased property inquiries by 250%, reduced time-to-sale by 40%, and generated 5M+ views.',
+                'image' => 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/CdH6HGEhx9s',
+                'tags' => ['Drone', 'Real Estate', 'Luxury']
+            ],
+            [
+                'id' => 5,
+                'title' => 'Healthcare Training Program',
+                'client' => 'MediCare Solutions',
+                'industry' => 'Healthcare',
+                'project_type' => 'Educational Videos',
+                'duration' => '5 months',
+                'videos_produced' => '20',
+                'challenge' => 'Create comprehensive training videos for medical staff on new procedures and equipment.',
+                'solution' => 'Produced detailed procedural videos, 3D animations, and interactive training modules.',
+                'results' => 'Improved training completion rates by 90%, reduced onboarding time by 60%, and enhanced patient safety.',
+                'image' => 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/K1ImD48UqNQ',
+                'tags' => ['Healthcare', 'Training', '3D Animation']
+            ],
+            [
+                'id' => 6,
+                'title' => 'Food & Beverage Brand Launch',
+                'client' => 'FreshBites',
+                'industry' => 'Food & Beverage',
+                'project_type' => 'Brand Launch Campaign',
+                'duration' => '3 months',
+                'videos_produced' => '10',
+                'challenge' => 'Launch a new organic food brand with compelling storytelling and mouth-watering visuals.',
+                'solution' => 'Created farm-to-table documentaries, product feature videos, and chef collaboration content.',
+                'results' => 'Achieved 1.8M impressions, increased brand awareness by 200%, and secured 50+ retail partnerships.',
+                'image' => 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/5PsSi25OKJ8',
+                'tags' => ['Food', 'Brand Launch', 'Documentary']
+            ],
+            [
+                'id' => 7,
+                'title' => 'Automotive Safety Campaign',
+                'client' => 'SafeDrive Motors',
+                'industry' => 'Automotive',
+                'project_type' => 'Safety Awareness Videos',
+                'duration' => '4 months',
+                'videos_produced' => '12',
+                'challenge' => 'Create impactful safety awareness videos to promote responsible driving habits.',
+                'solution' => 'Produced emotional storytelling videos, crash simulation animations, and testimonial campaigns.',
+                'results' => 'Reached 10M+ viewers, increased safety awareness by 150%, and influenced policy changes.',
+                'image' => 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/CdH6HGEhx9s',
+                'tags' => ['Automotive', 'Safety', 'Animation']
+            ],
+            [
+                'id' => 8,
+                'title' => 'FinTech Product Demo',
+                'client' => 'PayTech Solutions',
+                'industry' => 'Financial Technology',
+                'project_type' => 'Product Demonstration',
+                'duration' => '2 months',
+                'videos_produced' => '6',
+                'challenge' => 'Explain complex financial technology through simple, engaging video demonstrations.',
+                'solution' => 'Created animated explainer videos, screen recordings, and user journey walkthroughs.',
+                'results' => 'Increased user adoption by 300%, reduced support tickets by 70%, and improved user satisfaction.',
+                'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/K1ImD48UqNQ',
+                'tags' => ['FinTech', 'Product Demo', 'Animation']
+            ],
+            [
+                'id' => 9,
+                'title' => 'Educational Platform Launch',
+                'client' => 'EduLearn Academy',
+                'industry' => 'Education',
+                'project_type' => 'Course Content Videos',
+                'duration' => '6 months',
+                'videos_produced' => '50',
+                'challenge' => 'Create engaging educational content for an online learning platform.',
+                'solution' => 'Produced instructor-led videos, animated lessons, and interactive content across multiple subjects.',
+                'results' => 'Achieved 95% course completion rates, increased student engagement by 250%, and expanded to 20+ courses.',
+                'image' => 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/5PsSi25OKJ8',
+                'tags' => ['Education', 'Online Learning', 'Animation']
+            ],
+            [
+                'id' => 10,
+                'title' => 'Sports Brand Activation',
+                'client' => 'AthleticPro',
+                'industry' => 'Sports & Fitness',
+                'project_type' => 'Brand Activation Campaign',
+                'duration' => '3 months',
+                'videos_produced' => '15',
+                'challenge' => 'Launch a new sports brand with high-energy content targeting fitness enthusiasts.',
+                'solution' => 'Created workout videos, athlete testimonials, and behind-the-scenes content for social media.',
+                'results' => 'Generated 3M+ views, increased brand followers by 400%, and drove 200% increase in online sales.',
+                'image' => 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/CdH6HGEhx9s',
+                'tags' => ['Sports', 'Fitness', 'Social Media']
+            ],
+            [
+                'id' => 11,
+                'title' => 'Manufacturing Process Documentation',
+                'client' => 'IndustrialWorks',
+                'industry' => 'Manufacturing',
+                'project_type' => 'Process Documentation',
+                'duration' => '4 months',
+                'videos_produced' => '18',
+                'challenge' => 'Document complex manufacturing processes for training and compliance purposes.',
+                'solution' => 'Created detailed process videos, safety protocols, and quality control documentation.',
+                'results' => 'Reduced training time by 65%, improved safety compliance by 90%, and standardized processes.',
+                'image' => 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/K1ImD48UqNQ',
+                'tags' => ['Manufacturing', 'Documentation', 'Safety']
+            ],
+            [
+                'id' => 12,
+                'title' => 'Non-Profit Awareness Campaign',
+                'client' => 'Hope Foundation',
+                'industry' => 'Non-Profit',
+                'project_type' => 'Awareness Campaign',
+                'duration' => '2 months',
+                'videos_produced' => '8',
+                'challenge' => 'Create emotional, impactful videos to raise awareness and drive donations.',
+                'solution' => 'Produced testimonial videos, impact stories, and call-to-action campaigns.',
+                'results' => 'Increased donations by 300%, reached 5M+ viewers, and recruited 500+ new volunteers.',
+                'image' => 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/5PsSi25OKJ8',
+                'tags' => ['Non-Profit', 'Awareness', 'Testimonials']
+            ],
+            [
+                'id' => 13,
+                'title' => 'E-commerce Product Launches',
+                'client' => 'ShopSmart',
+                'industry' => 'E-commerce',
+                'project_type' => 'Product Launch Videos',
+                'duration' => '5 months',
+                'videos_produced' => '30',
+                'challenge' => 'Create compelling product videos for multiple e-commerce launches.',
+                'solution' => 'Produced unboxing videos, product demos, and lifestyle integration content.',
+                'results' => 'Increased conversion rates by 180%, reduced return rates by 40%, and boosted average order value.',
+                'image' => 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/CdH6HGEhx9s',
+                'tags' => ['E-commerce', 'Product Demo', 'Unboxing']
+            ],
+            [
+                'id' => 14,
+                'title' => 'Tourism Destination Marketing',
+                'client' => 'ExploreIndia Tourism',
+                'industry' => 'Tourism & Travel',
+                'project_type' => 'Destination Marketing',
+                'duration' => '6 months',
+                'videos_produced' => '20',
+                'challenge' => 'Showcase India\'s hidden gems and tourist destinations through compelling video content.',
+                'solution' => 'Created travel vlogs, destination showcases, and cultural experience videos.',
+                'results' => 'Increased tourism bookings by 250%, generated 8M+ views, and boosted local business revenue.',
+                'image' => 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/K1ImD48UqNQ',
+                'tags' => ['Tourism', 'Travel', 'Cultural']
+            ],
+            [
+                'id' => 15,
+                'title' => 'Podcast Production Series',
+                'client' => 'TechTalk Podcast',
+                'industry' => 'Media & Entertainment',
+                'project_type' => 'Podcast Production',
+                'duration' => '4 months',
+                'videos_produced' => '24',
+                'challenge' => 'Produce high-quality video podcasts with professional audio and visual elements.',
+                'solution' => 'Set up studio recording, multi-camera setup, and post-production for engaging content.',
+                'results' => 'Increased podcast downloads by 400%, gained 100K+ subscribers, and secured sponsorship deals.',
+                'image' => 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop',
+                'video_url' => 'https://www.youtube.com/embed/5PsSi25OKJ8',
+                'tags' => ['Podcast', 'Studio', 'Entertainment']
+            ]
+        ];
+
+        return view('case-studies', compact('caseStudies'));
+    }
+}

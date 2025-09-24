@@ -31,7 +31,7 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="h-8 w-auto">
+                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="w-20 h-12">
                     </a>
                 </div>
 
@@ -43,7 +43,7 @@
                     <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         Portfolio
                     </a>
-                    <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                    <a href="{{ route('case-studies') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         Case Studies
                     </a>
                     <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
@@ -55,14 +55,12 @@
                     <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         Contact
                     </a>
-                    <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                        Visit Xped
-                    </a>
+                  
                 </div>
 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="{{ route('contact') }}" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-gray-800 transition-colors duration-200">
+                    <a href="{{ route('contact') }}" class="bg-orange-600 text-white px-4 py-2 rounded text-sm font-medium">
                         Get a Quote
                     </a>
                 </div>
@@ -104,11 +102,9 @@
                     <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
                         Contact
                     </a>
-                    <a href="#" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
-                        Visit Xped
-                    </a>
+                 
                     <div class="pt-4">
-                        <a href="{{ route('contact') }}" class="bg-gray-900 text-white block px-3 py-2 rounded text-base font-medium hover:bg-gray-800 transition-colors duration-200">
+                        <a href="{{ route('contact') }}" class="bg-orange-600 text-white block px-3 py-2 rounded text-base font-medium hover:bg-gray-800 transition-colors duration-200 text-center">
                             Get a Quote
                         </a>
                     </div>
@@ -134,20 +130,7 @@
                     <p class="text-gray-600 mb-6 max-w-md leading-relaxed">
                         SuGanta Internationals - Your premier partner for professional video production, advertisement shoots, studio rentals, and podcast services worldwide.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
+                   
                 </div>
 
                 <!-- Quick Links -->

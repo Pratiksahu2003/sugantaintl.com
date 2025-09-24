@@ -70,4 +70,38 @@ return [
             'description' => 'Comprehensive event coverage demonstrating our versatility'
         ]
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Team Members
+    |--------------------------------------------------------------------------
+    |
+    | Company team members and their roles
+    |
+    */
+    'team' => [
+        [
+            'name' => 'Sushil Khatta',
+            'position' => 'Managing Director',
+            'description' => 'Leading strategic direction and company growth',
+            'initials' => 'SK',
+            'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face'
+        ],
+     
+        [
+            'name' => 'Vidu Slathia',
+            'position' => 'Video Specialist',
+            'description' => 'Expert in video production and creative direction',
+            'initials' => 'VS',
+            'image' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face'
+        ],
+        [
+            'name' => 'Shashak',
+            'position' => 'Social Media Manager',
+            'description' => 'Managing social media presence and digital marketing',
+            'initials' => 'SH',
+            'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face'
+        ],
+     
+    ],
 ];
