@@ -51,19 +51,19 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="space-y-2">
-                <div class="text-4xl md:text-5xl font-bold text-gray-900">500+</div>
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.total_videos') }}</div>
                 <div class="text-sm md:text-base text-gray-600 font-medium">Total Videos</div>
             </div>
             <div class="space-y-2">
-                <div class="text-4xl md:text-5xl font-bold text-gray-900">20+</div>
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.clients') }}</div>
                 <div class="text-sm md:text-base text-gray-600 font-medium">Clients</div>
             </div>
             <div class="space-y-2">
-                <div class="text-4xl md:text-5xl font-bold text-gray-900">0+</div>
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.cities') }}</div>
                 <div class="text-sm md:text-base text-gray-600 font-medium">Cities</div>
             </div>
             <div class="space-y-2">
-                <div class="text-4xl md:text-5xl font-bold text-gray-900">0+</div>
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.languages') }}</div>
                 <div class="text-sm md:text-base text-gray-600 font-medium">Languages</div>
             </div>
         </div>
@@ -76,18 +76,31 @@
         <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-16">
             Trusted by Well-Known Companies – Across India.
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-            <div class="bg-gray-200 h-16 rounded-lg flex items-center justify-center">
-                <span class="text-gray-500 font-medium">Client Logo 1</span>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center opacity-60">
+            <div class="bg-white h-20 rounded-lg flex items-center justify-center p-4 shadow-sm hover:opacity-100 transition-opacity duration-300">
+                <a href="https://groupsairfare.com/" target="_blank" rel="noopener noreferrer" class="block w-full h-full flex items-center justify-center">
+                    <img src="{{ asset('customer/Airfare_logo.png') }}" alt="GroupsAirFare.com - Group Travel Booking" class="max-h-16 max-w-32 w-auto object-contain">
+                </a>
             </div>
-            <div class="bg-gray-200 h-16 rounded-lg flex items-center justify-center">
-                <span class="text-gray-500 font-medium">Client Logo 2</span>
+            <div class="bg-white h-20 rounded-lg flex items-center justify-center p-4 shadow-sm hover:opacity-100 transition-opacity duration-300">
+                <a href="https://farehawker.com/" target="_blank" rel="noopener noreferrer" class="block w-full h-full flex items-center justify-center">
+                    <img src="{{ asset('customer/farehawker-logo.png') }}" alt="FareHawker.com - Flight Booking Platform" class="max-h-16 max-w-32 w-auto object-contain">
+                </a>
             </div>
-            <div class="bg-gray-200 h-16 rounded-lg flex items-center justify-center">
-                <span class="text-gray-500 font-medium">Client Logo 3</span>
+            <div class="bg-white h-20 rounded-lg flex items-center justify-center p-4 shadow-sm hover:opacity-100 transition-opacity duration-300">
+                <a href="https://suganta.com/" target="_blank" rel="noopener noreferrer" class="block w-full h-full flex items-center justify-center">
+                    <img src="{{ asset('customer/Su250.png') }}" alt="SuGanta.com - Professional Services" class="max-h-16 max-w-32 w-auto object-contain">
+                </a>
             </div>
-            <div class="bg-gray-200 h-16 rounded-lg flex items-center justify-center">
-                <span class="text-gray-500 font-medium">Client Logo 4</span>
+            <div class="bg-white h-20 rounded-lg flex items-center justify-center p-4 shadow-sm hover:opacity-100 transition-opacity duration-300">
+                <a href="https://tytil.com/" target="_blank" rel="noopener noreferrer" class="block w-full h-full flex items-center justify-center">
+                    <img src="{{ asset('customer/tytil-new.png') }}" alt="tyTil.com - Technology Solutions" class="max-h-16 max-w-32 w-auto object-contain">
+                </a>
+            </div>
+            <div class="bg-white h-20 rounded-lg flex items-center justify-center p-4 shadow-sm hover:opacity-100 transition-opacity duration-300">
+                <a href="https://www.bunzo.co.in/" target="_blank" rel="noopener noreferrer" class="block w-full h-full flex items-center justify-center">
+                    <img src="{{ asset('customer/bunzo-logo-img.png') }}" alt="BUNZO - Fresh Food & Beverages" class="max-h-16 max-w-32 w-auto object-contain">
+                </a>
             </div>
         </div>
     </div>

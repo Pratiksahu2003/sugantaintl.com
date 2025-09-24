@@ -86,16 +86,16 @@
             <!-- Mobile Navigation -->
             <div class="mobile-menu hidden md:hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-                    <a href="{{ route('services') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('video-production') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
                         Video Production
                     </a>
-                    <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
                         Portfolio
                     </a>
                     <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
                         Case Studies
                     </a>
-                    <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
                         Resources
                     </a>
                     <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
@@ -168,15 +168,15 @@
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3 text-gray-400"></i>
-                            info@sugantaintl.com
+                            {{ config('company.contact.email') }}
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone mr-3 text-gray-400"></i>
-                            +1 (555) 123-4567
+                            {{ config('company.contact.phone') }}
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-map-marker-alt mr-3 text-gray-400"></i>
-                            Global Headquarters
+                            {{ config('company.contact.address') }}
                         </li>
                     </ul>
                 </div>

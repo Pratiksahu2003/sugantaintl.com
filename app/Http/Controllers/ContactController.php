@@ -42,18 +42,18 @@ class ContactController extends Controller
             // Log the contact form submission
             \Log::info('Contact Form Submission', $contactData);
 
-            // Try to send email (will work if SMTP is configured)
-            try {
-                Mail::raw($this->formatEmailContent($request), function ($message) use ($request) {
-                    $message->to('suganta1@gmail.com')
-                        ->subject('New Contact Form Submission - ' . $request->subject)
-                        ->from($request->email, $request->name)
-                        ->replyTo($request->email, $request->name);
-                });
-            } catch (\Exception $mailException) {
-                // If email fails, just log it but don't fail the form submission
-                \Log::warning('Email sending failed, but contact form was logged: ' . $mailException->getMessage());
-            }
+                // Try to send email (will work if SMTP is configured)
+                try {
+                    Mail::raw($this->formatEmailContent($request), function ($message) use ($request) {
+                        $message->to(config('company.contact.email'))
+                            ->subject('New Contact Form Submission - ' . $request->subject)
+                            ->from($request->email, $request->name)
+                            ->replyTo($request->email, $request->name);
+                    });
+                } catch (\Exception $mailException) {
+                    // If email fails, just log it but don't fail the form submission
+                    \Log::warning('Email sending failed, but contact form was logged: ' . $mailException->getMessage());
+                }
 
             return redirect()->back()->with('success', 'Thank you for your message! We will get back to you within 24 hours.');
         } catch (\Exception $e) {

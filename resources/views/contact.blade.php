@@ -118,8 +118,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                            <p class="text-gray-600">suganta1@gmail.com</p>
-                            <p class="text-gray-600">info@sugantaintl.com</p>
+                            <p class="text-gray-600">{{ config('company.contact.email') }}</p>
                         </div>
                     </div>
                     
@@ -130,8 +129,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                            <p class="text-gray-600">+1 (555) 123-4567</p>
-                            <p class="text-gray-600">+1 (555) 987-6543</p>
+                            <p class="text-gray-600">{{ config('company.contact.phone') }}</p>
                         </div>
                     </div>
                     
@@ -257,10 +255,10 @@
             Don't wait! Contact us today for a free consultation and let's discuss how we can bring your vision to life.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+15551234567" class="bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-300">
-                Call: +1 (555) 123-4567
+            <a href="tel:{{ config('company.contact.phone') }}" class="bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-300">
+                Call: {{ config('company.contact.phone') }}
             </a>
-            <a href="mailto:suganta1@gmail.com" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-300">
+            <a href="mailto:{{ config('company.contact.email') }}" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-300">
                 Email Us
             </a>
         </div>
