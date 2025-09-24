@@ -11,7 +11,7 @@ use App\Http\Controllers\CaseStudiesController;
 use App\Http\Controllers\ResourcesController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/aboutus', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
 Route::get('/video-production', [VideoProductionController::class, 'index'])->name('video-production');
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('Portfolio');
