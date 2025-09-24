@@ -88,6 +88,13 @@ return [
             'image' => '/team/sushil.jpg'
         ],
         [
+            'name' => 'Ankita Jha',
+            'position' => 'Vice President - Content & Business Development',
+            'description' => 'Drives content strategy and business development, building partnerships and expanding service offerings.',
+            'initials' => 'AJ',
+            'image' => '/team/ankita.jpg'
+        ],
+        [
             'name' => 'Vidu Slathia',
             'position' => 'Manager- Media/ PR & Sales',
             'description' => 'Leads media relations, public relations, and sales initiatives to expand the company\'s reach and client base.',
@@ -115,12 +122,6 @@ return [
             'initials' => 'PS',
             'image' => '/team/pratik.png'
         ],
-        [
-            'name' => 'Ankita Jha',
-            'position' => 'Vice President - Content & Business Development',
-            'description' => 'Drives content strategy and business development, building partnerships and expanding service offerings.',
-            'initials' => 'AJ',
-            'image' => '/team/ankita.jpg'
-        ]
+     
     ],
 ];
