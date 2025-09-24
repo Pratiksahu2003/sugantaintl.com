@@ -85,42 +85,42 @@ return [
             'position' => 'Production Manager',
             'description' => 'Oversees all aspects of video production, ensuring projects are delivered on time and to the highest quality standards.',
             'initials' => 'SK',
-            'image' => url('team\sushil.jpg')
+            'image' => '/team/sushil.jpg'
         ],
         [
             'name' => 'Vidu Slathia',
             'position' => 'Manager- Media/ PR & Sales',
-            'description' => 'Leads media relations, public relations, and sales initiatives to expand the company’s reach and client base.',
+            'description' => 'Leads media relations, public relations, and sales initiatives to expand the company\'s reach and client base.',
             'initials' => 'VS',
-            'image' => url('team\vidu.png')
+            'image' => '/team/vidu.png'
         ],
         [
             'name' => 'Shashak',
             'position' => 'Video & Media Editor',
             'description' => 'Edits and enhances video content, ensuring a polished final product that meets client expectations.',
             'initials' => 'SH',
-            'image' => url('\team\shashak.jpg')
+            'image' => '/team/shashak.jpg'
         ],
         [
             'name' => 'Vishal Sharma ',
             'position' => 'Manger Contracting & HRD',
             'description' => 'Manages contracts, vendor relationships, and human resource development for smooth business operations.',
             'initials' => 'VS',
-            'image' => url('team\vishal.jpg')
+            'image' => '/team/vishal.jpg'
         ],
         [
             'name' => 'Pratik Sahu',
             'position' => 'Manager - IT & Tech Management',
             'description' => 'Handles all IT infrastructure, technical support, and technology strategy for the company.',
             'initials' => 'PS',
-            'image' => url('team\pratik.png')
+            'image' => '/team/pratik.png'
         ],
         [
             'name' => 'Ankita Jha',
             'position' => 'Vice President - Content & Business Development',
             'description' => 'Drives content strategy and business development, building partnerships and expanding service offerings.',
             'initials' => 'AJ',
-            'image' => url('team\ankita.jpg')
+            'image' => '/team/ankita.jpg'
         ]
     ],
 ];

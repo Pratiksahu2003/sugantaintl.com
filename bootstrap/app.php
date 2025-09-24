@@ -33,18 +33,20 @@ $app = Application::configure(basePath: dirname(__DIR__))
     })
     ->create();
 
-// Force bind request early
-$app->singleton('request', function () {
-    if (php_sapi_name() === 'cli') {
-        return Request::create('/', 'GET', [], [], [], [
-            'REQUEST_METHOD' => 'GET',
-            'REQUEST_URI' => '/',
-            'HTTP_HOST' => 'localhost',
-            'SERVER_NAME' => 'localhost',
-            'SERVER_PORT' => '80',
-        ]);
-    }
-    return Request::capture();
-});
+// Ensure request is bound after app creation
+if (!$app->bound('request')) {
+    $app->singleton('request', function () {
+        if (php_sapi_name() === 'cli') {
+            return Request::create('/', 'GET', [], [], [], [
+                'REQUEST_METHOD' => 'GET',
+                'REQUEST_URI' => '/',
+                'HTTP_HOST' => 'localhost',
+                'SERVER_NAME' => 'localhost',
+                'SERVER_PORT' => '80',
+            ]);
+        }
+        return Request::capture();
+    });
+}
 
 return $app;

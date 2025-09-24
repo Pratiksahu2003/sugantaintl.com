@@ -5,7 +5,6 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Routing\UrlGenerator;
-use Illuminate\Contracts\Routing\UrlGenerator as UrlGeneratorContract;
 
 class UrlServiceProvider extends ServiceProvider
 {
@@ -14,22 +13,27 @@ class UrlServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Force override the URL generator registration
-        $this->app->bind('url', function ($app) {
+        // Override the URL generator registration to handle null request
+        $this->app->singleton('url', function ($app) {
             $routes = $app['router']->getRoutes();
             $app->instance('routes', $routes);
 
-            // Create a proper request instance for CLI context
-            if (php_sapi_name() === 'cli') {
-                $request = Request::create('/', 'GET', [], [], [], [
-                    'REQUEST_METHOD' => 'GET',
-                    'REQUEST_URI' => '/',
-                    'HTTP_HOST' => 'localhost',
-                    'SERVER_NAME' => 'localhost',
-                    'SERVER_PORT' => '80',
-                ]);
-            } else {
-                $request = Request::capture();
+            // Ensure we have a valid request
+            $request = $app->bound('request') ? $app['request'] : null;
+            
+            // If no request is bound, create one for CLI context
+            if (!$request) {
+                if (php_sapi_name() === 'cli') {
+                    $request = Request::create('/', 'GET', [], [], [], [
+                        'REQUEST_METHOD' => 'GET',
+                        'REQUEST_URI' => '/',
+                        'HTTP_HOST' => 'localhost',
+                        'SERVER_NAME' => 'localhost',
+                        'SERVER_PORT' => '80',
+                    ]);
+                } else {
+                    $request = Request::capture();
+                }
             }
             
             return new UrlGenerator(
@@ -37,11 +41,6 @@ class UrlServiceProvider extends ServiceProvider
                 $request,
                 $app['config']['app.asset_url']
             );
-        });
-
-        // Also register the contract
-        $this->app->bind(UrlGeneratorContract::class, function ($app) {
-            return $app['url'];
         });
     }
 
