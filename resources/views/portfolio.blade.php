@@ -1,285 +1,307 @@
 @extends('layouts.app')
 
-@section('title', 'Portfolio - SpacePepper Digital Solutions')
-@section('description', 'Explore our portfolio of successful web development, mobile app, and digital marketing projects. See how we help businesses grow.')
+@section('title', 'Portfolio - SuGanta Internationals Video Production')
+@section('description', 'Explore our portfolio of professional video production projects including corporate videos, commercials, event coverage, and more.')
 
 @section('content')
 <!-- Hero Section -->
-<section class="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Our <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Portfolio</span>
+<section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Our <span class="text-green-400">Portfolio</span>
             </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover our latest projects and see how we've helped businesses transform their digital presence and achieve remarkable results.
+            <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Discover our latest video production projects and see how we've helped businesses create compelling visual content that drives results.
             </p>
         </div>
-        
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-            <button class="filter-btn active bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300" data-filter="all">
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-wrap justify-center gap-4">
+            <button class="filter-btn active bg-gray-900 text-white px-6 py-3 rounded text-sm font-medium transition-colors duration-200" data-filter="all">
                 All Projects
             </button>
-            <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300" data-filter="web">
-                Web Development
+            <button class="filter-btn bg-gray-100 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-200 transition-colors duration-200" data-filter="corporate">
+                Corporate Videos
             </button>
-            <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300" data-filter="mobile">
-                Mobile Development
+            <button class="filter-btn bg-gray-100 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-200 transition-colors duration-200" data-filter="commercial">
+                Commercial Ads
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-200 transition-colors duration-200" data-filter="event">
+                Event Coverage
+            </button>
+            <button class="filter-btn bg-gray-100 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-200 transition-colors duration-200" data-filter="drone">
+                Drone Videos
             </button>
         </div>
     </div>
 </section>
 
 <!-- Portfolio Grid -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-            @foreach($projects as $project)
-            <div class="portfolio-item group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 {{ strtolower(str_replace(' ', '-', $project['category'])) }}" data-category="{{ strtolower(str_replace(' ', '-', $project['category'])) }}">
-                <div class="relative overflow-hidden">
-                    <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <div class="flex space-x-2">
-                            <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
+            <!-- Project 1 - Corporate Video -->
+            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 corporate" data-category="corporate">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop" alt="Corporate Video Production" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <button class="play-btn opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-play text-gray-900 text-xl ml-1"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="p-6">
                     <div class="flex items-center justify-between mb-3">
-                        <span class="text-sm font-semibold {{ $project['category'] == 'Web Development' ? 'text-blue-600' : 'text-purple-600' }}">
-                            {{ $project['category'] }}
-                        </span>
-                        <div class="flex space-x-1">
-                            @foreach($project['technologies'] as $tech)
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">{{ $tech }}</span>
-                            @endforeach
-                        </div>
+                        <span class="text-sm font-medium text-green-600 bg-green-100 px-3 py-1 rounded-full">Corporate Video</span>
+                        <span class="text-sm text-gray-500">2024</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{{ $project['title'] }}</h3>
-                    <p class="text-gray-600 mb-4">{{ $project['description'] }}</p>
-                    <a href="#" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                        View Project
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">TechCorp Company Profile</h3>
+                    <p class="text-gray-600 mb-4">Professional corporate video showcasing company culture, values, and achievements for internal and external communications.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Duration: 3 minutes</span>
+                        <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">View Project →</a>
+                    </div>
                 </div>
             </div>
-            @endforeach
-        </div>
-        
-        <!-- Load More Button -->
-        <div class="text-center mt-12">
-            <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                Load More Projects
-            </button>
+
+            <!-- Project 2 - Commercial Ad -->
+            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 commercial" data-category="commercial">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=500&h=300&fit=crop" alt="Commercial Advertisement" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <button class="play-btn opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-play text-gray-900 text-xl ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">Commercial Ad</span>
+                        <span class="text-sm text-gray-500">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Fashion Brand Campaign</h3>
+                    <p class="text-gray-600 mb-4">Dynamic commercial advertisement featuring lifestyle shots, product showcases, and brand storytelling for social media and TV.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Duration: 30 seconds</span>
+                        <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - Event Coverage -->
+            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 event" data-category="event">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500&h=300&fit=crop" alt="Event Coverage" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <button class="play-btn opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-play text-gray-900 text-xl ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Event Coverage</span>
+                        <span class="text-sm text-gray-500">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Annual Conference Highlights</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive event coverage including keynote speeches, networking sessions, and behind-the-scenes moments.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Duration: 5 minutes</span>
+                        <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 - Drone Video -->
+            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 drone" data-category="drone">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop" alt="Drone Video Production" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <button class="play-btn opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-play text-gray-900 text-xl ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-orange-600 bg-orange-100 px-3 py-1 rounded-full">Drone Video</span>
+                        <span class="text-sm text-gray-500">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Real Estate Aerial Tour</h3>
+                    <p class="text-gray-600 mb-4">Stunning aerial footage showcasing luxury properties with cinematic drone movements and professional color grading.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Duration: 2 minutes</span>
+                        <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 - Corporate Training -->
+            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 corporate" data-category="corporate">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop" alt="Training Video" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <button class="play-btn opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-play text-gray-900 text-xl ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-green-600 bg-green-100 px-3 py-1 rounded-full">Corporate Video</span>
+                        <span class="text-sm text-gray-500">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Employee Training Series</h3>
+                    <p class="text-gray-600 mb-4">Interactive training videos with animations, graphics, and professional narration for corporate learning programs.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Duration: 8 episodes</span>
+                        <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 - Product Demo -->
+            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 commercial" data-category="commercial">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop" alt="Product Demo Video" class="w-full h-48 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <button class="play-btn opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white bg-opacity-90 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-play text-gray-900 text-xl ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">Commercial Ad</span>
+                        <span class="text-sm text-gray-500">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Tech Product Launch</h3>
+                    <p class="text-gray-600 mb-4">High-energy product demonstration video featuring close-ups, slow-motion effects, and dynamic transitions.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Duration: 1 minute</span>
+                        <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">View Project →</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Stats Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Project Statistics</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Numbers that showcase our commitment to delivering exceptional results for our clients.
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-project-diagram text-white text-2xl"></i>
-                </div>
-                <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">150+</div>
-                <div class="text-gray-600">Projects Completed</div>
-            </div>
-            
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-users text-white text-2xl"></i>
-                </div>
-                <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">120+</div>
-                <div class="text-gray-600">Happy Clients</div>
-            </div>
-            
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-award text-white text-2xl"></i>
-                </div>
-                <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">25+</div>
-                <div class="text-gray-600">Awards Won</div>
-            </div>
-            
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-clock text-white text-2xl"></i>
-                </div>
-                <div class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">5+</div>
-                <div class="text-gray-600">Years Experience</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Technologies Section -->
+<!-- Statistics Section -->
 <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technologies We Use</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Achievements</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                We work with the latest technologies and frameworks to deliver cutting-edge solutions.
+                Numbers that reflect our commitment to delivering exceptional video production services.
             </p>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            <!-- Frontend -->
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
-                    <i class="fab fa-react text-2xl text-blue-500"></i>
-                </div>
-                <h4 class="font-semibold text-gray-900">React</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-2">
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.total_videos') }}</div>
+                <div class="text-sm md:text-base text-gray-600 font-medium">Videos Produced</div>
             </div>
-            
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors">
-                    <i class="fab fa-vuejs text-2xl text-green-500"></i>
-                </div>
-                <h4 class="font-semibold text-gray-900">Vue.js</h4>
+            <div class="space-y-2">
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.clients') }}</div>
+                <div class="text-sm md:text-base text-gray-600 font-medium">Happy Clients</div>
             </div>
-            
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-100 transition-colors">
-                    <i class="fab fa-laravel text-2xl text-red-500"></i>
-                </div>
-                <h4 class="font-semibold text-gray-900">Laravel</h4>
+            <div class="space-y-2">
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.cities') }}</div>
+                <div class="text-sm md:text-base text-gray-600 font-medium">Cities Covered</div>
             </div>
-            
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors">
-                    <i class="fab fa-node-js text-2xl text-green-600"></i>
-                </div>
-                <h4 class="font-semibold text-gray-900">Node.js</h4>
-            </div>
-            
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
-                    <i class="fab fa-python text-2xl text-blue-600"></i>
-                </div>
-                <h4 class="font-semibold text-gray-900">Python</h4>
-            </div>
-            
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-100 transition-colors">
-                    <i class="fab fa-php text-2xl text-purple-600"></i>
-                </div>
-                <h4 class="font-semibold text-gray-900">PHP</h4>
+            <div class="space-y-2">
+                <div class="text-4xl md:text-5xl font-bold text-gray-900">{{ config('company.statistics.languages') }}</div>
+                <div class="text-sm md:text-base text-gray-600 font-medium">Languages</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials -->
+<!-- Services Section -->
 <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Video Production Services</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Don't just take our word for it. Here's what our clients have to say about working with us.
+                From concept to completion, we offer comprehensive video production solutions for every need.
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Testimonial 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-4">
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-video text-green-600 text-2xl"></i>
                 </div>
-                <p class="text-gray-600 mb-6">
-                    "SpacePepper delivered an exceptional e-commerce platform that exceeded our expectations. The team was professional, responsive, and delivered on time."
-                </p>
-                <div class="flex items-center">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-900">John Anderson</h4>
-                        <p class="text-gray-600 text-sm">CEO, TechCorp</p>
-                    </div>
-                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Corporate Videos</h3>
+                <p class="text-gray-600">Professional videos for internal communications, training, and brand storytelling.</p>
             </div>
             
-            <!-- Testimonial 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-4">
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-tv text-blue-600 text-2xl"></i>
                 </div>
-                <p class="text-gray-600 mb-6">
-                    "The mobile app they developed for us has been a game-changer. User engagement increased by 300% and our revenue grew significantly."
-                </p>
-                <div class="flex items-center">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-900">Sarah Wilson</h4>
-                        <p class="text-gray-600 text-sm">Founder, StartupXYZ</p>
-                    </div>
-                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Commercial Ads</h3>
+                <p class="text-gray-600">Eye-catching advertisements for TV, social media, and digital platforms.</p>
             </div>
             
-            <!-- Testimonial 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-4">
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-calendar-alt text-purple-600 text-2xl"></i>
                 </div>
-                <p class="text-gray-600 mb-6">
-                    "Their digital marketing strategy helped us reach new customers and increase our online presence. Highly recommended!"
-                </p>
-                <div class="flex items-center">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-900">Mike Chen</h4>
-                        <p class="text-gray-600 text-sm">Marketing Director, RetailCo</p>
-                    </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Event Coverage</h3>
+                <p class="text-gray-600">Complete event documentation from conferences to product launches.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-drone text-orange-600 text-2xl"></i>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Drone Videos</h3>
+                <p class="text-gray-600">Stunning aerial footage for real estate, tourism, and marketing purposes.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-microphone text-red-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Podcast Production</h3>
+                <p class="text-gray-600">Professional podcast recording and post-production services.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-building text-indigo-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Studio Rental</h3>
+                <p class="text-gray-600">State-of-the-art studio spaces for your video production needs.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Project?
+            Ready to Create Your Next Video?
         </h2>
-        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Let's create something amazing together. Contact us today to discuss your project requirements.
+        <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Let's discuss your project and create something amazing together. Contact us today for a free consultation.
         </p>
-        <a href="{{ route('contact') }}" class="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            Start Your Project
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ route('contact') }}" class="bg-white text-gray-900 px-8 py-4 rounded text-lg font-medium hover:bg-gray-100 transition-all duration-200">
+                Get Started Today
+            </a>
+            <a href="tel:{{ config('company.contact.phone') }}" class="border-2 border-white text-white px-8 py-4 rounded text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-200">
+                Call {{ config('company.contact.phone') }}
+            </a>
+        </div>
     </div>
 </section>
 
@@ -296,12 +318,12 @@
                 
                 // Update active button
                 filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
-                    b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                    b.classList.remove('active', 'bg-gray-900', 'text-white');
+                    b.classList.add('bg-gray-100', 'text-gray-700');
                 });
                 
-                this.classList.add('active', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
-                this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                this.classList.add('active', 'bg-gray-900', 'text-white');
+                this.classList.remove('bg-gray-100', 'text-gray-700');
                 
                 // Filter portfolio items
                 portfolioItems.forEach(item => {

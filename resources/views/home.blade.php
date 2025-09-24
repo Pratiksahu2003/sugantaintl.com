@@ -7,36 +7,35 @@
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Video Background -->
-    <video 
-        class="absolute inset-0 w-full h-full object-cover z-0" 
-        autoplay 
-        muted 
-        loop 
+    <video
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        autoplay
+        muted
+        loop
         playsinline
-        poster=""
-    >
+        poster="">
         <source src="{{ asset('video/hero.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    
+
     <!-- Video Overlay -->
     <div class="absolute inset-0 bg-black/40 z-10"></div>
-    
+
     <!-- Content -->
     <div class="relative z-20 max-w-6xl mx-auto px-6 text-center">
         <!-- Main Heading -->
         <div class="mb-8">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-                It's time for your video campaigns to 
+                It's time for your video campaigns to
                 <span class="text-green-400">Evolve.</span>
             </h1>
         </div>
-        
+
         <!-- Subtitle -->
         <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-normal">
             Experience professional video production at unprecedented speed and scale. Get months of video content delivered in weeks, through India's most advanced creative platform.
         </p>
-        
+
         <!-- CTA Button -->
         <div class="mb-16">
             <a href="{{ route('contact') }}" class="bg-white text-gray-900 px-8 py-3 rounded text-base font-medium hover:bg-gray-100 transition-all duration-200 inline-block">
@@ -106,17 +105,36 @@
     </div>
 </section>
 
-<!-- Any Video Your Business Needs Section -->
+<!-- Portfolio Videos Section -->
 <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Any Video Your Business Needs.
-        </h2>
-        <p class="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
-            Our creative network and team has expertise in all kinds of genres, industries, social media channels and video types.
-        </p>
-        <div class="mb-12">
-            <span class="text-sm font-medium text-gray-500">Types of Videos</span>
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Any Video Your Business Needs
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                From corporate videos to commercial ads, we create compelling visual content that drives results. See our work in action.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            @foreach(config('company.portfolio_videos') as $video)
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <div class="aspect-video">
+                    {!! $video['iframe'] !!}
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">{{ $video['title'] }}</h3>
+                    <p class="text-gray-600">{{ $video['description'] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="{{ route('Portfolio') }}" class="bg-gray-900 text-white px-8 py-3 rounded text-base font-medium hover:bg-gray-800 transition-all duration-200 inline-block">
+                View More Projects
+            </a>
         </div>
     </div>
 </section>
@@ -139,12 +157,14 @@
                     Read More →
                 </a>
             </div>
-            <div class="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-                <span class="text-gray-500 font-medium">About Image</span>
+            <div class="relative">
+                <img src="{{ asset('about/aboutus.jpg') }}" alt="SuGanta Internationals - Professional Video Production Studio" class="w-full h-96 object-cover rounded-lg shadow-lg">
             </div>
         </div>
     </div>
 </section>
+
+
 
 <!-- Our Work Section -->
 <section class="py-20 bg-white">
