@@ -1,184 +1,340 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <title>@yield('title', 'SpacePepper - Digital Solutions')</title>
-    <meta name="description" content="@yield('description', 'Professional web development, mobile apps, and digital marketing services')">
-    
+
+    <title>@yield('title', 'SuGanta Internationals - Professional Video Production Services')</title>
+    <meta name="description" content="@yield('description', 'SuGanta Internationals - Leading video production company offering video shoots, ads production, studio rentals, and podcast services for businesses worldwide')">
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+
     @stack('styles')
 </head>
-<body class="font-inter antialiased bg-white">
+
+<body class="font-inter antialiased bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <nav class="fixed w-full z-50 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
+                <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-rocket text-white text-sm"></i>
-                        </div>
-                        <span class="ml-2 text-xl font-bold text-gray-900">SpacePepper</span>
+                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="h-8 w-auto">
                     </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600' }} px-3 py-2 text-sm font-medium transition-colors">
-                            Home
-                        </a>
-                        <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600' }} px-3 py-2 text-sm font-medium transition-colors">
-                            About
-                        </a>
-                        <a href="{{ route('services') }}" class="nav-link {{ request()->routeIs('services') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600' }} px-3 py-2 text-sm font-medium transition-colors">
-                            Services
-                        </a>
-                        <a href="{{ route('portfolio') }}" class="nav-link {{ request()->routeIs('portfolio') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600' }} px-3 py-2 text-sm font-medium transition-colors">
-                            Portfolio
-                        </a>
-                        <a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600' }} px-3 py-2 text-sm font-medium transition-colors">
-                            Contact
-                        </a>
-                    </div>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="{{ route('video-production') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Video Production
+                    </a>
+                    <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Portfolio
+                    </a>
+                    <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Case Studies
+                    </a>
+                    <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Resources
+                    </a>
+                    <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        About
+                    </a>
+                    <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Contact
+                    </a>
+                    <a href="#" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Visit Xped
+                    </a>
                 </div>
-                
+
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="{{ route('contact') }}" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300">
-                        Get Started
+                    <a href="{{ route('contact') }}" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-gray-800 transition-colors duration-200">
+                        Get a Quote
                     </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="mobile-menu-button text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger icon -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Close icon -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="{{ route('home') }}" class="block px-3 py-2 text-base font-medium {{ request()->routeIs('home') ? 'text-blue-600' : 'text-gray-700' }}">Home</a>
-                <a href="{{ route('about') }}" class="block px-3 py-2 text-base font-medium {{ request()->routeIs('about') ? 'text-blue-600' : 'text-gray-700' }}">About</a>
-                <a href="{{ route('services') }}" class="block px-3 py-2 text-base font-medium {{ request()->routeIs('services') ? 'text-blue-600' : 'text-gray-700' }}">Services</a>
-                <a href="{{ route('portfolio') }}" class="block px-3 py-2 text-base font-medium {{ request()->routeIs('portfolio') ? 'text-blue-600' : 'text-gray-700' }}">Portfolio</a>
-                <a href="{{ route('contact') }}" class="block px-3 py-2 text-base font-medium {{ request()->routeIs('contact') ? 'text-blue-600' : 'text-gray-700' }}">Contact</a>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu hidden md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="{{ route('services') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        Video Production
+                    </a>
+                    <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        Portfolio
+                    </a>
+                    <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        Case Studies
+                    </a>
+                    <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        Resources
+                    </a>
+                    <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        About
+                    </a>
+                    <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        Contact
+                    </a>
+                    <a href="#" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                        Visit Xped
+                    </a>
+                    <div class="pt-4">
+                        <a href="{{ route('contact') }}" class="bg-gray-900 text-white block px-3 py-2 rounded text-base font-medium hover:bg-gray-800 transition-colors duration-200">
+                            Get a Quote
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-16">
+    <main>
         @yield('content')
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-gray-50 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Company Info -->
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-rocket text-white text-sm"></i>
-                        </div>
-                        <span class="ml-2 text-xl font-bold">SpacePepper</span>
+                    <div class="mb-6">
+                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="h-16 w-auto">
                     </div>
-                    <p class="text-gray-400 mb-4 max-w-md">
-                        We create digital experiences that drive results. From web development to mobile apps and digital marketing, we help businesses thrive in the digital world.
+                    <p class="text-gray-600 mb-6 max-w-md leading-relaxed">
+                        SuGanta Internationals - Your premier partner for professional video production, advertisement shoots, studio rentals, and podcast services worldwide.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                            <i class="fab fa-dribbble"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                            <i class="fab fa-behance"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
                             <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="{{ route('services') }}" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="{{ route('portfolio') }}" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="{{ route('home') }}" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a></li>
+                        <li><a href="{{ route('about') }}" class="text-gray-600 hover:text-gray-900 transition-colors">About</a></li>
+                        <li><a href="{{ route('services') }}" class="text-gray-600 hover:text-gray-900 transition-colors">Services</a></li>
+                        <li><a href="{{ route('work') }}" class="text-gray-600 hover:text-gray-900 transition-colors">Work</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <ul class="space-y-2 text-gray-400">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Get in Touch</h3>
+                    <ul class="space-y-3 text-gray-600">
                         <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2"></i>
-                            hello@spacepepper.com
+                            <i class="fas fa-envelope mr-3 text-gray-400"></i>
+                            info@sugantaintl.com
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone mr-2"></i>
+                            <i class="fas fa-phone mr-3 text-gray-400"></i>
                             +1 (555) 123-4567
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            123 Business St, City, State 12345
+                            <i class="fas fa-map-marker-alt mr-3 text-gray-400"></i>
+                            Global Headquarters
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; {{ date('Y') }} SpacePepper. All rights reserved.</p>
+
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
+                <p class="text-gray-600">&copy; {{ date('Y') }} SuGanta Internationals. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     @stack('scripts')
-    
+
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        // Enhanced JavaScript for IndieVisual-style navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle with improved UX
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburgerIcon = mobileMenuButton?.querySelector('svg:first-child');
+            const closeIcon = mobileMenuButton?.querySelector('svg:last-child');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    
+                    if (isHidden) {
+                        // Show menu
+                        mobileMenu.classList.remove('hidden');
+                        hamburgerIcon?.classList.add('hidden');
+                        closeIcon?.classList.remove('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'true');
+                    } else {
+                        // Hide menu
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon?.classList.remove('hidden');
+                        closeIcon?.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon?.classList.remove('hidden');
+                        closeIcon?.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close mobile menu on escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon?.classList.remove('hidden');
+                        closeIcon?.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // Video background handling
+            const video = document.querySelector('video');
+            if (video) {
+                // Smooth fade-in when video loads
+                video.addEventListener('loadeddata', function() {
+                    this.classList.add('loaded');
+                    console.log('Video loaded successfully');
+                });
+
+                // Ensure video plays on mobile devices
+                video.addEventListener('canplay', function() {
+                    this.play().catch(function(error) {
+                        console.log('Video autoplay failed:', error);
+                        // Fallback: show a play button or handle gracefully
                     });
+                });
+
+                // Handle video loading errors
+                video.addEventListener('error', function() {
+                    console.log('Video failed to load');
+                    // Show fallback background
+                    const heroSection = document.querySelector('section');
+                    if (heroSection) {
+                        heroSection.classList.add('no-video-support');
+                    }
+                });
+
+                // Pause video when page is not visible (performance optimization)
+                document.addEventListener('visibilitychange', function() {
+                    if (document.hidden) {
+                        video.pause();
+                    } else {
+                        video.play().catch(function(error) {
+                            console.log('Video resume failed:', error);
+                        });
+                    }
+                });
+
+                // Optimize video for mobile devices
+                if (window.innerWidth <= 768) {
+                    video.style.objectFit = 'cover';
+                    // Reduce video quality on mobile for better performance
+                    video.setAttribute('preload', 'metadata');
+                } else {
+                    video.setAttribute('preload', 'auto');
                 }
+
+                // Add intersection observer for video performance
+                const videoObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            video.play().catch(function(error) {
+                                console.log('Video play failed:', error);
+                            });
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                videoObserver.observe(video);
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to navbar
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('nav');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
             });
         });
     </script>
 </body>
+
 </html>

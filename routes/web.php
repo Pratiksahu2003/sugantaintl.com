@@ -6,10 +6,15 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\VideoProductionController;
+use App\Http\Controllers\ResourcesController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
-Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+Route::get('/video-production', [VideoProductionController::class, 'index'])->name('video-production');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('Portfolio');
+Route::get('/work', [PortfolioController::class, 'index'])->name('work');
+Route::get('/resources', [ResourcesController::class, 'index'])->name('Resources');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

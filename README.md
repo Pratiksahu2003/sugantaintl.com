@@ -1,15 +1,17 @@
-# SpacePepper - Digital Solutions Website
+# IndieVisual - Creative Design Studio Website
 
-A modern, responsive website built with Laravel and Tailwind CSS, similar to spacepepper.com. This project showcases a complete digital agency website with multiple pages and interactive features.
+A complete 100% identical clone of IndieVisual.in built with Laravel and Tailwind CSS. This project replicates every section, UI element, and design detail from the original IndieVisual creative studio website.
 
 ## Features
 
--   **Modern Design**: Clean, professional design with gradient backgrounds and smooth animations
+-   **100% Identical UI**: Exact replica of IndieVisual.in design and layout
+-   **Creative Studio Aesthetic**: Clean, minimal design with professional typography
 -   **Responsive Layout**: Fully responsive design that works on all devices
--   **Multiple Pages**: Home, About, Services, Portfolio, and Contact pages
+-   **Complete Pages**: Home, About, Services, Work, and Contact pages
 -   **Interactive Elements**: Portfolio filtering, FAQ toggles, mobile menu
+-   **Project Showcases**: Creative project displays with gradient backgrounds and icons
 -   **Contact Form**: Functional contact form with validation
--   **SEO Optimized**: Proper meta tags and semantic HTML structure
+-   **Indian Branding**: Mumbai-based creative studio with local contact details
 
 ## Pages Included
 

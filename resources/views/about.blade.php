@@ -1,43 +1,49 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - SpacePepper Digital Solutions')
-@section('description', 'Learn about SpacePepper team, our mission, and how we help businesses succeed with innovative digital solutions.')
+@section('title', 'About Us - SuGanta Internationals Video Production')
+@section('description', 'Learn about SuGanta Internationals team, our story, and how we help businesses with professional video production, studio rentals, and podcast services.')
 
 @section('content')
 <!-- Hero Section -->
-<section class="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                About <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">SpacePepper</span>
+<section class="pt-20 pb-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+                About
+                <br>
+                <span class="text-gray-400">SuGanta Internationals</span>
             </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                We're a passionate team of digital innovators dedicated to transforming businesses through cutting-edge technology and creative solutions.
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                We are a professional video production company passionate about helping businesses create compelling visual content that drives engagement and results through our comprehensive video production services.
             </p>
         </div>
     </div>
 </section>
 
 <!-- Our Story -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
-                <p class="text-lg text-gray-600 mb-6">
-                    Founded in 2019, SpacePepper began as a small team of developers and designers with a big vision: to help businesses thrive in the digital age. What started as a passion project has grown into a full-service digital agency serving clients worldwide.
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                    Our
+                    <br>
+                    Story
+                </h2>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Founded in 2018, IndieVisual started as a passion project by a group of designers who believed that great design could transform businesses and create meaningful connections with audiences.
                 </p>
-                <p class="text-lg text-gray-600 mb-6">
-                    We believe that great digital experiences are born from the perfect blend of creativity, technology, and strategy. Our team combines years of experience with fresh perspectives to deliver solutions that not only look amazing but drive real business results.
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    What began as a small studio has grown into a creative powerhouse, working with startups, established brands, and everything in between. We've had the privilege of helping over 100 businesses tell their stories through beautiful, functional design.
                 </p>
-                <p class="text-lg text-gray-600">
-                    Today, we're proud to have helped over 150 businesses transform their digital presence and achieve their goals through innovative web development, mobile applications, and digital marketing strategies.
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Today, we continue to push the boundaries of creativity while staying true to our core belief: that exceptional design is not just about how something looks, but how it makes people feel and how it drives real business results.
                 </p>
             </div>
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="Our Team" class="rounded-2xl shadow-2xl">
-                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-rocket text-white text-2xl"></i>
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gray-900 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-heart text-white text-2xl"></i>
                 </div>
             </div>
         </div>
@@ -45,28 +51,28 @@
 </section>
 
 <!-- Our Mission & Vision -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <!-- Mission -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+            <div class="bg-gray-50 p-12 rounded-2xl">
+                <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-8">
                     <i class="fas fa-bullseye text-white text-2xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                <p class="text-gray-600">
-                    To empower businesses with innovative digital solutions that drive growth, enhance user experiences, and create lasting value. We're committed to delivering excellence in every project while building long-term partnerships with our clients.
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    To create beautiful, functional designs that help businesses connect with their audiences and achieve their goals. We believe that great design is a powerful tool for communication and growth.
                 </p>
             </div>
             
             <!-- Vision -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+            <div class="bg-gray-50 p-12 rounded-2xl">
+                <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-8">
                     <i class="fas fa-eye text-white text-2xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-                <p class="text-gray-600">
-                    To be the leading digital agency that businesses trust for transformative solutions. We envision a future where technology seamlessly integrates with business goals to create meaningful impact and sustainable success.
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Vision</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    To be recognized as a leading creative studio that consistently delivers exceptional design solutions. We envision a world where every business has access to beautiful, thoughtful design.
                 </p>
             </div>
         </div>
@@ -74,57 +80,81 @@
 </section>
 
 <!-- Our Values -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Our Values
+            </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                These core values guide everything we do and shape how we work with our clients and each other.
+                These core principles guide everything we do and shape how we approach every project and client relationship.
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Innovation -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Creativity -->
             <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-lightbulb text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Innovation</h3>
-                <p class="text-gray-600">
-                    We constantly explore new technologies and creative approaches to solve complex challenges and deliver cutting-edge solutions.
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Creativity</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We believe in pushing creative boundaries and exploring innovative solutions that make our clients stand out from the competition.
                 </p>
             </div>
             
             <!-- Quality -->
             <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-gem text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-4">Quality</h3>
-                <p class="text-gray-600">
-                    Excellence is non-negotiable. We maintain the highest standards in every aspect of our work, from code quality to user experience.
+                <p class="text-gray-600 leading-relaxed">
+                    Excellence is at the heart of everything we do. We maintain the highest standards in design, execution, and client service.
                 </p>
             </div>
             
             <!-- Collaboration -->
             <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-handshake text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-4">Collaboration</h3>
-                <p class="text-gray-600">
-                    We believe in the power of teamwork and open communication, both within our team and with our valued clients.
+                <p class="text-gray-600 leading-relaxed">
+                    We work closely with our clients as partners, ensuring their vision and goals are at the center of every design decision.
                 </p>
             </div>
             
-            <!-- Integrity -->
+            <!-- Authenticity -->
             <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-shield-alt text-white text-2xl"></i>
+                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-heart text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Integrity</h3>
-                <p class="text-gray-600">
-                    Honesty and transparency are the foundation of our relationships. We always do what's right for our clients and their success.
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Authenticity</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We help brands find and express their authentic voice through design that truly represents who they are and what they stand for.
+                </p>
+            </div>
+            
+            <!-- Innovation -->
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Innovation</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We stay ahead of design trends and technology to ensure our clients always receive cutting-edge solutions.
+                </p>
+            </div>
+            
+            <!-- Impact -->
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-target text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Impact</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Every design decision we make is driven by the goal of creating meaningful impact for our clients and their audiences.
                 </p>
             </div>
         </div>
@@ -132,147 +162,75 @@
 </section>
 
 <!-- Team Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Meet the Team
+            </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our diverse team of experts brings together years of experience in technology, design, and digital marketing.
+                Our talented team of designers, developers, and strategists who bring creativity and expertise to every project.
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Team Member 1 -->
-            <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="John Smith" class="w-24 h-24 rounded-full mx-auto mb-6 object-cover">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">John Smith</h3>
-                <p class="text-blue-600 font-semibold mb-4">CEO & Founder</p>
-                <p class="text-gray-600 mb-6">
-                    Visionary leader with 10+ years in tech industry. Passionate about innovation and building great teams.
+            <div class="text-center group">
+                <div class="relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Arjun Sharma" class="w-32 h-32 rounded-full mx-auto object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Arjun Sharma</h3>
+                <p class="text-gray-600 font-medium mb-4">Creative Director & Founder</p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Passionate about creating meaningful design experiences. 8+ years in the industry with a focus on brand identity and digital design.
                 </p>
                 <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                        <i class="fab fa-dribbble"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">
-                        <i class="fab fa-twitter"></i>
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                        <i class="fab fa-behance"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Team Member 2 -->
-            <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face" alt="Sarah Johnson" class="w-24 h-24 rounded-full mx-auto mb-6 object-cover">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Sarah Johnson</h3>
-                <p class="text-purple-600 font-semibold mb-4">Lead Designer</p>
-                <p class="text-gray-600 mb-6">
-                    Creative designer with expertise in UI/UX design and brand identity. Loves creating beautiful experiences.
+            <div class="text-center group">
+                <div class="relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Priya Patel" class="w-32 h-32 rounded-full mx-auto object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Priya Patel</h3>
+                <p class="text-gray-600 font-medium mb-4">Lead UI/UX Designer</p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Specializes in user experience design and interface design. Loves creating intuitive digital experiences that users love.
                 </p>
                 <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
                         <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Team Member 3 -->
-            <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Mike Chen" class="w-24 h-24 rounded-full mx-auto mb-6 object-cover">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Mike Chen</h3>
-                <p class="text-pink-600 font-semibold mb-4">Lead Developer</p>
-                <p class="text-gray-600 mb-6">
-                    Full-stack developer with expertise in modern web technologies. Passionate about clean code and performance.
+            <div class="text-center group">
+                <div class="relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Rahul Kumar" class="w-32 h-32 rounded-full mx-auto object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Rahul Kumar</h3>
+                <p class="text-gray-600 font-medium mb-4">Brand Strategist</p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Expert in brand strategy and visual identity. Helps businesses define their brand voice and create compelling narratives.
                 </p>
                 <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-pink-600 transition-colors">
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-pink-600 transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose SpacePepper?</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                We combine technical expertise with creative vision to deliver exceptional results for our clients.
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Expertise -->
-            <div class="flex items-start">
-                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <i class="fas fa-star text-white"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Proven Expertise</h3>
-                    <p class="text-gray-600">5+ years of experience delivering successful projects across various industries and technologies.</p>
-                </div>
-            </div>
-            
-            <!-- Custom Solutions -->
-            <div class="flex items-start">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <i class="fas fa-cogs text-white"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Solutions</h3>
-                    <p class="text-gray-600">Tailored solutions designed specifically for your business needs and objectives.</p>
-                </div>
-            </div>
-            
-            <!-- 24/7 Support -->
-            <div class="flex items-start">
-                <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <i class="fas fa-headset text-white"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">24/7 Support</h3>
-                    <p class="text-gray-600">Round-the-clock support to ensure your digital solutions run smoothly at all times.</p>
-                </div>
-            </div>
-            
-            <!-- Agile Process -->
-            <div class="flex items-start">
-                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <i class="fas fa-sync text-white"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Agile Process</h3>
-                    <p class="text-gray-600">Flexible development process that adapts to changes and delivers results quickly.</p>
-                </div>
-            </div>
-            
-            <!-- Competitive Pricing -->
-            <div class="flex items-start">
-                <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <i class="fas fa-dollar-sign text-white"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Competitive Pricing</h3>
-                    <p class="text-gray-600">Fair and transparent pricing with no hidden costs. Great value for high-quality work.</p>
-                </div>
-            </div>
-            
-            <!-- Long-term Partnership -->
-            <div class="flex items-start">
-                <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <i class="fas fa-handshake text-white"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Long-term Partnership</h3>
-                    <p class="text-gray-600">We build lasting relationships and continue to support your growth beyond project completion.</p>
                 </div>
             </div>
         </div>
@@ -280,16 +238,18 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Work Together?
+<section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Work
+            <br>
+            Together?
         </h2>
-        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Let's discuss your project and see how we can help you achieve your digital goals.
+        <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            We'd love to learn about your project and discuss how we can help bring your vision to life.
         </p>
-        <a href="{{ route('contact') }}" class="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            Get In Touch
+        <a href="{{ route('contact') }}" class="bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-300">
+            Let's Talk
         </a>
     </div>
 </section>

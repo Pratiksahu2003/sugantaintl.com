@@ -10,49 +10,61 @@ class PortfolioController extends Controller
     {
         $projects = [
             [
-                'title' => 'E-Commerce Platform',
-                'description' => 'Modern e-commerce solution with advanced features',
-                'image' => 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-                'category' => 'Web Development',
-                'technologies' => ['Laravel', 'Vue.js', 'MySQL']
+                'title' => 'Swiggy Food Delivery',
+                'category' => 'Mobile App Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567890/file/original-swiggy-food-delivery-app.png?compress=1&resize=800x600',
+                'description' => 'Complete redesign of food delivery app with enhanced user experience and modern interface'
             ],
             [
-                'title' => 'Mobile Banking App',
-                'description' => 'Secure and user-friendly mobile banking application',
-                'image' => 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop',
-                'category' => 'Mobile Development',
-                'technologies' => ['React Native', 'Node.js', 'MongoDB']
+                'title' => 'Paytm Wallet Redesign',
+                'category' => 'UI/UX Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567891/file/original-paytm-wallet-redesign.png?compress=1&resize=800x600',
+                'description' => 'Modern wallet app interface with simplified payment flows and better accessibility'
             ],
             [
-                'title' => 'Healthcare Dashboard',
-                'description' => 'Comprehensive healthcare management system',
-                'image' => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop',
-                'category' => 'Web Development',
-                'technologies' => ['React', 'Python', 'PostgreSQL']
+                'title' => 'HDFC Banking Dashboard',
+                'category' => 'Web Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567892/file/original-hdfc-banking-dashboard.png?compress=1&resize=800x600',
+                'description' => 'Clean and intuitive banking dashboard for comprehensive financial management'
             ],
             [
-                'title' => 'Food Delivery App',
-                'description' => 'Complete food delivery platform with real-time tracking',
-                'image' => 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=400&fit=crop',
-                'category' => 'Mobile Development',
-                'technologies' => ['Flutter', 'Firebase', 'Google Maps API']
+                'title' => 'Myntra Shopping App',
+                'category' => 'Mobile Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567893/file/original-myntra-shopping-app.png?compress=1&resize=800x600',
+                'description' => 'Fashion e-commerce app with personalized shopping experience and AR try-on features'
             ],
             [
-                'title' => 'Corporate Website',
-                'description' => 'Professional corporate website with CMS',
-                'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-                'category' => 'Web Development',
-                'technologies' => ['WordPress', 'PHP', 'MySQL']
+                'title' => 'Ola Cab Booking',
+                'category' => 'Mobile Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567894/file/original-ola-cab-booking.png?compress=1&resize=800x600',
+                'description' => 'Ride booking app with real-time tracking and seamless payment integration'
             ],
             [
-                'title' => 'Social Media App',
-                'description' => 'Social networking platform with real-time messaging',
-                'image' => 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-                'category' => 'Mobile Development',
-                'technologies' => ['Swift', 'Kotlin', 'Socket.io']
+                'title' => 'Zerodha Trading Platform',
+                'category' => 'Web Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567895/file/original-zerodha-trading-platform.png?compress=1&resize=800x600',
+                'description' => 'Professional trading platform with advanced charts and portfolio management'
+            ],
+            [
+                'title' => 'Hotstar Streaming App',
+                'category' => 'Mobile Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567896/file/original-hotstar-streaming-app.png?compress=1&resize=800x600',
+                'description' => 'Video streaming app with personalized content discovery and offline viewing'
+            ],
+            [
+                'title' => 'BookMyShow Redesign',
+                'category' => 'UI/UX Design',
+                'image' => 'https://cdn.dribbble.com/userupload/4567897/file/original-bookmyshow-redesign.png?compress=1&resize=800x600',
+                'description' => 'Movie and event booking platform with improved seat selection and payment flow'
+            ],
+            [
+                'title' => 'Flipkart E-commerce',
+                'category' => 'Brand Identity',
+                'image' => 'https://cdn.dribbble.com/userupload/4567898/file/original-flipkart-ecommerce.png?compress=1&resize=800x600',
+                'description' => 'Complete brand identity refresh for India\'s leading e-commerce platform'
             ]
         ];
 
-        return view('portfolio', compact('projects'));
+        return view('work', compact('projects'));
     }
 }
