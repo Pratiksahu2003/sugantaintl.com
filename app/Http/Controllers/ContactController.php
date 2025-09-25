@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+use App\Mail\ContactQueryMail;
 
 class ContactController extends Controller
 {
@@ -43,18 +44,25 @@ class ContactController extends Controller
             // Log the contact form submission
             Log::info('Contact Form Submission', $contactData);
 
-                // Try to send email (will work if SMTP is configured)
-                try {
-                    Mail::raw($this->formatEmailContent($request), function ($message) use ($request) {
-                        $message->to(config('company.contact.email'))
-                            ->subject('New Contact Form Submission - ' . $request->subject)
-                            ->from($request->email, $request->name)
-                            ->replyTo($request->email, $request->name);
-                    });
-                } catch (\Exception $mailException) {
-                    // If email fails, just log it but don't fail the form submission
-                    Log::warning('Email sending failed, but contact form was logged: ' . $mailException->getMessage());
-                }
+            // Try to send email using template
+            try {
+                $emailData = [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'subject' => $request->subject,
+                    'message' => $request->message,
+                    'timestamp' => now()->format('M d, Y \a\t h:i A'),
+                    'source' => 'contact form'
+                ];
+
+                Mail::to(config('company.contact.email'))
+                    ->send(new ContactQueryMail($emailData));
+                    
+                Log::info('Contact form email sent successfully');
+            } catch (\Exception $mailException) {
+                // If email fails, just log it but don't fail the form submission
+                Log::warning('Email sending failed, but contact form was logged: ' . $mailException->getMessage());
+            }
 
             return redirect()->back()->with('success', 'Thank you for your message! We will get back to you within 24 hours.');
         } catch (\Exception $e) {
@@ -96,14 +104,21 @@ class ContactController extends Controller
 
             Log::info('Modal Contact Form Submission', $contactData);
 
-            // Try to send email (will work if SMTP is configured)
+            // Try to send email using template
             try {
-                Mail::raw($this->formatModalEmailContent($request), function ($message) use ($request) {
-                    $message->to(config('company.contact.email'))
-                        ->subject('New Quick Query from Modal - ' . $request->subject)
-                        ->from($request->email, $request->name)
-                        ->replyTo($request->email, $request->name);
-                });
+                $emailData = [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'subject' => $request->subject,
+                    'message' => $request->message,
+                    'timestamp' => now()->format('M d, Y \a\t h:i A'),
+                    'source' => 'modal query form'
+                ];
+
+                Mail::to(config('company.contact.email'))
+                    ->send(new ContactQueryMail($emailData));
+                    
+                Log::info('Modal contact form email sent successfully');
             } catch (\Exception $mailException) {
                 // If email fails, just log it but don't fail the form submission
                 Log::warning('Modal email sending failed, but contact form was logged: ' . $mailException->getMessage());
@@ -120,38 +135,4 @@ class ContactController extends Controller
         }
     }
 
-    private function formatEmailContent($request)
-    {
-        return "
-New Contact Form Submission from SuGanta Internationals Website
-
-Name: {$request->name}
-Email: {$request->email}
-Service Type: {$request->subject}
-
-Message:
-{$request->message}
-
----
-This message was sent from the contact form on sugantaintl.com.test
-        ";
-    }
-
-    private function formatModalEmailContent($request)
-    {
-        return "
-New Quick Query from Modal - SuGanta Internationals Website
-
-Name: {$request->name}
-Email: {$request->email}
-Service Type: {$request->subject}
-
-Message:
-{$request->message}
-
----
-This message was sent from the modal contact form on sugantaintl.com.test
-Timestamp: " . now()->format('Y-m-d H:i:s') . "
-        ";
-    }
 }
