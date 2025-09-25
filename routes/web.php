@@ -20,3 +20,4 @@ Route::get('/case-studies', [CaseStudiesController::class, 'index'])->name('case
 Route::get('/resources', [ResourcesController::class, 'index'])->name('Resources');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/modal-contact', [ContactController::class, 'storeModal'])->name('modal.contact.store');
