@@ -20,12 +20,74 @@
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <!-- Additional mobile navbar styles -->
+    <style>
+        /* Mobile navbar improvements */
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        
+        .mobile-menu:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Prevent body scroll when mobile menu is open */
+        body.mobile-menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
+        
+        /* Smooth navbar transitions */
+        nav {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        /* Mobile menu button animation */
+        .mobile-menu-button svg {
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        /* Better focus states for accessibility */
+        .mobile-menu-button:focus {
+            outline: 2px solid #f97316;
+            outline-offset: 2px;
+        }
+        
+        /* Mobile menu link hover effects */
+        .mobile-menu a {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mobile-menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .mobile-menu a:hover::before {
+            left: 100%;
+        }
+    </style>
+
     @stack('styles')
 </head>
 
 <body class="font-inter antialiased bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white border-b border-gray-200">
+    <nav class="fixed w-full z-50 bg-white border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -67,7 +129,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900" aria-controls="mobile-menu" aria-expanded="false">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500 transition-colors duration-200" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <!-- Hamburger icon -->
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -83,28 +145,28 @@
 
             <!-- Mobile Navigation -->
             <div class="mobile-menu hidden md:hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-                    <a href="{{ route('video-production') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200 shadow-lg">
+                    <a href="{{ route('video-production') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Video Production
                     </a>
-                    <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Portfolio
                     </a>
-                    <a href="{{ route('work') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('case-studies') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Case Studies
                     </a>
-                    <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Resources
                     </a>
-                    <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('about') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         About
                     </a>
-                    <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-600 block px-3 py-2 text-base font-medium">
+                    <a href="{{ route('contact') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Contact
                     </a>
                  
                     <div class="pt-4">
-                        <a href="{{ route('contact') }}" class="bg-orange-600 text-white block px-3 py-2 rounded text-base font-medium hover:bg-gray-800 transition-colors duration-200 text-center">
+                        <a href="{{ route('contact') }}" class="bg-orange-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-700 transition-colors duration-200 text-center">
                             Get a Quote
                         </a>
                     </div>
@@ -174,7 +236,7 @@
     @stack('scripts')
 
     <script>
-        // Enhanced JavaScript for IndieVisual-style navigation
+        // Enhanced JavaScript for mobile navigation
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile menu toggle with improved UX
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
@@ -183,41 +245,62 @@
             const closeIcon = mobileMenuButton?.querySelector('svg:last-child');
 
             if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
+                // Function to show mobile menu
+                function showMobileMenu() {
+                    mobileMenu.classList.remove('hidden');
+                    hamburgerIcon?.classList.add('hidden');
+                    closeIcon?.classList.remove('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'true');
+                    document.body.classList.add('mobile-menu-open'); // Prevent background scrolling
+                }
+
+                // Function to hide mobile menu
+                function hideMobileMenu() {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon?.classList.remove('hidden');
+                    closeIcon?.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('mobile-menu-open'); // Restore scrolling
+                }
+
+                // Toggle mobile menu
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     const isHidden = mobileMenu.classList.contains('hidden');
                     
                     if (isHidden) {
-                        // Show menu
-                        mobileMenu.classList.remove('hidden');
-                        hamburgerIcon?.classList.add('hidden');
-                        closeIcon?.classList.remove('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'true');
+                        showMobileMenu();
                     } else {
-                        // Hide menu
-                        mobileMenu.classList.add('hidden');
-                        hamburgerIcon?.classList.remove('hidden');
-                        closeIcon?.classList.add('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        hideMobileMenu();
                     }
                 });
 
                 // Close mobile menu when clicking outside
                 document.addEventListener('click', function(event) {
                     if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-                        mobileMenu.classList.add('hidden');
-                        hamburgerIcon?.classList.remove('hidden');
-                        closeIcon?.classList.add('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        hideMobileMenu();
                     }
                 });
 
                 // Close mobile menu on escape key
                 document.addEventListener('keydown', function(event) {
                     if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        hamburgerIcon?.classList.remove('hidden');
-                        closeIcon?.classList.add('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        hideMobileMenu();
+                    }
+                });
+
+                // Close mobile menu when clicking on menu links
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hideMobileMenu();
+                    });
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 768) { // md breakpoint
+                        hideMobileMenu();
                     }
                 });
             }

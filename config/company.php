@@ -14,7 +14,7 @@ return [
         'total_videos' => '500+',
         'clients' => '20+',
         'cities' => '30+',
-        'languages' => '6+',
+        'languages' => '4+',
     ],
 
     /*

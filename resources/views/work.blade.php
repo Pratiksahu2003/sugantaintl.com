@@ -11,10 +11,10 @@
             <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
                 Our
                 <br>
-                <span class="text-gray-400">Work</span>
+                <span class="text-gray-400">Portfolio</span>
             </h1>
             <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                A showcase of our video production projects that demonstrate our expertise in creating compelling visual content for businesses worldwide.
+                Discover the creative work of SuGanta Internationals. From corporate films and commercials to live streaming, photography, and drone videography, our portfolio highlights the quality and impact we deliver for brands and businesses across India and beyond.
             </p>
         </div>
     </div>
