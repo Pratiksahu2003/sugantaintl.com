@@ -95,14 +95,14 @@ return [
             'image' => '/team/ankita.jpg'
         ],
         [
-            'name' => 'Vidu Slathia',
+            'name' => 'Vidhu Slathia',
             'position' => 'Manager- Media/ PR & Sales',
             'description' => 'Leads media relations, public relations, and sales initiatives to expand the company\'s reach and client base.',
             'initials' => 'VS',
             'image' => '/team/vidu.png'
         ],
         [
-            'name' => 'Shashak',
+            'name' => 'Shashank',
             'position' => 'Video & Media Editor',
             'description' => 'Edits and enhances video content, ensuring a polished final product that meets client expectations.',
             'initials' => 'SH',

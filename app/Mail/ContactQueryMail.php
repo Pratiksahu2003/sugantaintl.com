@@ -32,7 +32,7 @@ class ContactQueryMail extends Mailable
         
         return new Envelope(
             subject: $subject,
-            from: $this->data['email'],
+            from: config('mail.from.address'),
             replyTo: $this->data['email'],
         );
     }

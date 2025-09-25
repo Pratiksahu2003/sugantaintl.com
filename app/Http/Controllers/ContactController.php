@@ -55,7 +55,7 @@ class ContactController extends Controller
                     'source' => 'contact form'
                 ];
 
-                Mail::to(config('company.contact.email'))
+                Mail::to(config('mail.from.address'))
                     ->send(new ContactQueryMail($emailData));
                     
                 Log::info('Contact form email sent successfully');
@@ -115,7 +115,7 @@ class ContactController extends Controller
                     'source' => 'modal query form'
                 ];
 
-                Mail::to(config('company.contact.email'))
+                Mail::to(config('mail.from.address'))
                     ->send(new ContactQueryMail($emailData));
                     
                 Log::info('Modal contact form email sent successfully');
