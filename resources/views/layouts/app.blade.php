@@ -128,7 +128,7 @@
                         <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="h-16 w-auto">
                     </div>
                     <p class="text-gray-600 mb-6 max-w-md leading-relaxed">
-                        SuGanta Internationals - Your premier partner for professional video production, advertisement shoots, studio rentals, and podcast services worldwide.
+                       SuGanta Internationals – Your trusted partner for top-tier video production, advertisement shoots, studio rentals, and podcast services across the globe. With a passion for creativity and quality, we bring your brand's vision to life through compelling storytelling. Our global reach and expertise ensure your content stands out, no matter where you are.
                     </p>
                    
                 </div>
