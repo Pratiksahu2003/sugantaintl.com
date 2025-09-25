@@ -140,7 +140,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Studio</h3>
-                            <p class="text-gray-600">Global Headquarters<br>Professional Video Production<br>Worldwide Services</p>
+                            <p class="text-gray-600">{{ config('company.contact.address') }}</p>
                         </div>
                     </div>
                     

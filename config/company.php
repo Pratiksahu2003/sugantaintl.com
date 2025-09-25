@@ -103,8 +103,8 @@ return [
         ],
         [
             'name' => 'Shashank',
-            'position' => 'Video & Media Editor',
-            'description' => 'Edits and enhances video content, ensuring a polished final product that meets client expectations.',
+            'position' => 'Cinematographer & Senior Editor',
+            'description' => 'Brings creative vision to life through expert cinematography and advanced editing, crafting visually compelling stories for every project.',
             'initials' => 'SH',
             'image' => '/team/shashak.jpg'
         ],
