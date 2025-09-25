@@ -213,42 +213,36 @@
                     “SuGanta Internationals delivered our project with exceptional quality and speed. The team was highly professional and made the entire process seamless from start to finish.”
                 </p>
                 <div class="font-semibold text-gray-900">Loveleen Kaur</div>
-                <div class="text-sm text-gray-500">Creative Lead, Philips</div>
             </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <p class="text-gray-600 mb-4">
                     “We required a series of structured, high-quality videos on a tight timeline and budget. SuGanta exceeded our expectations with their expertise and organization.”
                 </p>
                 <div class="font-semibold text-gray-900">Amit Kumar Srivastava</div>
-                <div class="text-sm text-gray-500">AVP, Marketing</div>
             </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <p class="text-gray-600 mb-4">
                     “SuGanta’s on-demand video production platform made collaboration effortless. Their team felt like an extension of our own, always responsive and creative.”
                 </p>
                 <div class="font-semibold text-gray-900">Nanki Jassal</div>
-                <div class="text-sm text-gray-500">Strategic Consultant</div>
             </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <p class="text-gray-600 mb-4">
                     “The professionalism and creativity of SuGanta Internationals truly set them apart. They understood our vision and brought it to life better than we imagined.”
                 </p>
                 <div class="font-semibold text-gray-900">Rohit Sharma</div>
-                <div class="text-sm text-gray-500">Brand Manager, TechNova</div>
             </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <p class="text-gray-600 mb-4">
                     “From concept to final cut, the SuGanta team was attentive, innovative, and always available for feedback. We look forward to working with them again.”
                 </p>
                 <div class="font-semibold text-gray-900">Priya Mehra</div>
-                <div class="text-sm text-gray-500">Marketing Head, GreenLeaf</div>
             </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <p class="text-gray-600 mb-4">
                     “SuGanta Internationals made our product launch a huge success with their quick turnaround and high-quality video content. Highly recommended!”
                 </p>
                 <div class="font-semibold text-gray-900">Siddharth Jain</div>
-                <div class="text-sm text-gray-500">Founder, UrbanEats</div>
             </div>
         </div>
     </div>

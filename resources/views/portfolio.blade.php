@@ -9,7 +9,7 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center">
             <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Our <span class="text-green-400">Portfolio</span>
+                Our <span class="text-green-400">Our Works</span>
             </h1>
             <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
                 Discover our latest video production projects and see how we've helped businesses create compelling visual content that drives results.

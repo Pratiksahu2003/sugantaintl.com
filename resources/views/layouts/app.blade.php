@@ -208,11 +208,11 @@
                         Video Production
                     </a>
                     <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                        Portfolio
+                        Our Work
                     </a>
                    
                     <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                        Resources
+                        Podcasts & Interviews
                     </a>
                     <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         About
@@ -332,8 +332,6 @@
 
             <div class="border-t border-gray-200 mt-12 pt-8 text-center">
                 <p class="text-gray-600">&copy; {{ date('Y') }} SuGanta Internationals. All rights reserved.</p>
-                <!-- Temporary debug button -->
-                <button onclick="document.getElementById('contactModal').classList.remove('hidden')" class="mt-4 bg-red-500 text-white px-4 py-2 rounded text-sm">Show Modal Now</button>
             </div>
         </div>
     </footer>

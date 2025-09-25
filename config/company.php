@@ -147,13 +147,13 @@ return [
             'description' => 'Professional corporate video showcasing our production capabilities'
         ],
         [
-            'title' => 'Commercial Advertisement',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/K1ImD48UqNQ?si=K3tK_uu9JjsNM_vR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'title' => '"Dogri Bolo Dogri Suno" with Jammu’s renowned Dogri artist, Vasant Vyogi',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/OIyBdsNDdW0?si=XzIC7d-WhLvigDWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             'description' => 'Dynamic commercial advertisement featuring our creative expertise'
         ],
         [
-            'title' => 'Event Coverage',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/c64h-K74bFI?si=bOyt2KPL8HSdl21n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'title' => 'JAI DUGGAR JAI DOGRA JAI MAA DOGRI 🙏',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRQzvh8uQZ4?si=0TmAI8ZFdY6nCYjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             'description' => 'Comprehensive event coverage demonstrating our versatility'
         ]
     ],
