@@ -105,9 +105,7 @@
                     <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         Portfolio
                     </a>
-                    <a href="{{ route('case-studies') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                        Case Studies
-                    </a>
+                   
                     <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         Resources
                     </a>

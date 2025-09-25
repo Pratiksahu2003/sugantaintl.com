@@ -18,28 +18,28 @@
         Your browser does not support the video tag.
     </video>
 
-    <!-- Video Overlay -->
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
 
     <!-- Content -->
     <div class="relative z-20 max-w-6xl mx-auto px-6 text-center">
         <!-- Main Heading -->
         <div class="mb-8">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-                Video Production
-                <span class="text-green-400">Resources</span>
+                <span class="text-green-400">SuGanta Internationals</span> Resources
             </h1>
         </div>
         
         <!-- Subtitle -->
         <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-normal">
-            Access our comprehensive collection of video production guides, industry insights, and professional tips to enhance your video content strategy.
+            Welcome to the official resource hub of <span class="text-white font-semibold">www.sugantaintl.com</span>.<br>
+            Discover expert guides, actionable tips, and the latest industry insights curated by our professional video production team. Whether you’re a business, creator, or agency, empower your next project with knowledge from SuGanta Internationals.
         </p>
         
         <!-- CTA Button -->
         <div class="mb-16">
             <a href="{{ route('contact') }}" class="bg-white text-gray-900 px-8 py-3 rounded text-base font-medium hover:bg-gray-100 transition-all duration-200 inline-block">
-                Get Expert Advice
+                Connect With Our Experts
             </a>
         </div>
     </div>
@@ -169,117 +169,66 @@
     </div>
 </section>
 
-<!-- Featured Resources -->
+<!-- Featured Podcasts & Interviews -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Featured Resources
+                Featured Podcasts & Interviews
             </h2>
             <p class="text-lg text-gray-600 max-w-4xl mx-auto">
-                Discover our most popular and valuable video production resources.
+                Explore our latest podcasts and interviews with industry leaders, creators, and innovators.
             </p>
         </div>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Resource 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-file-alt text-blue-600"></i>
+            @foreach(config('company.featured_podcasts', []) as $podcast)
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col h-full">
+                    <div class="mb-4 w-full aspect-video overflow-hidden rounded-md bg-black flex items-center justify-center">
+                        <div class="w-full h-full flex items-center justify-center">
+                            {!! $podcast['iframe'] !!}
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ $podcast['title'] }}</h3>
+                    <p class="text-gray-600 mb-4 flex-1">
+                        {{ $podcast['description'] }}
+                    </p>
+                    @php
+                        $iframeSrc = '#';
+                        if (preg_match('/src="([^"]+)"/', $podcast['iframe'], $matches)) {
+                            $iframeSrc = $matches[1];
+                        }
+                    @endphp
+                    <a href="{{ $iframeSrc }}" target="_blank" class="text-blue-600 font-medium hover:text-blue-800 mt-auto">
+                        Watch on YouTube →
+                    </a>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Complete Video Production Checklist</h3>
-                <p class="text-gray-600 mb-4">
-                    A comprehensive checklist covering every aspect of video production from pre-production to delivery.
-                </p>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Read More →</a>
-            </div>
-            
-            <!-- Resource 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-video text-green-600"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">2024 Video Marketing Trends</h3>
-                <p class="text-gray-600 mb-4">
-                    Stay ahead with the latest video marketing trends and strategies for 2024.
-                </p>
-                <a href="#" class="text-green-600 font-medium hover:text-green-800">Read More →</a>
-            </div>
-            
-            <!-- Resource 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-lightbulb text-purple-600"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Creative Storytelling Techniques</h3>
-                <p class="text-gray-600 mb-4">
-                    Learn powerful storytelling techniques to create engaging and memorable video content.
-                </p>
-                <a href="#" class="text-purple-600 font-medium hover:text-purple-800">Read More →</a>
-            </div>
-            
-            <!-- Resource 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-tools text-orange-600"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Essential Video Production Equipment</h3>
-                <p class="text-gray-600 mb-4">
-                    A guide to essential equipment for professional video production on any budget.
-                </p>
-                <a href="#" class="text-orange-600 font-medium hover:text-orange-800">Read More →</a>
-            </div>
-            
-            <!-- Resource 5 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-chart-bar text-teal-600"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Video ROI Measurement Guide</h3>
-                <p class="text-gray-600 mb-4">
-                    Learn how to measure and optimize the return on investment for your video content.
-                </p>
-                <a href="#" class="text-teal-600 font-medium hover:text-teal-800">Read More →</a>
-            </div>
-            
-            <!-- Resource 6 -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                    <i class="fas fa-mobile-alt text-red-600"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Video Production Tips</h3>
-                <p class="text-gray-600 mb-4">
-                    Professional tips for creating high-quality videos using mobile devices and apps.
-                </p>
-                <a href="#" class="text-red-600 font-medium hover:text-red-800">Read More →</a>
-            </div>
+            @endforeach
         </div>
+        @if(config('company.featured_podcasts_list'))
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center">Podcast & Interview List</h3>
+                <ul class="list-disc list-inside text-gray-700 max-w-2xl mx-auto space-y-2">
+                    @foreach(config('company.featured_podcasts_list', []) as $item)
+                        <li>
+                            @if(isset($item['url']))
+                                <a href="{{ $item['url'] }}" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                    {{ $item['title'] ?? $item['url'] }}
+                                </a>
+                            @else
+                                {{ $item['title'] ?? $item }}
+                            @endif
+                            @if(isset($item['description']))
+                                <span class="text-gray-500"> - {{ $item['description'] }}</span>
+                            @endif
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 </section>
 
-<!-- Newsletter Signup -->
-<section class="py-20 bg-gray-900 text-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-            Stay Updated with Our Resources
-        </h2>
-        <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-            Subscribe to our newsletter and get the latest video production resources, tips, and industry insights delivered to your inbox.
-        </p>
-        
-        <div class="max-w-md mx-auto">
-            <div class="flex flex-col sm:flex-row gap-4">
-                <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-gray-900 px-6 py-3 rounded font-medium hover:bg-gray-100 transition-colors">
-                    Subscribe
-                </button>
-            </div>
-            <p class="text-sm text-gray-400 mt-4">
-                We respect your privacy. Unsubscribe at any time.
-            </p>
-        </div>
-    </div>
-</section>
+
 
 <!-- CTA Section -->
 <section class="py-20 bg-white">

@@ -9,12 +9,12 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-                Let's
+                Get in Touch
                 <br>
-                <span class="text-gray-400">Connect</span>
+                <span class="text-gray-400">with SuGanta International</span>
             </h1>
             <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Ready to create amazing video content? We'd love to hear about your video production goals and discuss how we can help you achieve outstanding results with our professional services.
+                Ready to elevate your brand with professional video production? Contact SuGanta International today to discuss your ideas or discover more about our full range of creative services. Our experienced team is here to offer personalized advice and innovative solutions to help your project succeed.
             </p>
         </div>
     </div>
@@ -158,24 +158,7 @@
                     </div>
                 </div>
                 
-                <!-- Social Media -->
-                <div class="mt-12">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Follow Our Work</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
+             
             </div>
         </div>
     </div>

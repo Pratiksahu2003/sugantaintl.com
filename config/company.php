@@ -122,6 +122,39 @@ return [
             'initials' => 'PS',
             'image' => '/team/pratik.png'
         ],
-     
+
+    ],
+
+    'featured_podcasts' => [
+        [
+            'title' => "Today's Guest MLA Vijaypur Surjit Singh Slathia",
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/N5aIojTWedo?si=av7Y2r6yjFPYPStA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'description' => 'Professional corporate video showcasing our production capabilities'
+        ],
+        [
+            'title' => "Interaction with Dr Karan Singh ji Son of J&K's Last ruling King Maharaja Hari Singh ji",
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/3cZSC0iPvU4?si=gxfX_ihLa4dfFGkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'description' => 'Dynamic commercial advertisement featuring our creative expertise'
+        ],
+        [
+            'title' => 'Talks at Topnotch Episode 2 with Mr India Bhanu Pratap Sharma',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/qaKx8ib8rSM?si=KxIhttLKrBVqjQh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'description' => 'Comprehensive event coverage demonstrating our versatility'
+        ],
+        [
+            'title' => 'Talks at Topnotch Episode 1 with Gurmeet Singh',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/cLfEjaIABfM?si=KbuVIQzjpGcVmYnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'description' => 'Professional corporate video showcasing our production capabilities'
+        ],
+        [
+            'title' => 'Commercial Advertisement',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/K1ImD48UqNQ?si=K3tK_uu9JjsNM_vR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'description' => 'Dynamic commercial advertisement featuring our creative expertise'
+        ],
+        [
+            'title' => 'Event Coverage',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/c64h-K74bFI?si=bOyt2KPL8HSdl21n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+            'description' => 'Comprehensive event coverage demonstrating our versatility'
+        ]
     ],
 ];
