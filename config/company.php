@@ -96,8 +96,8 @@ return [
         ],
         [
             'name' => 'Vidhu Slathia',
-            'position' => 'Manager- Media/ PR & Sales',
-            'description' => 'Leads media relations, public relations, and sales initiatives to expand the company\'s reach and client base.',
+            'position' => 'Manager- Media/ PR & Anchor',
+            'description' => 'Leads media relations, public relations, and ensures every campaign, communication, and event resonates strongly with audiences while building authentic connections for brands and individuals.',
             'initials' => 'VS',
             'image' => '/team/vidu.png'
         ],
