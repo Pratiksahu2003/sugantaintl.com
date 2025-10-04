@@ -198,7 +198,7 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="w-30 h-12">
+                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="w-40 h-18">
                     </a>
                 </div>
 
