@@ -27,7 +27,7 @@ return [
     */
     'contact' => [
         'phone' => '+91 9266389413',
-        'email' => 'reachus@sugantaintl.com',
+        'email' => 'grow@starjd.com',
         'address' => 'SuGanta International, 4th Floor, 96A, Block- B, Pocket-10, Dwarka Sector -13, New Delhi 110075, Delhi, India',
     ],
 
