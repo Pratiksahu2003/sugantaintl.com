@@ -122,7 +122,7 @@
 
         <!-- Footer -->
         <div class="footer">
-            Query sent from {{ $data['source'] ?? 'contact form' }} on sugantaintl.com
+            Query sent from {{ $data['source'] ?? 'contact form' }} on starjd.com
         </div>
     </div>
 </body>

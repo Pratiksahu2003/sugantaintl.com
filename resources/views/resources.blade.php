@@ -32,7 +32,7 @@
         
         <!-- Subtitle -->
         <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-normal">
-            Welcome to the official resource hub of <span class="text-white font-semibold">www.sugantaintl.com</span>.<br>
+            Welcome to the official resource hub of <span class="text-white font-semibold">www.starjd.com</span>.<br>
             Discover expert guides, actionable tips, and the latest industry insights curated by our professional video production team. Whether you’re a business, creator, or agency, empower your next project with knowledge from SuGanta Internationals.
         </p>
         

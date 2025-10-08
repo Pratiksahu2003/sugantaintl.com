@@ -42,7 +42,7 @@ You can also use services like:
 - ⚠️ Email sending requires SMTP configuration
 
 ## Testing the Form
-1. Go to https://sugantaintl.com.test/contact
+1. Go to https://starjd.com.test/contact
 2. Fill out the form with test data
 3. Submit the form
 4. Check Laravel logs for the submission
