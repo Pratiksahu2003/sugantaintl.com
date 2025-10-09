@@ -40,7 +40,7 @@ return [
     |
     */
     'company' => [
-        'name' => 'SuGanta Internationals',
+        'name' => 'Star JD',
         'tagline' => 'Professional Video Production Services',
         'description' => 'Leading video production company offering video shoots, ads production, studio rentals, and podcast services for businesses worldwide',
     ],

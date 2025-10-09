@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - SuGanta Internationals Video Production')
-@section('description', 'Get in touch with SuGanta Internationals for your video production needs. We offer free consultations and personalized video production solutions.')
+@section('title', 'Contact Us - Star JD Video Production')
+@section('description', 'Get in touch with Star JD for your video production needs. We offer free consultations and personalized video production solutions.')
 
 @section('content')
 <!-- Hero Section -->

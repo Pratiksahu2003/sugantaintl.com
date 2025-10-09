@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'SuGanta Internationals - Professional Video Production Services')</title>
+    <title>@yield('title', 'Star JD - Professional Video Production Services')</title>
     <meta name="description" content="@yield('description', 'SuGanta Internationals - Leading video production company offering video shoots, ads production, studio rentals, and podcast services for businesses worldwide')">
 
     <!-- Fonts -->
