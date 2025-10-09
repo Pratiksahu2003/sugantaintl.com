@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - SuGanta Internationals Video Production')
-@section('description', 'Learn about SuGanta Internationals team, our story, and how we help businesses with professional video production, studio rentals, and podcast services.')
+@section('title', 'About Us - Star JD Video Production')
+@section('description', 'Learn about Star JD team, our story, and how we help businesses with professional video production, studio rentals, and podcast services.')
 
 @section('content')
 <!-- Hero Section -->
@@ -11,10 +11,10 @@
             <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
                 About
                 <br>
-                <span class="text-gray-400">SuGanta Internationals</span>
+                <span class="text-gray-400">Star JD</span>
             </h1>
             <p class="text-xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-                At SuGanta Internationals, we are redefining the landscape of video production in India. Established with a vision to deliver high-quality, scalable, and rapid video content solutions, we empower brands to tell their stories with impact and efficiency.
+                At Star JD, we are redefining the landscape of video production in India. Established with a vision to deliver high-quality, scalable, and rapid video content solutions, we empower brands to tell their stories with impact and efficiency.
             </p>
         </div>
     </div>
@@ -150,7 +150,7 @@
                 Our Approach
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                At SuGanta Internationals, we believe in delivering excellence with speed. Our streamlined processes ensure rapid turnaround without compromising on quality.
+                At Star JD, we believe in delivering excellence with speed. Our streamlined processes ensure rapid turnaround without compromising on quality.
             </p>
         </div>
         
@@ -364,7 +364,7 @@
             <span class="text-green-400">Together</span>
         </h2>
         <p class="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
-            Whether you're looking to supplement your agency's work with raw footage or launch a comprehensive pan-India video campaign, SuGanta Internationals is here to bring your vision to life.
+            Whether you're looking to supplement your agency's work with raw footage or launch a comprehensive pan-India video campaign, Star JD is here to bring your vision to life.
         </p>
         <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
             Connect with us today to embark on a creative journey that elevates your brand's storytelling.

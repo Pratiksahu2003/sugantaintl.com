@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Portfolio - SuGanta Internationals Video Production')
+@section('title', 'Portfolio - Star JD Video Production')
 @section('description', 'Explore our portfolio of professional video production projects including corporate videos, commercials, event coverage, and more.')
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Resources - SuGanta Internationals')
-@section('description', 'Video production resources, guides, tips, and industry insights from SuGanta Internationals professional video production team.')
+@section('title', 'Resources - Star JD')
+@section('description', 'Video production resources, guides, tips, and industry insights from Star JD professional video production team.')
 
 @section('content')
 <!-- Hero Section -->
@@ -26,14 +26,14 @@
         <!-- Main Heading -->
         <div class="mb-8">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-                <span class="text-green-400">SuGanta Internationals</span> Resources
+                <span class="text-green-400">Star JD</span> Resources
             </h1>
         </div>
         
         <!-- Subtitle -->
         <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-normal">
             Welcome to the official resource hub of <span class="text-white font-semibold">www.starjd.com</span>.<br>
-            Discover expert guides, actionable tips, and the latest industry insights curated by our professional video production team. Whether you’re a business, creator, or agency, empower your next project with knowledge from SuGanta Internationals.
+            Discover expert guides, actionable tips, and the latest industry insights curated by our professional video production team. Whether you’re a business, creator, or agency, empower your next project with knowledge from Star JD.
         </p>
         
         <!-- CTA Button -->

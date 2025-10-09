@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Work - SuGanta Internationals Video Production Portfolio')
+@section('title', 'Our Work - Star JD Video Production Portfolio')
 @section('description', 'Explore our portfolio of video production projects including corporate videos, advertisements, live streaming, photography, and drone services.')
 
 @section('content')
@@ -14,7 +14,7 @@
                 <span class="text-gray-400">Portfolio</span>
             </h1>
             <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Discover the creative work of SuGanta Internationals. From corporate films and commercials to live streaming, photography, and drone videography, our portfolio highlights the quality and impact we deliver for brands and businesses across India and beyond.
+                Discover the creative work of Star JD. From corporate films and commercials to live streaming, photography, and drone videography, our portfolio highlights the quality and impact we deliver for brands and businesses across India and beyond.
             </p>
         </div>
     </div>
