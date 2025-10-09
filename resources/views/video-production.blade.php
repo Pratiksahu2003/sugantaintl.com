@@ -16,7 +16,7 @@
         preload="auto"
         poster="{{ asset('banner/banner.jpg') }}"
         aria-hidden="true">
-        <source src="{{ asset('video/hero.mp4') }}" type="video/mp4">
+        <source src="{{ asset('video/hero1.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
