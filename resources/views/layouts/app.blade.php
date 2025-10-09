@@ -198,7 +198,7 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="w-40 h-18">
+                        <img src="{{ asset('images/logo.png') }}" alt="SuGanta Internationals" class="w-30 h-16">
                     </a>
                 </div>
 
@@ -279,7 +279,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main class="py-10">
         @yield('content')
     </main>
 

@@ -22,12 +22,13 @@
     <div class="absolute inset-0 bg-black/40 z-10"></div>
 
     <!-- Content -->
-    <div class="relative z-20 max-w-6xl mx-auto px-6 text-center">
+    <div class="relative z-20 max-w-6xl mx-auto px-12 text-center">
         <!-- Main Heading -->
-        <div class="mb-8">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-                Take your video campaigns to the next level with SuGanta Intl.
-                <span class="text-green-400">Evolve.</span>
+        <div class="mb-8 py-10 tracking-wide">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+            Take your video campaigns to the next level with Star JD.
+            <br>
+            <span class="text-green-400 p-2 tracking-wider">Evolve.</span>
             </h1>
         </div>
 
