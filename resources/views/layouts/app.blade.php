@@ -446,6 +446,19 @@
                             </div>
                             
                             <div>
+                                <label for="modal_mobile" class="block text-sm font-semibold text-gray-900 mb-2">Mobile Number *</label>
+                                <div class="relative">
+                                    <input type="tel" id="modal_mobile" name="mobile" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black transition-all @error('mobile') border-red-500 @enderror"
+                                        placeholder="Enter your mobile number (e.g., +91 9876543210)">
+                                    <i class="fas fa-phone absolute right-3 top-3 text-gray-400"></i>
+                                </div>
+                                @error('mobile')
+                                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            
+                            <div>
                                 <label for="modal_subject" class="block text-sm font-semibold text-gray-900 mb-2">Service Type *</label>
                                 <div class="relative">
                                     <select id="modal_subject" name="subject" required

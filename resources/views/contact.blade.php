@@ -67,6 +67,16 @@
                     </div>
                     
                     <div>
+                        <label for="mobile" class="block text-sm font-medium text-gray-700 mb-2">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="mobile" value="{{ old('mobile') }}" required
+                            class="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors @error('mobile') border-red-500 @enderror"
+                            placeholder="Enter your mobile number (e.g., +91 9876543210)">
+                        @error('mobile')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    
+                    <div>
                         <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Project Type *</label>
                         <select id="subject" name="subject" required
                             class="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors @error('subject') border-red-500 @enderror">

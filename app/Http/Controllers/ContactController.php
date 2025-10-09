@@ -20,6 +20,7 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'mobile' => 'required|string|max:20|regex:/^[\+]?[0-9\s\-\(\)]{10,20}$/',
             'subject' => 'required|string|max:255',
             'message' => 'required|string|min:10'
         ]);
@@ -36,6 +37,7 @@ class ContactController extends Controller
             $contactData = [
                 'name' => $request->name,
                 'email' => $request->email,
+                'mobile' => $request->mobile,
                 'subject' => $request->subject,
                 'message' => $request->message,
                 'timestamp' => now()->format('Y-m-d H:i:s')
@@ -49,6 +51,7 @@ class ContactController extends Controller
                 $emailData = [
                     'name' => $request->name,
                     'email' => $request->email,
+                    'mobile' => $request->mobile,
                     'subject' => $request->subject,
                     'message' => $request->message,
                     'timestamp' => now()->format('M d, Y \a\t h:i A'),
@@ -80,6 +83,7 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'mobile' => 'required|string|max:20|regex:/^[\+]?[0-9\s\-\(\)]{10,20}$/',
             'subject' => 'required|string|max:255',
             'message' => 'required|string|min:10'
         ]);
@@ -96,6 +100,7 @@ class ContactController extends Controller
             $contactData = [
                 'name' => $request->name,
                 'email' => $request->email,
+                'mobile' => $request->mobile,
                 'subject' => $request->subject,
                 'message' => $request->message,
                 'source' => 'modal',
@@ -109,6 +114,7 @@ class ContactController extends Controller
                 $emailData = [
                     'name' => $request->name,
                     'email' => $request->email,
+                    'mobile' => $request->mobile,
                     'subject' => $request->subject,
                     'message' => $request->message,
                     'timestamp' => now()->format('M d, Y \a\t h:i A'),

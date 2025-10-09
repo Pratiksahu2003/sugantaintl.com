@@ -104,6 +104,11 @@
                 </div>
                 
                 <div class="detail-row">
+                    <div class="label">Mobile Number</div>
+                    <div class="value">{{ $data['mobile'] ?? 'Not provided' }}</div>
+                </div>
+                
+                <div class="detail-row">
                     <div class="label">Service Type</div>
                     <div class="value">{{ $data['subject'] }}</div>
                 </div>
