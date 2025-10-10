@@ -22,63 +22,15 @@
 
     <!-- Additional mobile navbar styles -->
     <style>
-        /* Mobile navbar improvements */
-        .mobile-menu {
-            transition: all 0.3s ease-in-out;
-        }
-        
-        .mobile-menu.hidden {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        
-        .mobile-menu:not(.hidden) {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Prevent body scroll when mobile menu is open */
-        body.mobile-menu-open {
-            overflow: hidden;
-            position: fixed;
-            width: 100%;
-        }
-        
         /* Smooth navbar transitions */
         nav {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        
-        /* Mobile menu button animation */
-        .mobile-menu-button svg {
-            transition: transform 0.2s ease-in-out;
         }
         
         /* Better focus states for accessibility */
         .mobile-menu-button:focus {
             outline: 2px solid #f97316;
             outline-offset: 2px;
-        }
-        
-        /* Mobile menu link hover effects */
-        .mobile-menu a {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .mobile-menu a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .mobile-menu a:hover::before {
-            left: 100%;
         }
         
         /* Modal animations */
@@ -214,6 +166,9 @@
                     <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         Podcasts & Interviews
                     </a>
+                    <a href="{{ route('blog.index') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        Blog
+                    </a>
                     <a href="{{ route('about') }}" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                         About
                     </a>
@@ -248,18 +203,18 @@
 
             <!-- Mobile Navigation -->
             <div class="mobile-menu hidden md:hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200 shadow-lg">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="{{ route('video-production') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Video Production
                     </a>
                     <a href="{{ route('Portfolio') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
-                        Portfolio
-                    </a>
-                    <a href="{{ route('case-studies') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
-                        Case Studies
+                        Our Work
                     </a>
                     <a href="{{ route('Resources') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
-                        Resources
+                        Podcasts & Interviews
+                    </a>
+                    <a href="{{ route('blog.index') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
+                        Blog
                     </a>
                     <a href="{{ route('about') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         About
@@ -267,8 +222,7 @@
                     <a href="{{ route('contact') }}" class="text-gray-900 hover:text-orange-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                         Contact
                     </a>
-                 
-                    <div class="pt-4">
+                    <div class="pt-4 border-t border-gray-200">
                         <a href="{{ route('contact') }}" class="bg-orange-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-700 transition-colors duration-200 text-center">
                             Get a Quote
                         </a>
@@ -524,43 +478,56 @@
                 // Function to show mobile menu
                 function showMobileMenu() {
                     mobileMenu.classList.remove('hidden');
-                    hamburgerIcon?.classList.add('hidden');
-                    closeIcon?.classList.remove('hidden');
                     mobileMenuButton.setAttribute('aria-expanded', 'true');
-                    document.body.classList.add('mobile-menu-open'); // Prevent background scrolling
+                    document.body.classList.add('mobile-menu-open');
+                    // Smooth animation
+                    setTimeout(() => {
+                        mobileMenu.style.transform = 'translateY(0)';
+                        mobileMenu.style.opacity = '1';
+                        mobileMenu.style.visibility = 'visible';
+                        mobileMenu.style.maxHeight = '500px';
+                    }, 10);
                 }
 
                 // Function to hide mobile menu
                 function hideMobileMenu() {
-                    mobileMenu.classList.add('hidden');
-                    hamburgerIcon?.classList.remove('hidden');
-                    closeIcon?.classList.add('hidden');
+                    mobileMenu.style.transform = 'translateY(-10px)';
+                    mobileMenu.style.opacity = '0';
+                    mobileMenu.style.visibility = 'hidden';
+                    mobileMenu.style.maxHeight = '0';
                     mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    document.body.classList.remove('mobile-menu-open'); // Restore scrolling
+                    document.body.classList.remove('mobile-menu-open');
+                    
+                    // Add hidden class after animation
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
                 }
 
                 // Toggle mobile menu
                 mobileMenuButton.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    const isHidden = mobileMenu.classList.contains('hidden');
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
                     
-                    if (isHidden) {
-                        showMobileMenu();
-                    } else {
+                    if (isExpanded) {
                         hideMobileMenu();
+                    } else {
+                        showMobileMenu();
                     }
                 });
 
                 // Close mobile menu when clicking outside
                 document.addEventListener('click', function(event) {
                     if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-                        hideMobileMenu();
+                        if (mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+                            hideMobileMenu();
+                        }
                     }
                 });
 
                 // Close mobile menu on escape key
                 document.addEventListener('keydown', function(event) {
-                    if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    if (event.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
                         hideMobileMenu();
                     }
                 });
@@ -576,7 +543,9 @@
                 // Handle window resize
                 window.addEventListener('resize', function() {
                     if (window.innerWidth >= 768) { // md breakpoint
-                        hideMobileMenu();
+                        if (mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+                            hideMobileMenu();
+                        }
                     }
                 });
             }

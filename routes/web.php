@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\VideoProductionController;
 use App\Http\Controllers\CaseStudiesController;
 use App\Http\Controllers\ResourcesController;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus', [AboutController::class, 'index'])->name('about');
@@ -21,3 +22,10 @@ Route::get('/resources', [ResourcesController::class, 'index'])->name('Resources
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/modal-contact', [ContactController::class, 'storeModal'])->name('modal.contact.store');
+
+// Blog routes
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/category/{category}', [BlogController::class, 'category'])->name('blog.category');
+Route::get('/blog/tag/{tag}', [BlogController::class, 'tag'])->name('blog.tag');
+Route::get('/blog/search', [BlogController::class, 'search'])->name('blog.search');

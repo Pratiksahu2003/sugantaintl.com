@@ -588,13 +588,26 @@ nav a:hover {
 
 /* Mobile menu improvements */
 .mobile-menu {
-    transition: none;
-    transform: none;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.mobile-menu:not(.hidden) {
+    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    max-height: 500px;
 }
 
 .mobile-menu.hidden {
-    display: none;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
 }
 
 /* Focus states */
@@ -602,6 +615,62 @@ button:focus,
 a:focus {
     outline: 2px solid #111827;
     outline-offset: 2px;
+}
+
+/* Mobile menu button styles */
+.mobile-menu-button {
+    position: relative;
+    z-index: 60;
+}
+
+.mobile-menu-button svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+.mobile-menu-button[aria-expanded="true"] svg:first-child {
+    transform: rotate(45deg);
+}
+
+.mobile-menu-button[aria-expanded="true"] svg:last-child {
+    transform: rotate(-45deg);
+}
+
+/* Mobile menu positioning */
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Mobile menu link styles */
+.mobile-menu a {
+    display: block;
+    padding: 12px 16px;
+    color: #111827;
+    text-decoration: none;
+    border-bottom: 1px solid #f3f4f6;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu a:hover {
+    background-color: #f9fafb;
+    color: #f97316;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
 }
 
 /* Smooth scrolling */
