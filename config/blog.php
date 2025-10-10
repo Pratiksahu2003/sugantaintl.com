@@ -26,6 +26,8 @@ return [
         'drone-videography-tips' => 'drone-videography-tips',
         'video-editing-workflow' => 'video-editing-workflow',
         'brand-storytelling-through-video' => 'brand-storytelling-video',
+        'analytics-driven-marketing-decisions' => 'analytics-driven-marketing-decisions',
+        'key-digital-marketing-kpis' => 'key-digital-marketing-kpis',
     ],
 
     'settings' => [

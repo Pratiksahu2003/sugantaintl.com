@@ -91,7 +91,7 @@ class BlogController extends Controller
         $relatedPosts = $this->getRelatedPosts($slug, $allPosts);
         
         // Check if view file exists
-        $viewPath = "blog.posts.{$filename}";
+        $viewPath = "blog.posts." . pathinfo($filename, PATHINFO_FILENAME);
       
         if (!view()->exists($viewPath)) {
             abort(404, 'Blog post view file not found');
@@ -226,9 +226,47 @@ class BlogController extends Controller
      */
     private function filterPostsByCategory($posts, $category)
     {
-        // This is a basic implementation
-        // You can extend this to include category metadata in your posts
-        return $posts;
+        // Define category mappings for posts
+        $categoryMappings = [
+            'video-production' => [
+                'getting-started-with-video-production',
+                'best-practices-for-corporate-videos',
+                'video-marketing-strategies',
+                'video-editing-workflow',
+                'brand-storytelling-through-video'
+            ],
+            'studio-rental' => [
+                'studio-rental-guide',
+                'equipment-rental-checklist'
+            ],
+            'podcast-services' => [
+                'podcast-production-tips'
+            ],
+            'marketing' => [
+                'video-marketing-strategies',
+                'brand-storytelling-through-video',
+                'analytics-driven-marketing-decisions',
+                'key-digital-marketing-kpis'
+            ],
+            'equipment' => [
+                'equipment-rental-checklist',
+                'live-streaming-setup',
+                'drone-videography-tips'
+            ]
+        ];
+        
+        $categoryPosts = [];
+        
+        if (isset($categoryMappings[$category])) {
+            foreach ($categoryMappings[$category] as $postSlug) {
+                if (isset($posts[$postSlug])) {
+                    $categoryPosts[$postSlug] = $posts[$postSlug];
+                }
+            }
+        }
+        
+        // If no specific mapping, return all posts
+        return empty($categoryPosts) ? $posts : $categoryPosts;
     }
 
     /**
@@ -236,9 +274,91 @@ class BlogController extends Controller
      */
     private function filterPostsByTag($posts, $tag)
     {
-        // This is a basic implementation
-        // You can extend this to include tag metadata in your posts
-        return $posts;
+        // Define tag mappings for posts
+        $tagMappings = [
+            'video-production' => [
+                'getting-started-with-video-production',
+                'best-practices-for-corporate-videos',
+                'video-editing-workflow'
+            ],
+            'studio-rental' => [
+                'studio-rental-guide',
+                'equipment-rental-checklist'
+            ],
+            'podcast' => [
+                'podcast-production-tips'
+            ],
+            'marketing' => [
+                'video-marketing-strategies',
+                'brand-storytelling-through-video',
+                'analytics-driven-marketing-decisions',
+                'key-digital-marketing-kpis'
+            ],
+            'equipment' => [
+                'equipment-rental-checklist',
+                'live-streaming-setup',
+                'drone-videography-tips'
+            ],
+            'tips' => [
+                'podcast-production-tips',
+                'drone-videography-tips',
+                'getting-started-with-video-production'
+            ],
+            'tutorial' => [
+                'studio-rental-guide',
+                'live-streaming-setup',
+                'video-editing-workflow'
+            ],
+            'guide' => [
+                'studio-rental-guide',
+                'equipment-rental-checklist',
+                'live-streaming-setup'
+            ],
+            'strategy' => [
+                'video-marketing-strategies',
+                'brand-storytelling-through-video'
+            ],
+            'technology' => [
+                'live-streaming-setup',
+                'drone-videography-tips',
+                'video-editing-workflow'
+            ],
+            'creativity' => [
+                'brand-storytelling-through-video',
+                'drone-videography-tips'
+            ],
+            'business' => [
+                'best-practices-for-corporate-videos',
+                'video-marketing-strategies',
+                'brand-storytelling-through-video'
+            ],
+            'branding' => [
+                'brand-storytelling-through-video',
+                'best-practices-for-corporate-videos'
+            ],
+            'social-media' => [
+                'video-marketing-strategies',
+                'live-streaming-setup'
+            ],
+            'content-creation' => [
+                'podcast-production-tips',
+                'video-editing-workflow',
+                'brand-storytelling-through-video'
+            ]
+        ];
+        
+        $tagPosts = [];
+        
+        if (isset($tagMappings[$tag])) {
+            foreach ($tagMappings[$tag] as $postSlug) {
+                if (isset($posts[$postSlug])) {
+                    $tagPosts[$postSlug] = $posts[$postSlug];
+                }
+            }
+        }
+        
+        // If no specific mapping, return all posts
+        return empty($tagPosts) ? $posts : $tagPosts;
     }
 
     /**
