@@ -28,6 +28,14 @@ return [
         'brand-storytelling-through-video' => 'brand-storytelling-video',
         'analytics-driven-marketing-decisions' => 'analytics-driven-marketing-decisions',
         'key-digital-marketing-kpis' => 'key-digital-marketing-kpis',
+        'professional-photoshoots-boost-brand-image' => 'professional-photoshoots-boost-brand-image',
+        'indias-b2b-digital-marketing-growth' => 'indias-b2b-digital-marketing-growth',
+        'google-ads-vs-meta-ads-roi-comparison' => 'google-ads-vs-meta-ads-roi-comparison',
+        'instagram-advertising-organic-growth-2025' => 'instagram-advertising-organic-growth-2025',
+        'understanding-click-through-rate-ctr' => 'understanding-click-through-rate-ctr',
+        'keyword-research-importance-guide' => 'keyword-research-importance-guide',
+        'strong-brand-strategy-transform-online-presence' => 'strong-brand-strategy-transform-online-presence',
+        'why-business-needs-digital-presence-2025' => 'why-business-needs-digital-presence-2025',
     ],
 
     'settings' => [

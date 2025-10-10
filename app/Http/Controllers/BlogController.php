@@ -246,7 +246,15 @@ class BlogController extends Controller
                 'video-marketing-strategies',
                 'brand-storytelling-through-video',
                 'analytics-driven-marketing-decisions',
-                'key-digital-marketing-kpis'
+                'key-digital-marketing-kpis',
+                'professional-photoshoots-boost-brand-image',
+                'indias-b2b-digital-marketing-growth',
+                'google-ads-vs-meta-ads-roi-comparison',
+                'instagram-advertising-organic-growth-2025',
+                'understanding-click-through-rate-ctr',
+                'keyword-research-importance-guide',
+                'strong-brand-strategy-transform-online-presence',
+                'why-business-needs-digital-presence-2025'
             ],
             'equipment' => [
                 'equipment-rental-checklist',
@@ -292,7 +300,15 @@ class BlogController extends Controller
                 'video-marketing-strategies',
                 'brand-storytelling-through-video',
                 'analytics-driven-marketing-decisions',
-                'key-digital-marketing-kpis'
+                'key-digital-marketing-kpis',
+                'professional-photoshoots-boost-brand-image',
+                'indias-b2b-digital-marketing-growth',
+                'google-ads-vs-meta-ads-roi-comparison',
+                'instagram-advertising-organic-growth-2025',
+                'understanding-click-through-rate-ctr',
+                'keyword-research-importance-guide',
+                'strong-brand-strategy-transform-online-presence',
+                'why-business-needs-digital-presence-2025'
             ],
             'equipment' => [
                 'equipment-rental-checklist',
