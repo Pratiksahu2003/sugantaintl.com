@@ -1,5 +1,5 @@
 {{-- How Analytics Can Drive Smarter Marketing Decisions --}}
-<div class="prose prose-lg max-w-none">
+<div class="prose prose-lg max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold text-gray-900 mb-6">How Analytics Can Drive Smarter Marketing Decisions</h2>
     
     <p class="text-gray-700 leading-relaxed mb-6">
