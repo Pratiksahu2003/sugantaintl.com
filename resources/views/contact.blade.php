@@ -161,8 +161,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Working Hours</h3>
-                            <p class="text-gray-600">Monday - Friday: 10:00 AM - 7:00 PM</p>
-                            <p class="text-gray-600">Saturday: 10:00 AM - 5:00 PM</p>
+                            <p class="text-gray-600">Monday - Saturday: 10:00 AM - 7:00 PM</p>
                             <p class="text-gray-600">Sunday: Closed</p>
                         </div>
                     </div>
