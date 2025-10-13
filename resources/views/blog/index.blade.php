@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog - ' . config('company.name'))
+@section('title', 'Blog - ' . config('app.name'))
 @section('description', config('blog.seo.default_description'))
 
 @section('content')
