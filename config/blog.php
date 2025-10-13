@@ -36,6 +36,10 @@ return [
         'keyword-research-importance-guide' => 'keyword-research-importance-guide',
         'strong-brand-strategy-transform-online-presence' => 'strong-brand-strategy-transform-online-presence',
         'why-business-needs-digital-presence-2025' => 'why-business-needs-digital-presence-2025',
+        'seo-mistakes-killing-your-rankings' => 'seo-mistakes-killing-your-rankings',
+        'how-ai-reshaping-digital-marketing' => 'how-ai-reshaping-digital-marketing',
+        'psychology-online-buying-what-makes-people-click' => 'psychology-online-buying-what-makes-people-click',
+        'positioning-business-crowded-market' => 'positioning-business-crowded-market',
     ],
 
     'settings' => [
