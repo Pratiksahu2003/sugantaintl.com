@@ -174,38 +174,75 @@ class ProfileController extends Controller
     private function updateInfluencerProfile(Request $request, User $user): void
     {
         $profileData = $request->only([
-            'stage_name', 'niche', 'about', 'rate_per_post', 'rate_per_story',
-            'rate_per_video', 'currency', 'is_available_for_collaboration'
+            'stage_name', 'profession', 'primary_category_id', 'company_name', 'company_position',
+            'about', 'bio_extended', 'mission_statement', 'values',
+            'instagram_url', 'instagram_handle', 'instagram_followers',
+            'tiktok_url', 'tiktok_handle', 'tiktok_followers',
+            'youtube_url', 'youtube_handle', 'youtube_subscribers',
+            'twitter_url', 'twitter_handle', 'twitter_followers',
+            'facebook_url', 'facebook_handle', 'facebook_followers',
+            'linkedin_url', 'linkedin_handle', 'linkedin_followers',
+            'snapchat_url', 'snapchat_handle', 'snapchat_followers',
+            'pinterest_url', 'pinterest_handle', 'pinterest_followers',
+            'twitch_url', 'twitch_handle', 'twitch_followers',
+            'discord_url', 'discord_handle', 'telegram_url', 'telegram_handle',
+            'reddit_url', 'reddit_handle', 'clubhouse_url', 'clubhouse_handle',
+            'spotify_url', 'spotify_handle', 'soundcloud_url', 'soundcloud_handle',
+            'behance_url', 'behance_handle', 'dribbble_url', 'dribbble_handle',
+            'github_url', 'github_handle', 'medium_url', 'medium_handle',
+            'substack_url', 'substack_handle', 'patreon_url', 'patreon_handle',
+            'onlyfans_url', 'onlyfans_handle', 'website_url', 'blog_url',
+            'podcast_url', 'newsletter_url', 'business_email', 'business_phone',
+            'manager_name', 'manager_email', 'manager_phone', 'agency_name', 'agency_contact',
+            'rate_per_campaign', 'currency', 'country', 'state', 'city', 'timezone', 'primary_language',
+            'average_engagement_rate', 'average_likes_per_post', 'average_comments_per_post',
+            'average_shares_per_post', 'average_video_views', 'average_story_views',
+            'trust_score'
         ]);
 
-        // Handle verification status (admin only)
-        if (Auth::user()->hasRole('admin') && $request->has('is_verified')) {
-            $profileData['is_verified'] = true;
+        // Handle boolean fields
+        $booleanFields = [
+            'has_manager', 'has_agency', 'accepts_gifted_collaborations', 'accepts_paid_collaborations',
+            'accepts_brand_ambassador', 'accepts_event_appearances', 'accepts_product_reviews',
+            'accepts_sponsored_content', 'is_featured', 'is_premium', 'accepts_direct_messages',
+            'show_contact_info', 'show_rates', 'is_verified', 'is_available_for_collaboration'
+        ];
+
+        foreach ($booleanFields as $field) {
+            $profileData[$field] = $request->has($field) ? true : false;
         }
 
         // Handle JSON fields
-        if ($request->has('social_platforms')) {
-            $profileData['social_platforms'] = $request->input('social_platforms');
-        }
-        if ($request->has('engagement_stats')) {
-            $profileData['engagement_stats'] = $request->input('engagement_stats');
-        }
-        if ($request->has('content_categories')) {
-            $profileData['content_categories'] = $request->input('content_categories');
-        }
-        if ($request->has('availability')) {
-            $profileData['availability'] = $request->input('availability');
-        }
-        if ($request->has('collaboration_preferences')) {
-            $profileData['collaboration_preferences'] = $request->input('collaboration_preferences');
+        $jsonFields = [
+            'secondary_categories', 'specializations', 'languages', 'target_audience',
+            'audience_locations', 'content_types', 'posting_schedule', 'collaboration_types',
+            'brand_preferences', 'content_preferences', 'budget_range', 'payment_methods',
+            'portfolio_images', 'portfolio_videos', 'case_studies', 'testimonials',
+            'media_kit', 'verification_documents', 'social_proof', 'privacy_settings',
+            'achievements', 'awards', 'certifications', 'education', 'work_experience'
+        ];
+
+        foreach ($jsonFields as $field) {
+            if ($request->has($field)) {
+                $value = $request->input($field);
+                if (is_string($value) && !empty($value)) {
+                    // Convert comma-separated string to array
+                    $profileData[$field] = array_map('trim', explode(',', $value));
+                } elseif (is_array($value)) {
+                    $profileData[$field] = $value;
+                } else {
+                    $profileData[$field] = null;
+                }
+            }
         }
 
-        // Handle image uploads
+        // Handle file uploads
         if ($request->hasFile('profile_image')) {
-            $profileData['profile_image'] = $request->file('profile_image')->store('influencers', 'public');
+            $profileData['profile_image'] = $request->file('profile_image')->store('influencer-profiles', 'public');
         }
+
         if ($request->hasFile('cover_image')) {
-            $profileData['cover_image'] = $request->file('cover_image')->store('influencers', 'public');
+            $profileData['cover_image'] = $request->file('cover_image')->store('influencer-covers', 'public');
         }
 
         $user->influencerProfile()->updateOrCreate(['user_id' => $user->id], $profileData);
