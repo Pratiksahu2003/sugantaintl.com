@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -77,6 +78,30 @@ class User extends Authenticatable
     public function companyProfile()
     {
         return $this->hasOne(CompanyProfile::class);
+    }
+
+    /**
+     * Get the user's influencer services.
+     */
+    public function influencerServices(): HasMany
+    {
+        return $this->hasMany(InfluencerService::class);
+    }
+
+    /**
+     * Get the user's influencer packages.
+     */
+    public function influencerPackages(): HasMany
+    {
+        return $this->hasMany(InfluencerPackage::class);
+    }
+
+    /**
+     * Get the user's influencer collaborations.
+     */
+    public function influencerCollaborations(): HasMany
+    {
+        return $this->hasMany(InfluencerCollaboration::class);
     }
 
     /**

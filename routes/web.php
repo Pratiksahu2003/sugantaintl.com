@@ -15,6 +15,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Influencer\ServiceController;
+use App\Http\Controllers\Influencer\PackageController;
+use App\Http\Controllers\Influencer\CollaborationController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -47,6 +50,25 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.user');
     Route::get('/profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.user.edit');
     Route::put('/profile/{user}', [ProfileController::class, 'update'])->name('profile.user.update');
+    
+    // Influencer routes - Only accessible by users with influencer role
+    Route::middleware('role:influencer')->prefix('influencer')->name('influencer.')->group(function () {
+        // Services routes
+        Route::resource('services', ServiceController::class);
+        Route::post('services/{service}/toggle-active', [ServiceController::class, 'toggleActive'])->name('services.toggle-active');
+        Route::post('services/{service}/toggle-featured', [ServiceController::class, 'toggleFeatured'])->name('services.toggle-featured');
+        
+        // Packages routes
+        Route::resource('packages', PackageController::class);
+        Route::post('packages/{package}/toggle-active', [PackageController::class, 'toggleActive'])->name('packages.toggle-active');
+        Route::post('packages/{package}/toggle-featured', [PackageController::class, 'toggleFeatured'])->name('packages.toggle-featured');
+        
+        // Collaborations routes
+        Route::resource('collaborations', CollaborationController::class);
+        Route::post('collaborations/{collaboration}/toggle-featured', [CollaborationController::class, 'toggleFeatured'])->name('collaborations.toggle-featured');
+        Route::post('collaborations/{collaboration}/toggle-urgent', [CollaborationController::class, 'toggleUrgent'])->name('collaborations.toggle-urgent');
+        Route::post('collaborations/{collaboration}/update-status', [CollaborationController::class, 'updateStatus'])->name('collaborations.update-status');
+    });
 });
 
 // Admin routes - Only accessible by users with admin role

@@ -98,21 +98,45 @@ function initSidebar() {
 
 // Submenu Functionality
 function initSubmenus() {
+    console.log('Initializing submenus...');
     const submenuHeaders = document.querySelectorAll('.nav-submenu-header');
+    console.log('Found submenu headers:', submenuHeaders.length);
     
-    submenuHeaders.forEach(header => {
-        header.addEventListener('click', function() {
+    submenuHeaders.forEach((header, index) => {
+        console.log(`Setting up submenu ${index + 1}:`, header.textContent.trim());
+        
+        header.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Submenu clicked:', this.textContent.trim());
+            
             const submenu = this.parentElement;
             const isActive = submenu.classList.contains('active');
+            const submenuItems = submenu.querySelector('.nav-submenu-items');
+            
+            console.log('Current state:', isActive ? 'active' : 'inactive');
+            console.log('Submenu items element:', submenuItems);
             
             // Close all other submenus
             document.querySelectorAll('.nav-submenu').forEach(menu => {
                 menu.classList.remove('active');
+                const items = menu.querySelector('.nav-submenu-items');
+                if (items) {
+                    items.style.display = 'none';
+                }
             });
             
             // Toggle current submenu
             if (!isActive) {
                 submenu.classList.add('active');
+                if (submenuItems) {
+                    submenuItems.style.display = 'block';
+                }
+                console.log('Submenu opened');
+            } else {
+                if (submenuItems) {
+                    submenuItems.style.display = 'none';
+                }
+                console.log('Submenu closed');
             }
         });
     });
@@ -120,11 +144,24 @@ function initSubmenus() {
     // Auto-open submenu if current page is in submenu
     const activeSubmenuLink = document.querySelector('.nav-submenu-link.active');
     if (activeSubmenuLink) {
+        console.log('Found active submenu link:', activeSubmenuLink.textContent.trim());
         const submenu = activeSubmenuLink.closest('.nav-submenu');
         if (submenu) {
             submenu.classList.add('active');
+            const submenuItems = submenu.querySelector('.nav-submenu-items');
+            if (submenuItems) {
+                submenuItems.style.display = 'block';
+            }
+            console.log('Auto-opened submenu for active link');
         }
+    } else {
+        console.log('No active submenu link found');
     }
+    
+    // Initialize all submenu items as hidden
+    document.querySelectorAll('.nav-submenu-items').forEach(items => {
+        items.style.display = 'none';
+    });
 }
 
 // Update sidebar state in localStorage

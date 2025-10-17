@@ -150,10 +150,14 @@ body {
     overflow: hidden;
     transition: max-height 0.3s ease;
     background: var(--content-bg);
+    opacity: 0;
+    visibility: hidden;
 }
 
 .nav-submenu.active .nav-submenu-items {
-    max-height: 200px;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-submenu-link {

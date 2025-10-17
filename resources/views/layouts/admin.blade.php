@@ -52,6 +52,43 @@
                     </a>
                 </div>
                 
+                @if(Auth::user()->hasRole('influencer'))
+                <!-- Influencer Services, Packages & Collaborations -->
+                <div class="nav-item nav-submenu">
+                    <div class="nav-submenu-header">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Services & Collaborations</span>
+                        <i class="fas fa-chevron-down nav-submenu-toggle"></i>
+                    </div>
+                    <div class="nav-submenu-items">
+                        <a href="{{ route('influencer.services.index') }}" class="nav-submenu-link {{ request()->routeIs('influencer.services.*') ? 'active' : '' }}">
+                            <i class="fas fa-cogs"></i>
+                            <span>My Services</span>
+                        </a>
+                        <a href="{{ route('influencer.services.create') }}" class="nav-submenu-link {{ request()->routeIs('influencer.services.create') ? 'active' : '' }}">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Service</span>
+                        </a>
+                        <a href="{{ route('influencer.packages.index') }}" class="nav-submenu-link {{ request()->routeIs('influencer.packages.*') ? 'active' : '' }}">
+                            <i class="fas fa-box"></i>
+                            <span>My Packages</span>
+                        </a>
+                        <a href="{{ route('influencer.packages.create') }}" class="nav-submenu-link {{ request()->routeIs('influencer.packages.create') ? 'active' : '' }}">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Package</span>
+                        </a>
+                        <a href="{{ route('influencer.collaborations.index') }}" class="nav-submenu-link {{ request()->routeIs('influencer.collaborations.*') ? 'active' : '' }}">
+                            <i class="fas fa-handshake"></i>
+                            <span>My Collaborations</span>
+                        </a>
+                        <a href="{{ route('influencer.collaborations.create') }}" class="nav-submenu-link {{ request()->routeIs('influencer.collaborations.create') ? 'active' : '' }}">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Collaboration</span>
+                        </a>
+                    </div>
+                </div>
+                @endif
+                
                 @if(Auth::user()->hasRole('admin'))
                 <!-- Profile Management Submenu -->
                 <div class="nav-item nav-submenu">
