@@ -1,0 +1,225 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\InfluencerCategory;
+use Illuminate\Database\Seeder;
+
+class InfluencerCategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $categories = [
+            [
+                'name' => 'Fashion & Beauty',
+                'slug' => 'fashion-beauty',
+                'description' => 'Fashion, beauty, makeup, skincare, and style influencers.',
+                'icon' => 'fas fa-tshirt',
+                'color' => '#E91E63',
+                'keywords' => ['fashion', 'beauty', 'makeup', 'skincare', 'style', 'outfit', 'cosmetics'],
+                'subcategories' => ['Fashion', 'Beauty', 'Makeup', 'Skincare', 'Hair', 'Nails', 'Jewelry', 'Accessories'],
+                'sort_order' => 1,
+            ],
+            [
+                'name' => 'Lifestyle',
+                'slug' => 'lifestyle',
+                'description' => 'General lifestyle, daily routines, and personal experiences.',
+                'icon' => 'fas fa-home',
+                'color' => '#4CAF50',
+                'keywords' => ['lifestyle', 'daily', 'routine', 'personal', 'life', 'wellness'],
+                'subcategories' => ['Daily Life', 'Wellness', 'Home', 'Family', 'Pets', 'Travel', 'Food'],
+                'sort_order' => 2,
+            ],
+            [
+                'name' => 'Fitness & Health',
+                'slug' => 'fitness-health',
+                'description' => 'Fitness, health, nutrition, and wellness influencers.',
+                'icon' => 'fas fa-dumbbell',
+                'color' => '#FF9800',
+                'keywords' => ['fitness', 'health', 'workout', 'gym', 'nutrition', 'wellness', 'exercise'],
+                'subcategories' => ['Fitness', 'Health', 'Nutrition', 'Yoga', 'Running', 'Weightlifting', 'Martial Arts'],
+                'sort_order' => 3,
+            ],
+            [
+                'name' => 'Food & Cooking',
+                'slug' => 'food-cooking',
+                'description' => 'Food, cooking, recipes, and culinary content creators.',
+                'icon' => 'fas fa-utensils',
+                'color' => '#795548',
+                'keywords' => ['food', 'cooking', 'recipe', 'culinary', 'restaurant', 'chef', 'baking'],
+                'subcategories' => ['Cooking', 'Baking', 'Restaurant Reviews', 'Food Photography', 'Recipes', 'Healthy Eating'],
+                'sort_order' => 4,
+            ],
+            [
+                'name' => 'Travel',
+                'slug' => 'travel',
+                'description' => 'Travel, tourism, and adventure content creators.',
+                'icon' => 'fas fa-plane',
+                'color' => '#2196F3',
+                'keywords' => ['travel', 'tourism', 'adventure', 'vacation', 'destination', 'wanderlust'],
+                'subcategories' => ['Adventure Travel', 'Luxury Travel', 'Budget Travel', 'Solo Travel', 'Family Travel', 'Business Travel'],
+                'sort_order' => 5,
+            ],
+            [
+                'name' => 'Technology',
+                'slug' => 'technology',
+                'description' => 'Technology, gadgets, and digital innovation influencers.',
+                'icon' => 'fas fa-laptop',
+                'color' => '#607D8B',
+                'keywords' => ['technology', 'gadgets', 'tech', 'digital', 'innovation', 'software', 'hardware'],
+                'subcategories' => ['Gadgets', 'Software', 'Gaming', 'AI', 'Mobile Tech', 'Web Development', 'Cybersecurity'],
+                'sort_order' => 6,
+            ],
+            [
+                'name' => 'Gaming',
+                'slug' => 'gaming',
+                'description' => 'Gaming, esports, and interactive entertainment content.',
+                'icon' => 'fas fa-gamepad',
+                'color' => '#9C27B0',
+                'keywords' => ['gaming', 'esports', 'streaming', 'twitch', 'youtube gaming', 'game reviews'],
+                'subcategories' => ['PC Gaming', 'Console Gaming', 'Mobile Gaming', 'Esports', 'Game Reviews', 'Streaming'],
+                'sort_order' => 7,
+            ],
+            [
+                'name' => 'Entertainment',
+                'slug' => 'entertainment',
+                'description' => 'Entertainment, comedy, and creative content creators.',
+                'icon' => 'fas fa-theater-masks',
+                'color' => '#FF5722',
+                'keywords' => ['entertainment', 'comedy', 'funny', 'creative', 'dance', 'music', 'acting'],
+                'subcategories' => ['Comedy', 'Dance', 'Music', 'Acting', 'Magic', 'Pranks', 'Challenges'],
+                'sort_order' => 8,
+            ],
+            [
+                'name' => 'Business & Finance',
+                'slug' => 'business-finance',
+                'description' => 'Business, finance, entrepreneurship, and investment content.',
+                'icon' => 'fas fa-chart-line',
+                'color' => '#4CAF50',
+                'keywords' => ['business', 'finance', 'entrepreneurship', 'investment', 'trading', 'startup'],
+                'subcategories' => ['Entrepreneurship', 'Investment', 'Trading', 'Startups', 'Marketing', 'Sales'],
+                'sort_order' => 9,
+            ],
+            [
+                'name' => 'Education',
+                'slug' => 'education',
+                'description' => 'Educational content, tutorials, and learning resources.',
+                'icon' => 'fas fa-graduation-cap',
+                'color' => '#3F51B5',
+                'keywords' => ['education', 'learning', 'tutorial', 'teaching', 'academic', 'knowledge'],
+                'subcategories' => ['Tutorials', 'Language Learning', 'Academic', 'Skills', 'Online Courses', 'Study Tips'],
+                'sort_order' => 10,
+            ],
+            [
+                'name' => 'Art & Design',
+                'slug' => 'art-design',
+                'description' => 'Art, design, creativity, and visual content creators.',
+                'icon' => 'fas fa-palette',
+                'color' => '#E91E63',
+                'keywords' => ['art', 'design', 'creative', 'drawing', 'painting', 'graphic design', 'illustration'],
+                'subcategories' => ['Digital Art', 'Traditional Art', 'Graphic Design', 'Illustration', 'Photography', 'Architecture'],
+                'sort_order' => 11,
+            ],
+            [
+                'name' => 'Parenting & Family',
+                'slug' => 'parenting-family',
+                'description' => 'Parenting, family life, and child-related content.',
+                'icon' => 'fas fa-baby',
+                'color' => '#FFC107',
+                'keywords' => ['parenting', 'family', 'kids', 'children', 'mom', 'dad', 'baby'],
+                'subcategories' => ['New Parents', 'Toddlers', 'School Age', 'Teenagers', 'Family Activities', 'Parenting Tips'],
+                'sort_order' => 12,
+            ],
+            [
+                'name' => 'Automotive',
+                'slug' => 'automotive',
+                'description' => 'Cars, motorcycles, and automotive content creators.',
+                'icon' => 'fas fa-car',
+                'color' => '#424242',
+                'keywords' => ['cars', 'automotive', 'motorcycle', 'racing', 'review', 'modification'],
+                'subcategories' => ['Car Reviews', 'Motorcycles', 'Racing', 'Modifications', 'Luxury Cars', 'Electric Vehicles'],
+                'sort_order' => 13,
+            ],
+            [
+                'name' => 'Sports',
+                'slug' => 'sports',
+                'description' => 'Sports, athletics, and physical activities.',
+                'icon' => 'fas fa-football-ball',
+                'color' => '#FF5722',
+                'keywords' => ['sports', 'athletics', 'football', 'basketball', 'soccer', 'tennis', 'olympics'],
+                'subcategories' => ['Football', 'Basketball', 'Soccer', 'Tennis', 'Olympics', 'Extreme Sports', 'Team Sports'],
+                'sort_order' => 14,
+            ],
+            [
+                'name' => 'Music',
+                'slug' => 'music',
+                'description' => 'Music, musicians, and audio content creators.',
+                'icon' => 'fas fa-music',
+                'color' => '#9C27B0',
+                'keywords' => ['music', 'musician', 'singer', 'band', 'instrument', 'concert', 'album'],
+                'subcategories' => ['Singing', 'Instrumental', 'Music Production', 'Concerts', 'Music Reviews', 'Cover Songs'],
+                'sort_order' => 15,
+            ],
+            [
+                'name' => 'Photography',
+                'slug' => 'photography',
+                'description' => 'Photography, visual arts, and image content creators.',
+                'icon' => 'fas fa-camera',
+                'color' => '#607D8B',
+                'keywords' => ['photography', 'photo', 'camera', 'visual', 'portrait', 'landscape', 'wedding'],
+                'subcategories' => ['Portrait', 'Landscape', 'Wedding', 'Street', 'Fashion', 'Product', 'Nature'],
+                'sort_order' => 16,
+            ],
+            [
+                'name' => 'Home & Garden',
+                'slug' => 'home-garden',
+                'description' => 'Home improvement, gardening, and interior design.',
+                'icon' => 'fas fa-seedling',
+                'color' => '#4CAF50',
+                'keywords' => ['home', 'garden', 'interior', 'design', 'diy', 'renovation', 'plants'],
+                'subcategories' => ['Interior Design', 'Gardening', 'DIY', 'Home Renovation', 'Plants', 'Decorating'],
+                'sort_order' => 17,
+            ],
+            [
+                'name' => 'Pets & Animals',
+                'slug' => 'pets-animals',
+                'description' => 'Pets, animals, and animal care content.',
+                'icon' => 'fas fa-paw',
+                'color' => '#FF9800',
+                'keywords' => ['pets', 'animals', 'dog', 'cat', 'pet care', 'wildlife', 'animal rescue'],
+                'subcategories' => ['Dogs', 'Cats', 'Exotic Pets', 'Wildlife', 'Pet Care', 'Animal Rescue', 'Training'],
+                'sort_order' => 18,
+            ],
+            [
+                'name' => 'Sustainability',
+                'slug' => 'sustainability',
+                'description' => 'Environmental, sustainable living, and eco-friendly content.',
+                'icon' => 'fas fa-leaf',
+                'color' => '#4CAF50',
+                'keywords' => ['sustainability', 'environment', 'eco', 'green', 'climate', 'renewable', 'zero waste'],
+                'subcategories' => ['Zero Waste', 'Renewable Energy', 'Climate Action', 'Eco Products', 'Green Living', 'Conservation'],
+                'sort_order' => 19,
+            ],
+            [
+                'name' => 'Mental Health',
+                'slug' => 'mental-health',
+                'description' => 'Mental health, wellness, and self-care content.',
+                'icon' => 'fas fa-heart',
+                'color' => '#E91E63',
+                'keywords' => ['mental health', 'wellness', 'self care', 'therapy', 'mindfulness', 'anxiety', 'depression'],
+                'subcategories' => ['Therapy', 'Mindfulness', 'Self Care', 'Anxiety', 'Depression', 'Meditation', 'Wellness'],
+                'sort_order' => 20,
+            ],
+        ];
+
+        foreach ($categories as $category) {
+            InfluencerCategory::firstOrCreate(
+                ['slug' => $category['slug']],
+                $category
+            );
+        }
+    }
+}

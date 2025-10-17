@@ -134,13 +134,6 @@
                         <span>View Site</span>
                     </a>
                 </div>
-                <div class="nav-item">
-                    <form method="POST" action="{{ route('logout') }}" class="nav-link">
-                        @csrf
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
-                    </form>
-                </div>
             </nav>
         </aside>
 
@@ -162,7 +155,40 @@
                         </div>
                         <div class="user-info">
                             <div class="user-name">{{ Auth::user()->name }}</div>
-                            <div class="user-role">Administrator</div>
+                            <div class="user-role">
+                                @if(Auth::user()->hasRole('admin'))
+                                    Administrator
+                                @elseif(Auth::user()->hasRole('influencer'))
+                                    Influencer
+                                @elseif(Auth::user()->hasRole('company'))
+                                    Company
+                                @else
+                                    User
+                                @endif
+                            </div>
+                        </div>
+                        <div class="user-dropdown">
+                            <button class="dropdown-toggle" id="userDropdownToggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu" id="userDropdownMenu">
+                                <a href="{{ route('profile.show', Auth::user()) }}" class="dropdown-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="{{ route('home') }}" class="dropdown-item">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Site</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <form method="POST" action="{{ route('logout') }}" id="logoutForm">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item logout-btn">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Logout</span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -69,30 +69,12 @@ function initSidebar() {
             }
         });
         
-        // Handle logout form submission
-        const logoutForm = sidebar.querySelector('form[action*="logout"]');
-        if (logoutForm) {
-            logoutForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                Swal.fire({
-                    title: 'Logout Confirmation',
-                    text: 'Are you sure you want to logout?',
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
-                    confirmButtonText: 'Yes, logout!',
-                    cancelButtonText: 'Cancel'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        this.submit();
-                    }
-                });
-            });
-        }
         
         // Initialize submenu functionality
         initSubmenus();
+        
+        // Initialize user dropdown
+        initUserDropdown();
     }
 }
 
@@ -162,6 +144,57 @@ function initSubmenus() {
     document.querySelectorAll('.nav-submenu-items').forEach(items => {
         items.style.display = 'none';
     });
+}
+
+// User Dropdown Functionality
+function initUserDropdown() {
+    const dropdownToggle = document.getElementById('userDropdownToggle');
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+    const logoutForm = document.getElementById('logoutForm');
+    
+    if (dropdownToggle && dropdownMenu) {
+        // Toggle dropdown
+        dropdownToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+        
+        // Close dropdown on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    }
+    
+    // Handle logout form submission
+    if (logoutForm) {
+        logoutForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Logout Confirmation',
+                text: 'Are you sure you want to logout?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, logout!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Submit the form
+                    this.submit();
+                }
+            });
+        });
+    }
 }
 
 // Update sidebar state in localStorage
