@@ -20,11 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function initAdminDashboard() {
     console.log('Admin Dashboard initialized');
     
-    // Add loading states to buttons
+    // Add loading states to buttons (but not submit buttons)
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
         button.addEventListener('click', function() {
-            if (this.type === 'submit') {
+            // Only add loading state to non-submit buttons
+            if (this.type !== 'submit') {
                 this.classList.add('loading');
                 this.disabled = true;
                 
@@ -126,6 +127,20 @@ function initFormValidations() {
     
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
+            // Skip validation for forms with no-validate class
+            if (form.classList.contains('no-validate')) {
+                return true;
+            }
+            
+            // Skip validation for all admin forms
+            if (form.action.includes('admin/') || 
+                form.id.includes('admin') || 
+                form.id.includes('user') ||
+                form.id.includes('role')) {
+                console.log('Skipping validation for admin form:', form.id || form.action);
+                return true;
+            }
+            
             const requiredFields = form.querySelectorAll('[required]');
             let isValid = true;
             

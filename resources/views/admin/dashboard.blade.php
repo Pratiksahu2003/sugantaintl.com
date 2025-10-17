@@ -146,6 +146,10 @@
                         <i class="fas fa-users"></i>
                         Manage Users
                     </a>
+                    <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">
+                        <i class="fas fa-user-tag"></i>
+                        Manage Roles
+                    </a>
                     <a href="{{ route('admin.settings') }}" class="btn btn-secondary">
                         <i class="fas fa-cog"></i>
                         System Settings

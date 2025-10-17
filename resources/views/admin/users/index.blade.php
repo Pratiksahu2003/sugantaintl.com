@@ -12,10 +12,12 @@
             <h1 style="font-size: 1.875rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Manage Users</h1>
             <p style="color: var(--text-secondary);">View and manage all registered users.</p>
         </div>
+        @if(Auth::user()->hasRole('admin'))
         <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
             <i class="fas fa-user-plus"></i>
             Add New User
         </a>
+        @endif
     </div>
 
     <!-- Users Table -->
@@ -25,6 +27,7 @@
                 <tr>
                     <th>User</th>
                     <th>Email</th>
+                    <th>Roles</th>
                     <th>Status</th>
                     <th>Created</th>
                     <th>Actions</th>
@@ -45,6 +48,17 @@
                     </td>
                     <td>{{ $user->email }}</td>
                     <td>
+                        @if($user->roles->count() > 0)
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                                @foreach($user->roles as $role)
+                                    <span class="badge badge-primary">{{ $role->name }}</span>
+                                @endforeach
+                            </div>
+                        @else
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">No roles</span>
+                        @endif
+                    </td>
+                    <td>
                         <span class="badge {{ $user->email_verified_at ? 'badge-success' : 'badge-warning' }}">
                             {{ $user->email_verified_at ? 'Verified' : 'Pending' }}
                         </span>
@@ -53,18 +67,22 @@
                     <td>
                         <div style="display: flex; gap: 0.5rem;">
                             <a href="{{ route('admin.users.show', $user) }}" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">View</a>
+                            @if(Auth::user()->hasRole('admin') || Auth::user()->id === $user->id)
                             <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</a>
+                            @endif
+                            @if(Auth::user()->hasRole('admin') && Auth::user()->id !== $user->id)
                             <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this user?')">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Delete</button>
                             </form>
+                            @endif
                         </div>
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="5" style="text-align: center; color: var(--text-secondary); padding: 2rem;">
+                    <td colspan="6" style="text-align: center; color: var(--text-secondary); padding: 2rem;">
                         No users found.
                     </td>
                 </tr>

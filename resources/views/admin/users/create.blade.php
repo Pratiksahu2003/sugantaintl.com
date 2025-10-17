@@ -77,6 +77,33 @@
                     </div>
                 </div>
 
+                <!-- Role Assignment -->
+                <div style="margin-top: 2rem;">
+                    <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Role Assignment</h4>
+                    <div class="form-group">
+                        <label class="form-label">Assign Roles</label>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+                            @foreach($roles as $role)
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="roles[]" id="role_{{ $role->id }}" value="{{ $role->id }}" {{ in_array($role->id, old('roles', [])) ? 'checked' : '' }} class="form-checkbox">
+                                    <label for="role_{{ $role->id }}" class="form-label" style="margin-bottom: 0;">
+                                        <span style="font-weight: 500;">{{ $role->name }}</span>
+                                        @if($role->description)
+                                            <br><span style="font-size: 0.875rem; color: var(--text-secondary);">{{ $role->description }}</span>
+                                        @endif
+                                    </label>
+                                </div>
+                            @endforeach
+                        </div>
+                        @error('roles')
+                            <div class="field-error">{{ $message }}</div>
+                        @enderror
+                        @error('roles.*')
+                            <div class="field-error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
                 <!-- Submit Buttons -->
                 <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 0.75rem;">
                     <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">
