@@ -56,6 +56,30 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the user's profile.
+     */
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class);
+    }
+
+    /**
+     * Get the user's influencer profile.
+     */
+    public function influencerProfile()
+    {
+        return $this->hasOne(InfluencerProfile::class);
+    }
+
+    /**
+     * Get the user's company profile.
+     */
+    public function companyProfile()
+    {
+        return $this->hasOne(CompanyProfile::class);
+    }
+
+    /**
      * Check if user has a specific role.
      */
     public function hasRole(string $role): bool

@@ -161,6 +161,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Profile Management -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Profile Management</h3>
+            </div>
+            <div class="card-body">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Manage user profiles and role-specific information.</p>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
+                        <i class="fas fa-users"></i>
+                        Manage All Users
+                    </a>
+                    <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">
+                        <i class="fas fa-user-tag"></i>
+                        Manage Roles
+                    </a>
+                    <a href="{{ route('profile.show') }}" class="btn btn-secondary">
+                        <i class="fas fa-user"></i>
+                        View My Profile
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- System Information -->

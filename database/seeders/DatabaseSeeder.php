@@ -25,5 +25,8 @@ class DatabaseSeeder extends Seeder
         
         // Then seed demo users
         $this->call(DemoUserSeeder::class);
+        
+        // Finally seed profile data
+        $this->call(ProfileDataSeeder::class);
     }
 }

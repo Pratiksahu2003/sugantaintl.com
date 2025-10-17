@@ -53,14 +53,14 @@
                         <span>Roles</span>
                     </a>
                 </div>
-                @else
-                <div class="nav-item">
-                    <a href="{{ route('admin.users.show', Auth::user()) }}" class="nav-link {{ request()->routeIs('admin.users.show') ? 'active' : '' }}">
-                        <i class="fas fa-user"></i>
-                        <span>My Profile</span>
-                    </a>
-                </div>
-                @endif
+        @else
+        <div class="nav-item">
+            <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+                <i class="fas fa-user"></i>
+                <span>My Profile</span>
+            </a>
+        </div>
+        @endif
                 <div class="nav-item">
                     <a href="{{ route('admin.settings') }}" class="nav-link {{ request()->routeIs('admin.settings*') ? 'active' : '' }}">
                         <i class="fas fa-cog"></i>

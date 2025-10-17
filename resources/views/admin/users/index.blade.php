@@ -67,9 +67,12 @@
                     <td>
                         <div style="display: flex; gap: 0.5rem;">
                             <a href="{{ route('admin.users.show', $user) }}" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">View</a>
-                            @if(Auth::user()->hasRole('admin') || Auth::user()->id === $user->id)
+                        @if(Auth::user()->hasRole('admin') || Auth::user()->id === $user->id)
                             <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</a>
-                            @endif
+                        @endif
+                        @if(Auth::user()->hasRole('admin'))
+                            <a href="{{ route('profile.edit', $user) }}" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Profile</a>
+                        @endif
                             @if(Auth::user()->hasRole('admin') && Auth::user()->id !== $user->id)
                             <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this user?')">
                                 @csrf
