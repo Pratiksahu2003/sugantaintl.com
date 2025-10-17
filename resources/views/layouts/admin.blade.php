@@ -16,6 +16,9 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Styles -->
     @vite(['resources/css/admin.css', 'resources/js/admin.js'])
 
@@ -40,27 +43,48 @@
                         <span>Dashboard</span>
                     </a>
                 </div>
-                @if(Auth::user()->hasRole('admin'))
+                
+                <!-- Profile Menu -->
                 <div class="nav-item">
-                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
-                        <i class="fas fa-users"></i>
-                        <span>Users</span>
+                    <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
                     </a>
                 </div>
+                
+                @if(Auth::user()->hasRole('admin'))
+                <!-- Profile Management Submenu -->
+                <div class="nav-item nav-submenu">
+                    <div class="nav-submenu-header">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Profile Management</span>
+                        <i class="fas fa-chevron-down nav-submenu-toggle"></i>
+                    </div>
+                    <div class="nav-submenu-items">
+                        <a href="{{ route('admin.users.index') }}" class="nav-submenu-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
+                            <i class="fas fa-users"></i>
+                            <span>All Users</span>
+                        </a>
+                        <a href="{{ route('admin.users.create') }}" class="nav-submenu-link {{ request()->routeIs('admin.users.create') ? 'active' : '' }}">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add User</span>
+                        </a>
+                        <a href="{{ route('profile.edit') }}" class="nav-submenu-link {{ request()->routeIs('profile.edit') ? 'active' : '' }}">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Edit My Profile</span>
+                        </a>
+                    </div>
+                </div>
+                @endif
+                
+                @if(Auth::user()->hasRole('admin'))
                 <div class="nav-item">
                     <a href="{{ route('admin.roles.index') }}" class="nav-link {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
                         <i class="fas fa-user-tag"></i>
                         <span>Roles</span>
                     </a>
                 </div>
-        @else
-        <div class="nav-item">
-            <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link {{ request()->routeIs('profile.*') ? 'active' : '' }}">
-                <i class="fas fa-user"></i>
-                <span>My Profile</span>
-            </a>
-        </div>
-        @endif
+                @endif
                 <div class="nav-item">
                     <a href="{{ route('admin.settings') }}" class="nav-link {{ request()->routeIs('admin.settings*') ? 'active' : '' }}">
                         <i class="fas fa-cog"></i>

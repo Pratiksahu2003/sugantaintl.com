@@ -1,4 +1,6 @@
 // Admin Dashboard JavaScript
+import Swal from 'sweetalert2';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize admin dashboard
     initAdminDashboard();
@@ -72,10 +74,55 @@ function initSidebar() {
         if (logoutForm) {
             logoutForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                if (confirm('Are you sure you want to logout?')) {
-                    this.submit();
-                }
+                Swal.fire({
+                    title: 'Logout Confirmation',
+                    text: 'Are you sure you want to logout?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, logout!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.submit();
+                    }
+                });
             });
+        }
+        
+        // Initialize submenu functionality
+        initSubmenus();
+    }
+}
+
+// Submenu Functionality
+function initSubmenus() {
+    const submenuHeaders = document.querySelectorAll('.nav-submenu-header');
+    
+    submenuHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const submenu = this.parentElement;
+            const isActive = submenu.classList.contains('active');
+            
+            // Close all other submenus
+            document.querySelectorAll('.nav-submenu').forEach(menu => {
+                menu.classList.remove('active');
+            });
+            
+            // Toggle current submenu
+            if (!isActive) {
+                submenu.classList.add('active');
+            }
+        });
+    });
+    
+    // Auto-open submenu if current page is in submenu
+    const activeSubmenuLink = document.querySelector('.nav-submenu-link.active');
+    if (activeSubmenuLink) {
+        const submenu = activeSubmenuLink.closest('.nav-submenu');
+        if (submenu) {
+            submenu.classList.add('active');
         }
     }
 }
@@ -112,9 +159,23 @@ function initDataTables() {
             if (button.textContent.toLowerCase().includes('delete') || 
                 button.getAttribute('onclick')?.includes('confirm')) {
                 button.addEventListener('click', function(e) {
-                    if (!confirm('Are you sure you want to perform this action?')) {
-                        e.preventDefault();
-                    }
+                    e.preventDefault();
+                    Swal.fire({
+                        title: 'Confirm Action',
+                        text: 'Are you sure you want to perform this action?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, do it!',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Remove the event listener temporarily to allow form submission
+                            this.removeEventListener('click', arguments.callee);
+                            this.click();
+                        }
+                    });
                 });
             }
         });

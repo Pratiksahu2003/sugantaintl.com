@@ -72,7 +72,7 @@
                                     <a href="{{ route('admin.roles.edit', $role) }}" class="btn btn-sm btn-warning" title="Edit Role">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="{{ route('admin.roles.destroy', $role) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this role?')">
+                                    <form action="{{ route('admin.roles.destroy', $role) }}" method="POST" style="display: inline;" onsubmit="return confirmDeleteRole(event, '{{ $role->name }}')">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" title="Delete Role">
@@ -116,3 +116,26 @@
     </div>
 </div>
 @endsection
+
+<script>
+function confirmDeleteRole(event, roleName) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: 'Delete Role',
+        text: `Are you sure you want to delete the ${roleName} role?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#dc2626',
+        cancelButtonColor: '#6b7280',
+        confirmButtonText: 'Yes, delete!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.submit();
+        }
+    });
+    
+    return false;
+}
+</script>

@@ -71,10 +71,10 @@
                             <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</a>
                         @endif
                         @if(Auth::user()->hasRole('admin'))
-                            <a href="{{ route('profile.edit', $user) }}" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Profile</a>
+                            <a href="{{ route('profile.edit') }}?user_id={{ $user->id }}" class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Profile</a>
                         @endif
                             @if(Auth::user()->hasRole('admin') && Auth::user()->id !== $user->id)
-                            <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this user?')">
+                            <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display: inline;" onsubmit="return confirmDeleteUser(event, '{{ $user->name }}')">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Delete</button>
@@ -102,3 +102,27 @@
     @endif
 </div>
 @endsection
+
+<script>
+function confirmDeleteUser(event, userName) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: 'Delete User',
+        text: `Are you sure you want to delete ${userName}? This action cannot be undone.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#dc2626',
+        cancelButtonColor: '#6b7280',
+        confirmButtonText: 'Yes, delete!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Submit the form
+            event.target.submit();
+        }
+    });
+    
+    return false;
+}
+</script>

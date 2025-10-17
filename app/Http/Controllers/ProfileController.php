@@ -36,11 +36,21 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the user's profile.
      */
-    public function edit(User $user = null): View
+    public function edit(Request $request, User $user = null): View
     {
-        // If no user specified, edit current user's profile
+        // If no user specified, check for query parameter or use current user
         if (!$user) {
-            $user = Auth::user();
+            // Check if user ID is provided as query parameter
+            if ($request->has('user_id')) {
+                $userId = $request->input('user_id');
+                $user = User::find($userId);
+                
+                if (!$user) {
+                    abort(404, 'User not found.');
+                }
+            } else {
+                $user = Auth::user();
+            }
         }
 
         // Check permissions - admins can edit any profile, others can only edit their own
@@ -60,9 +70,19 @@ class ProfileController extends Controller
      */
     public function update(Request $request, User $user = null): RedirectResponse
     {
-        // If no user specified, update current user's profile
+        // If no user specified, check for query parameter or use current user
         if (!$user) {
-            $user = Auth::user();
+            // Check if user ID is provided as query parameter
+            if ($request->has('user_id')) {
+                $userId = $request->input('user_id');
+                $user = User::find($userId);
+                
+                if (!$user) {
+                    abort(404, 'User not found.');
+                }
+            } else {
+                $user = Auth::user();
+            }
         }
 
         // Check permissions

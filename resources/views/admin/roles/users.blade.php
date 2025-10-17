@@ -112,7 +112,7 @@
                                         <a href="{{ route('admin.users.show', $user) }}" class="btn btn-sm btn-secondary" title="View User">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <form action="{{ route('admin.roles.remove-user', [$role, $user]) }}" method="POST" style="display: inline;" onsubmit="return confirm('Remove {{ $user->name }} from the {{ $role->name }} role?')">
+                                        <form action="{{ route('admin.roles.remove-user', [$role, $user]) }}" method="POST" style="display: inline;" onsubmit="return confirmRemoveUserFromRole(event, '{{ $user->name }}', '{{ $role->name }}')">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger" title="Remove Role">
@@ -177,3 +177,26 @@
     </div>
 </div>
 @endsection
+
+<script>
+function confirmRemoveUserFromRole(event, userName, roleName) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: 'Remove User from Role',
+        text: `Remove ${userName} from the ${roleName} role?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#dc2626',
+        cancelButtonColor: '#6b7280',
+        confirmButtonText: 'Yes, remove!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.submit();
+        }
+    });
+    
+    return false;
+}
+</script>

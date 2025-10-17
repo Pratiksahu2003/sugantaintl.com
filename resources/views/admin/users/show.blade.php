@@ -92,7 +92,7 @@
                         <i class="fas fa-envelope"></i>
                         Send Email
                     </a>
-                    <form method="POST" action="{{ route('admin.users.destroy', $user) }}" onsubmit="return confirm('Are you sure you want to delete this user? This action cannot be undone.')">
+                    <form method="POST" action="{{ route('admin.users.destroy', $user) }}" onsubmit="return confirmDeleteUser(event, '{{ $user->name }}')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger" style="width: 100%;">
@@ -145,7 +145,7 @@
                                         <div style="font-size: 0.875rem; color: var(--text-secondary);">{{ $role->description }}</div>
                                     @endif
                                 </div>
-                                <form action="{{ route('admin.users.remove-role', [$user, $role]) }}" method="POST" style="display: inline;" onsubmit="return confirm('Remove {{ $role->name }} role from {{ $user->name }}?')">
+                                <form action="{{ route('admin.users.remove-role', [$user, $role]) }}" method="POST" style="display: inline;" onsubmit="return confirmRemoveRole(event, '{{ $role->name }}', '{{ $user->name }}')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">
@@ -196,3 +196,47 @@
     </div>
 </div>
 @endsection
+
+<script>
+function confirmDeleteUser(event, userName) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: 'Delete User',
+        text: `Are you sure you want to delete ${userName}? This action cannot be undone.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#dc2626',
+        cancelButtonColor: '#6b7280',
+        confirmButtonText: 'Yes, delete!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.submit();
+        }
+    });
+    
+    return false;
+}
+
+function confirmRemoveRole(event, roleName, userName) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: 'Remove Role',
+        text: `Remove ${roleName} role from ${userName}?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#dc2626',
+        cancelButtonColor: '#6b7280',
+        confirmButtonText: 'Yes, remove!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.submit();
+        }
+    });
+    
+    return false;
+}
+</script>
