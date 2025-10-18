@@ -208,6 +208,9 @@
                 </div>
                 
                 <div class="topbar-right">
+                    <!-- Notification Bell -->
+                    @include('components.notification-bell')
+                    
                     <div class="user-menu">
                         <div class="user-avatar">
                             {{ substr(Auth::user()->name, 0, 1) }}
@@ -234,6 +237,10 @@
                                 <a href="{{ route('profile.show', Auth::user()) }}" class="dropdown-item">
                                     <i class="fas fa-user"></i>
                                     <span>My Profile</span>
+                                </a>
+                                <a href="{{ route('notifications.index') }}" class="dropdown-item">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Notifications</span>
                                 </a>
                                 <a href="{{ route('home') }}" class="dropdown-item">
                                     <i class="fas fa-external-link-alt"></i>

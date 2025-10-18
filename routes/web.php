@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Influencer\ServiceController;
 use App\Http\Controllers\Influencer\PackageController;
 use App\Http\Controllers\Influencer\CollaborationController;
+use App\Http\Controllers\NotificationController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -49,6 +50,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.user');
     Route::get('/profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.user.edit');
     Route::put('/profile/{user}', [ProfileController::class, 'update'])->name('profile.user.update');
+    
+    // Notification routes
+    Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+    Route::get('/notifications/recent', [NotificationController::class, 'recent'])->name('notifications.recent');
+    Route::get('/notifications/unread-count', [NotificationController::class, 'unreadCount'])->name('notifications.unread-count');
+    Route::post('/notifications/{notification}/mark-read', [NotificationController::class, 'markAsRead'])->name('notifications.mark-read');
+    Route::post('/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('notifications.mark-all-read');
+    Route::post('/notifications/{notification}/mark-unread', [NotificationController::class, 'markAsUnread'])->name('notifications.mark-unread');
+    Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
+    Route::post('/notifications/delete-read', [NotificationController::class, 'deleteRead'])->name('notifications.delete-read');
+    Route::get('/notifications/type/{type}', [NotificationController::class, 'byType'])->name('notifications.by-type');
+    Route::get('/notifications/{notification}', [NotificationController::class, 'show'])->name('notifications.show');
     
     // Influencer routes - Only accessible by users with influencer role
     Route::middleware('role:influencer')->prefix('influencer')->name('influencer.')->group(function () {

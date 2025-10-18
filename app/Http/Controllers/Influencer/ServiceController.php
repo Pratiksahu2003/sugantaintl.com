@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Influencer;
 
 use App\Http\Controllers\Controller;
 use App\Models\InfluencerService;
+use App\Services\NotificationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -78,7 +79,10 @@ class ServiceController extends Controller
             $validated['gallery_images'] = $galleryImages;
         }
 
-        InfluencerService::create($validated);
+        $service = InfluencerService::create($validated);
+
+        // Send notification
+        NotificationService::serviceCreated(Auth::user(), $service);
 
         return redirect()->route('influencer.services.index')
             ->with('success', 'Service created successfully!');
@@ -172,6 +176,9 @@ class ServiceController extends Controller
 
         $service->update($validated);
 
+        // Send notification
+        NotificationService::serviceUpdated(Auth::user(), $service);
+
         return redirect()->route('influencer.services.index')
             ->with('success', 'Service updated successfully!');
     }
@@ -196,7 +203,11 @@ class ServiceController extends Controller
             }
         }
 
+        $serviceName = $service->service_name;
         $service->delete();
+
+        // Send notification
+        NotificationService::serviceDeleted(Auth::user(), $serviceName);
 
         return redirect()->route('influencer.services.index')
             ->with('success', 'Service deleted successfully!');
