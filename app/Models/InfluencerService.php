@@ -48,6 +48,28 @@ class InfluencerService extends Model
     ];
 
     /**
+     * Get the thumbnail image URL.
+     */
+    public function getThumbnailUrlAttribute(): ?string
+    {
+        return $this->thumbnail_image ? asset('storage/' . $this->thumbnail_image) : null;
+    }
+
+    /**
+     * Get the gallery image URLs.
+     */
+    public function getGalleryUrlsAttribute(): array
+    {
+        if (!$this->gallery_images) {
+            return [];
+        }
+
+        return array_map(function ($image) {
+            return asset('storage/' . $image);
+        }, $this->gallery_images);
+    }
+
+    /**
      * Get the user that owns the service.
      */
     public function user(): BelongsTo
@@ -61,30 +83,6 @@ class InfluencerService extends Model
     public function influencerProfile(): BelongsTo
     {
         return $this->belongsTo(InfluencerProfile::class, 'user_id', 'user_id');
-    }
-
-    /**
-     * Get the thumbnail image URL.
-     */
-    public function getThumbnailUrlAttribute(): ?string
-    {
-        if ($this->thumbnail_image) {
-            return asset('storage/' . $this->thumbnail_image);
-        }
-        return null;
-    }
-
-    /**
-     * Get the gallery images URLs.
-     */
-    public function getGalleryUrlsAttribute(): array
-    {
-        if ($this->gallery_images) {
-            return array_map(function ($image) {
-                return asset('storage/' . $image);
-            }, $this->gallery_images);
-        }
-        return [];
     }
 
     /**
