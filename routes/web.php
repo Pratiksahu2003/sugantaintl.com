@@ -80,6 +80,15 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
     Route::get('roles/{role}/users', [RoleController::class, 'users'])->name('roles.users');
     Route::post('roles/{role}/assign-user', [RoleController::class, 'assignUser'])->name('roles.assign-user');
     Route::delete('roles/{role}/users/{user}', [RoleController::class, 'removeUser'])->name('roles.remove-user');
+    Route::get('role-options', function () {
+        return view('admin.role-options');
+    })->name('role-options');
+    Route::get('settings', [SettingsController::class, 'index'])->name('settings');
+    Route::post('settings', [SettingsController::class, 'update'])->name('settings.update');
+});
+
+// Company routes - Accessible by users with company role
+Route::middleware(['auth', 'verified', 'role:company'])->prefix('company')->name('company.')->group(function () {
     Route::get('settings', [SettingsController::class, 'index'])->name('settings');
     Route::post('settings', [SettingsController::class, 'update'])->name('settings.update');
 });

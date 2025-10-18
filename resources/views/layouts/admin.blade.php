@@ -40,11 +40,19 @@
             </div>
             
             <nav class="sidebar-nav">
+                <!-- Dashboard - Role-based routing -->
                 <div class="nav-item">
-                    <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                    </a>
+                    @if(Auth::user()->hasRole('admin'))
+                        <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    @else
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    @endif
                 </div>
                 
                 <!-- Profile Menu -->
@@ -124,13 +132,61 @@
                         <span>Roles</span>
                     </a>
                 </div>
+                <div class="nav-item">
+                    <a href="{{ route('admin.role-options') }}" class="nav-link {{ request()->routeIs('admin.role-options') ? 'active' : '' }}">
+                        <i class="fas fa-eye-slash"></i>
+                        <span>Role Options</span>
+                    </a>
+                </div>
                 @endif
+                
+                @if(Auth::user()->hasRole('company'))
+                <!-- Company-specific options -->
+                <div class="nav-item nav-submenu">
+                    <div class="nav-submenu-header">
+                        <i class="fas fa-building"></i>
+                        <span>Company Management</span>
+                        <i class="fas fa-chevron-down nav-submenu-toggle"></i>
+                    </div>
+                    <div class="nav-submenu-items">
+                        <a href="{{ route('profile.edit') }}" class="nav-submenu-link {{ request()->routeIs('profile.edit') ? 'active' : '' }}">
+                            <i class="fas fa-building"></i>
+                            <span>Company Profile</span>
+                        </a>
+                        <a href="{{ route('company.settings') }}" class="nav-submenu-link {{ request()->routeIs('company.settings*') ? 'active' : '' }}">
+                            <i class="fas fa-cog"></i>
+                            <span>Company Settings</span>
+                        </a>
+                    </div>
+                </div>
+                @endif
+                
+                @if(Auth::user()->hasRole('admin'))
                 <div class="nav-item">
                     <a href="{{ route('admin.settings') }}" class="nav-link {{ request()->routeIs('admin.settings*') ? 'active' : '' }}">
                         <i class="fas fa-cog"></i>
                         <span>Settings</span>
                     </a>
                 </div>
+                @endif
+                
+                @if(!Auth::user()->hasAnyRole(['admin', 'influencer', 'company']))
+                <!-- Regular User Options -->
+                <div class="nav-item nav-submenu">
+                    <div class="nav-submenu-header">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Account</span>
+                        <i class="fas fa-chevron-down nav-submenu-toggle"></i>
+                    </div>
+                    <div class="nav-submenu-items">
+                        <a href="{{ route('profile.edit') }}" class="nav-submenu-link {{ request()->routeIs('profile.edit') ? 'active' : '' }}">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Edit Profile</span>
+                        </a>
+                    </div>
+                </div>
+                @endif
+                
                 <div class="nav-item">
                     <a href="{{ route('home') }}" class="nav-link">
                         <i class="fas fa-external-link-alt"></i>
