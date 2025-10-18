@@ -77,8 +77,8 @@
     top: 100%;
     right: 0;
     width: 350px;
-    background: var(--content-bg);
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
@@ -93,18 +93,18 @@
 
 .notification-header {
     padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e5e7eb;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--sidebar-bg);
+    background: #f8f9fa;
 }
 
 .notification-header h3 {
     margin: 0;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: #1f2937;
 }
 
 .notification-actions {
@@ -114,7 +114,7 @@
 }
 
 .mark-all-read {
-    background: var(--primary-color);
+    background: #3b82f6;
     color: white;
     border: none;
     padding: 0.25rem 0.75rem;
@@ -125,13 +125,13 @@
 }
 
 .mark-all-read:hover {
-    background: var(--primary-hover);
+    background: #2563eb;
 }
 
 .notification-close {
     background: none;
     border: none;
-    color: var(--text-secondary);
+    color: #6b7280;
     cursor: pointer;
     padding: 0.25rem;
     border-radius: 0.25rem;
@@ -139,7 +139,7 @@
 }
 
 .notification-close:hover {
-    color: var(--text-primary);
+    color: #1f2937;
 }
 
 .notification-list {
@@ -149,18 +149,19 @@
 
 .notification-item {
     padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e5e7eb;
     cursor: pointer;
     transition: background-color 0.2s ease;
     position: relative;
+    background: #ffffff;
 }
 
 .notification-item:hover {
-    background-color: var(--hover-bg);
+    background-color: #f9fafb;
 }
 
 .notification-item.unread {
-    background-color: var(--unread-bg, #f8f9ff);
+    background-color: #f0f9ff;
 }
 
 .notification-item.unread::before {
@@ -170,7 +171,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: var(--primary-color);
+    background: #3b82f6;
 }
 
 .notification-content {
@@ -221,32 +222,32 @@
 
 .notification-title {
     font-weight: 600;
-    color: var(--text-primary);
+    color: #1f2937;
     margin-bottom: 0.25rem;
     font-size: 0.875rem;
 }
 
 .notification-message {
-    color: var(--text-secondary);
+    color: #6b7280;
     font-size: 0.8rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
 }
 
 .notification-time {
-    color: var(--text-muted);
+    color: #9ca3af;
     font-size: 0.75rem;
 }
 
 .notification-footer {
     padding: 1rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #e5e7eb;
     text-align: center;
-    background: var(--sidebar-bg);
+    background: #f8f9fa;
 }
 
 .view-all-notifications {
-    color: var(--primary-color);
+    color: #3b82f6;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.875rem;
@@ -254,20 +255,20 @@
 }
 
 .view-all-notifications:hover {
-    color: var(--primary-hover);
+    color: #2563eb;
 }
 
 /* Empty state */
 .notification-empty {
     padding: 2rem;
     text-align: center;
-    color: var(--text-secondary);
+    color: #6b7280;
 }
 
 .notification-empty i {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--text-muted);
+    color: #9ca3af;
 }
 
 .notification-empty p {
@@ -279,7 +280,7 @@
 .notification-loading {
     padding: 2rem;
     text-align: center;
-    color: var(--text-secondary);
+    color: #6b7280;
 }
 
 .notification-loading i {
@@ -351,6 +352,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.success) {
                 notificationCount.textContent = '0';
                 notificationCount.classList.add('hidden');
+                
+                // Also update sidebar count
+                const sidebarCount = document.getElementById('sidebarNotificationCount');
+                if (sidebarCount) {
+                    sidebarCount.style.display = 'none';
+                }
+                
                 loadNotifications();
             }
         })
@@ -423,6 +431,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 notificationCount.classList.remove('hidden');
             } else {
                 notificationCount.classList.add('hidden');
+            }
+            
+            // Also update sidebar count if it exists
+            const sidebarCount = document.getElementById('sidebarNotificationCount');
+            if (sidebarCount) {
+                if (data.count > 0) {
+                    sidebarCount.textContent = data.count;
+                    sidebarCount.style.display = 'flex';
+                } else {
+                    sidebarCount.style.display = 'none';
+                }
             }
         })
         .catch(error => console.error('Error:', error));

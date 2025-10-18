@@ -64,39 +64,52 @@
                 </div>
                 
                 @if(Auth::user()->hasRole('influencer'))
-                <!-- Influencer Services, Packages & Collaborations -->
-                <div class="nav-item nav-submenu">
-                    <div class="nav-submenu-header">
-                        <i class="fas fa-briefcase"></i>
-                        <span>Services & Collaborations</span>
-                        <i class="fas fa-chevron-down nav-submenu-toggle"></i>
-                    </div>
-                    <div class="nav-submenu-items">
-                        <a href="{{ route('influencer.services.index') }}" class="nav-submenu-link {{ request()->routeIs('influencer.services.*') ? 'active' : '' }}">
-                            <i class="fas fa-cogs"></i>
-                            <span>My Services</span>
-                        </a>
-                        <a href="{{ route('influencer.services.create') }}" class="nav-submenu-link {{ request()->routeIs('influencer.services.create') ? 'active' : '' }}">
-                            <i class="fas fa-plus"></i>
-                            <span>Add Service</span>
-                        </a>
-                        <a href="{{ route('influencer.packages.index') }}" class="nav-submenu-link {{ request()->routeIs('influencer.packages.*') ? 'active' : '' }}">
-                            <i class="fas fa-box"></i>
-                            <span>My Packages</span>
-                        </a>
-                        <a href="{{ route('influencer.packages.create') }}" class="nav-submenu-link {{ request()->routeIs('influencer.packages.create') ? 'active' : '' }}">
-                            <i class="fas fa-plus"></i>
-                            <span>Add Package</span>
-                        </a>
-                        <a href="{{ route('influencer.collaborations.index') }}" class="nav-submenu-link {{ request()->routeIs('influencer.collaborations.*') ? 'active' : '' }}">
-                            <i class="fas fa-handshake"></i>
-                            <span>My Collaborations</span>
-                        </a>
-                        <a href="{{ route('influencer.collaborations.create') }}" class="nav-submenu-link {{ request()->routeIs('influencer.collaborations.create') ? 'active' : '' }}">
-                            <i class="fas fa-plus"></i>
-                            <span>Add Collaboration</span>
-                        </a>
-                    </div>
+                <!-- My Services -->
+                <div class="nav-item">
+                    <a href="{{ route('influencer.services.index') }}" class="nav-link {{ request()->routeIs('influencer.services.*') ? 'active' : '' }}">
+                        <i class="fas fa-cogs"></i>
+                        <span>My Services</span>
+                    </a>
+                </div>
+                
+                <!-- Add Service -->
+                <div class="nav-item">
+                    <a href="{{ route('influencer.services.create') }}" class="nav-link {{ request()->routeIs('influencer.services.create') ? 'active' : '' }}">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Service</span>
+                    </a>
+                </div>
+                
+                <!-- My Packages -->
+                <div class="nav-item">
+                    <a href="{{ route('influencer.packages.index') }}" class="nav-link {{ request()->routeIs('influencer.packages.*') ? 'active' : '' }}">
+                        <i class="fas fa-box"></i>
+                        <span>My Packages</span>
+                    </a>
+                </div>
+                
+                <!-- Add Package -->
+                <div class="nav-item">
+                    <a href="{{ route('influencer.packages.create') }}" class="nav-link {{ request()->routeIs('influencer.packages.create') ? 'active' : '' }}">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Package</span>
+                    </a>
+                </div>
+                
+                <!-- My Collaborations -->
+                <div class="nav-item">
+                    <a href="{{ route('influencer.collaborations.index') }}" class="nav-link {{ request()->routeIs('influencer.collaborations.*') ? 'active' : '' }}">
+                        <i class="fas fa-handshake"></i>
+                        <span>My Collaborations</span>
+                    </a>
+                </div>
+                
+                <!-- Add Collaboration -->
+                <div class="nav-item">
+                    <a href="{{ route('influencer.collaborations.create') }}" class="nav-link {{ request()->routeIs('influencer.collaborations.create') ? 'active' : '' }}">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Collaboration</span>
+                    </a>
                 </div>
                 @endif
                 
@@ -186,6 +199,26 @@
                     </div>
                 </div>
                 @endif
+                
+                <!-- Notifications Menu -->
+                <div class="nav-item">
+                    <a href="{{ route('notifications.index') }}" class="nav-link {{ request()->routeIs('notifications.*') ? 'active' : '' }}">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                        <span class="notification-sidebar-count" id="sidebarNotificationCount" style="display: none;">0</span>
+                    </a>
+                </div>
+                
+                <!-- Logout Button -->
+                <div class="nav-item logout-item">
+                    <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                        @csrf
+                        <button type="submit" class="nav-link logout-btn text-black">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
+                </div>
                 
                 <div class="nav-item">
                     <a href="{{ route('home') }}" class="nav-link">
@@ -335,6 +368,28 @@
                     });
             });
         });
+
+        // Sidebar notification count update
+        function updateSidebarNotificationCount() {
+            fetch('{{ route("notifications.unread-count") }}')
+            .then(response => response.json())
+            .then(data => {
+                const sidebarCount = document.getElementById('sidebarNotificationCount');
+                if (data.count > 0) {
+                    sidebarCount.textContent = data.count;
+                    sidebarCount.style.display = 'flex';
+                } else {
+                    sidebarCount.style.display = 'none';
+                }
+            })
+            .catch(error => console.error('Error updating sidebar notification count:', error));
+        }
+
+        // Update sidebar notification count on page load
+        updateSidebarNotificationCount();
+
+        // Refresh sidebar notification count every 30 seconds
+        setInterval(updateSidebarNotificationCount, 30000);
     </script>
 </body>
 </html>
