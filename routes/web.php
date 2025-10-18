@@ -85,7 +85,7 @@ Route::middleware('auth')->group(function () {
 
 // Admin routes - Only accessible by users with admin role
 Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/',                           [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', UserController::class);
     Route::post('users/{user}/assign-role', [UserController::class, 'assignRole'])->name('users.assign-role');
     Route::delete('users/{user}/roles/{role}', [UserController::class, 'removeRole'])->name('users.remove-role');
