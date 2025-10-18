@@ -55,10 +55,6 @@
       ),
     ),
   ),
-  'concurrency' => 
-  array (
-    'default' => 'process',
-  ),
   'cors' => 
   array (
     'paths' => 
@@ -105,20 +101,24 @@
     ),
     'rehash_on_login' => true,
   ),
+  'concurrency' => 
+  array (
+    'default' => 'process',
+  ),
   'view' => 
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\NXTGN\\Desktop\\startjd\\resources\\views',
+      0 => '/var/www/starjd.com/resources/views',
     ),
-    'compiled' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\framework\\views',
+    'compiled' => '/var/www/starjd.com/storage/framework/views',
   ),
   'app' => 
   array (
-    'name' => 'SuGanta International',
-    'env' => 'local',
+    'name' => 'Star JD',
+    'env' => 'production',
     'debug' => true,
-    'url' => 'https://startjd.test',
+    'url' => 'https://www.starjd.com',
     'frontend_url' => 'http://localhost:3000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
@@ -427,8 +427,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\framework/cache/data',
-        'lock_path' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\framework/cache/data',
+        'path' => '/var/www/starjd.com/storage/framework/cache/data',
+        'lock_path' => '/var/www/starjd.com/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -472,7 +472,7 @@
         'driver' => 'octane',
       ),
     ),
-    'prefix' => 'suganta-international-cache-',
+    'prefix' => 'star-jd-cache-',
   ),
   'company' => 
   array (
@@ -739,7 +739,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'suganta-international-database-',
+        'prefix' => 'star-jd-database-',
         'persistent' => false,
       ),
       'default' => 
@@ -778,7 +778,7 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\app/private',
+        'root' => '/var/www/starjd.com/storage/app/private',
         'serve' => true,
         'throw' => false,
         'report' => false,
@@ -786,8 +786,8 @@
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\app/public',
-        'url' => 'https://startjd.test/storage',
+        'root' => '/var/www/starjd.com/storage/app/public',
+        'url' => 'https://www.starjd.com/storage',
         'visibility' => 'public',
         'throw' => false,
         'report' => false,
@@ -808,7 +808,7 @@
     ),
     'links' => 
     array (
-      'C:\\Users\\NXTGN\\Desktop\\startjd\\public\\storage' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\app/public',
+      '/var/www/starjd.com/public/storage' => '/var/www/starjd.com/storage/app/public',
     ),
   ),
   'logging' => 
@@ -833,14 +833,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\logs/laravel.log',
+        'path' => '/var/www/starjd.com/storage/logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\logs/laravel.log',
+        'path' => '/var/www/starjd.com/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -905,7 +905,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\logs/laravel.log',
+        'path' => '/var/www/starjd.com/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -919,12 +919,12 @@
         'transport' => 'smtp',
         'scheme' => NULL,
         'url' => NULL,
-        'host' => 'smtp-relay.brevo.com',
-        'port' => '587',
-        'username' => '82a5b0002@smtp-brevo.com',
-        'password' => 'S0DxqBvVfaXp6Zgr',
+        'host' => 'smtpout.secureserver.net',
+        'port' => '465',
+        'username' => 'learn@suganta.com',
+        'password' => 'Fare@3456789',
         'timeout' => NULL,
-        'local_domain' => 'startjd.test',
+        'local_domain' => 'www.starjd.com',
       ),
       'ses' => 
       array (
@@ -975,7 +975,7 @@
     ),
     'from' => 
     array (
-      'address' => 'info@sugantaintl.co',
+      'address' => 'query@starjd.com',
       'name' => 'SuGanta international',
     ),
     'markdown' => 
@@ -983,7 +983,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\NXTGN\\Desktop\\startjd\\resources\\views/vendor/mail',
+        0 => '/var/www/starjd.com/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -1078,7 +1078,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\NXTGN\\Desktop\\startjd\\storage\\framework/sessions',
+    'files' => '/var/www/starjd.com/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1087,7 +1087,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'suganta-international-session',
+    'cookie' => 'star-jd-session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
