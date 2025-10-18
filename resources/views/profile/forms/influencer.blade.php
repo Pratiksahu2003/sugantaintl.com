@@ -209,9 +209,11 @@
                     <label for="rate_per_campaign" style="display: block; font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Rate per Campaign</label>
                     <div style="display: flex;">
                         <select name="currency" style="padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 0.375rem 0 0 0.375rem; background: var(--content-bg); color: var(--text-primary);">
-                            <option value="USD" {{ old('currency', $user->influencerProfile?->currency) === 'USD' ? 'selected' : '' }}>USD</option>
-                            <option value="EUR" {{ old('currency', $user->influencerProfile?->currency) === 'EUR' ? 'selected' : '' }}>EUR</option>
-                            <option value="GBP" {{ old('currency', $user->influencerProfile?->currency) === 'GBP' ? 'selected' : '' }}>GBP</option>
+                            @foreach(\App\Services\CurrencyService::getCurrencies() as $code => $currency)
+                                <option value="{{ $code }}" {{ old('currency', $user->influencerProfile?->currency) === $code ? 'selected' : '' }}>
+                                    {{ $code }}
+                                </option>
+                            @endforeach
                         </select>
                         <input type="number" name="rate_per_campaign" id="rate_per_campaign" step="0.01" min="0" 
                                value="{{ old('rate_per_campaign', $user->influencerProfile?->rate_per_campaign) }}" 

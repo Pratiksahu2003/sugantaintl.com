@@ -70,13 +70,15 @@
         </div>
 
         <div style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-            <div>
+                <div>
                 <label for="budget_range_min" style="display: block; font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Budget Range (Min)</label>
                 <div style="display: flex;">
                     <select name="currency" style="padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 0.375rem 0 0 0.375rem; background: var(--content-bg); color: var(--text-primary);">
-                        <option value="USD" {{ old('currency', $user->companyProfile?->currency) === 'USD' ? 'selected' : '' }}>USD</option>
-                        <option value="EUR" {{ old('currency', $user->companyProfile?->currency) === 'EUR' ? 'selected' : '' }}>EUR</option>
-                        <option value="GBP" {{ old('currency', $user->companyProfile?->currency) === 'GBP' ? 'selected' : '' }}>GBP</option>
+                        @foreach(\App\Services\CurrencyService::getCurrencies() as $code => $currency)
+                            <option value="{{ $code }}" {{ old('currency', $user->companyProfile?->currency) === $code ? 'selected' : '' }}>
+                                {{ $code }}
+                            </option>
+                        @endforeach
                     </select>
                     <input type="number" name="budget_range_min" id="budget_range_min" step="0.01" min="0" 
                            value="{{ old('budget_range_min', $user->companyProfile?->budget_range_min) }}" 

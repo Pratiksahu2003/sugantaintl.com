@@ -103,10 +103,11 @@
                         <label for="currency" style="display: block; font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Currency *</label>
                         <select id="currency" name="currency" required
                                 style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 0.375rem; font-size: 0.875rem; transition: all 0.2s;">
-                            <option value="USD" {{ old('currency', $service->currency) == 'USD' ? 'selected' : '' }}>USD</option>
-                            <option value="EUR" {{ old('currency', $service->currency) == 'EUR' ? 'selected' : '' }}>EUR</option>
-                            <option value="GBP" {{ old('currency', $service->currency) == 'GBP' ? 'selected' : '' }}>GBP</option>
-                            <option value="INR" {{ old('currency', $service->currency) == 'INR' ? 'selected' : '' }}>INR</option>
+                            @foreach(\App\Services\CurrencyService::getCurrencies() as $code => $currency)
+                                <option value="{{ $code }}" {{ old('currency', $service->currency) == $code ? 'selected' : '' }}>
+                                    {{ $code }} - {{ $currency['name'] }}
+                                </option>
+                            @endforeach
                         </select>
                         @error('currency')
                             <p style="color: var(--danger-color); font-size: 0.75rem; margin-top: 0.25rem;">{{ $message }}</p>

@@ -19,6 +19,9 @@
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+
     <!-- Styles -->
     @vite(['resources/css/admin.css', 'resources/js/admin.js'])
 
@@ -216,5 +219,59 @@
     </div>
 
     @stack('scripts')
+
+    <!-- CKEditor Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize CKEditor for all textareas in dashboard
+            const textareas = document.querySelectorAll('textarea');
+            
+            textareas.forEach(function(textarea) {
+                // Skip if already initialized or if it's a simple textarea (like search)
+                if (textarea.hasAttribute('data-ckeditor-initialized') || 
+                    textarea.hasAttribute('data-simple') ||
+                    textarea.name === 'search' ||
+                    textarea.id === 'search') {
+                    return;
+                }
+
+                // Mark as initialized to prevent double initialization
+                textarea.setAttribute('data-ckeditor-initialized', 'true');
+
+                ClassicEditor
+                    .create(textarea, {
+                        toolbar: {
+                            items: [
+                                'heading', '|',
+                                'bold', 'italic', 'underline', 'strikethrough', '|',
+                                'link', 'bulletedList', 'numberedList', '|',
+                                'outdent', 'indent', '|',
+                                'blockQuote', 'insertTable', '|',
+                                'undo', 'redo'
+                            ]
+                        },
+                        language: 'en',
+                        table: {
+                            contentToolbar: [
+                                'tableColumn',
+                                'tableRow',
+                                'mergeTableCells'
+                            ]
+                        }
+                    })
+                    .then(editor => {
+                        console.log('CKEditor initialized for:', textarea.name || textarea.id);
+                        
+                        // Update the original textarea when editor content changes
+                        editor.model.document.on('change:data', () => {
+                            textarea.value = editor.getData();
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error initializing CKEditor:', error);
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
