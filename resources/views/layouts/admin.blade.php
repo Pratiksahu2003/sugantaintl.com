@@ -243,7 +243,6 @@
                 <div class="topbar-right">
                     <!-- Notification Bell -->
                     @include('components.notification-bell')
-                    
                     <div class="user-menu">
                         <div class="user-avatar">
                             {{ substr(Auth::user()->name, 0, 1) }}
